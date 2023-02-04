@@ -1,0 +1,175 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"_Name": "SectionSimplePropertyCollection0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell0",
+								"KeyName": "$(L,passcode)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Rules/UserPreferences/ChangeUserPasscode.js"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"_Name": "SectionSimplePropertyCollection1",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell1",
+								"KeyName": "$(L,support)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Rules/UserPreferences/UserSupportNav.js"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"_Name": "SectionSimplePropertyCollection2",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/ErrorArchive/SyncErrorsCount.js",
+								"_Name": "SectionSimplePropertyCell2",
+								"KeyName": "$(L,sync_errors)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Actions/ErrorArchive/ErrorArchive.action"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"_Name": "SectionSimplePropertyCollection3",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SmartInspections/Rules/SmartInspectionsErrorArchive_SyncErrorsCount.js",
+								"_Name": "SectionSimplePropertyCell3",
+								"KeyName": "Smart Inspections Sync Errors",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SmartInspections/Actions/NavToSmartInspectionsErrorArchive.action"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"_Name": "SectionSimplePropertyCollection4",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell4",
+								"KeyName": "$(L,privacy_policy)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Rules/PrivacyPolicy/PrivacyPolicyLink.js"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Footer": {
+						"_Name": "SectionFooter0",
+						"Caption": "/SAPAssetManager/Rules/Sync/LastSyncCaption.js",
+						"FooterStyle": "help",
+						"UseBottomPadding": false
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton0",
+							"Title": "$(L,sync)",
+							"TextAlignment": "center",
+							"Style": "FormCellButton",
+							"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+						}
+					]
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable1",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton1",
+							"Title": "$(L,reset)",
+							"TextAlignment": "center",
+							"Style": "ResetRed",
+							"OnPress": "/SAPAssetManager/Rules/Common/ResetAlertAction.js"
+						}
+					]
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserProfileSettings",
+	"Caption": "$(L,profile)",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"SystemItem": "/SAPAssetManager/Rules/UserPreferences/UserProfileCloseIcon.js",
+				"Position": "left",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action",
+				"Text": "$(L,close)"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

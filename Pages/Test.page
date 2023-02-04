@@ -1,0 +1,173 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js",
+				"Position": "Left",
+				"SystemItem": "Done",
+				"Text": "",
+				"Visible": true
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js",
+				"Position": "Right",
+				"SystemItem": "Add",
+				"Text": "",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "WO:{{#Property:OrderNumber}}",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"BodyText": "Show the body text",
+						"DetailImageIsCircular": false,
+						"Footnote": "Footnote",
+						"HeadlineText": "Headline",
+						"StatusText": "Status",
+						"Subhead": "Subhead",
+						"SubstatusText": "Substatus"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectHeader0",
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"Caption": "MIC",
+					"Controls": [
+						{
+							"Caption": "{MicNumber}",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "nonEditableFields",
+								"Caption": "subTitleText"
+							},
+							"Value": "{MicShortText}",
+							"_Name": "MICNumber",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"ApportionsSegmentWidthsByContent": false,
+							"Caption": "RESULT",
+							"IsEditable": true,
+							"IsVisible": true,
+							"OnValueChange": "/SmartInspections/Rules/QualitativePFFStatus_OnValueChange.rule.js",
+							"Segments": [
+								"FAIL",
+								"FIX",
+								"PASS"
+							],
+							"Styles": {
+								"Background": "statusColorNeutral"
+							},
+							"Value": "{FixedValuesResult}",
+							"_Name": "Status",
+							"_Type": "Control.Type.FormCell.SegmentedControl"
+						},
+						{
+							"Caption": "DEFECT CODE GROUP",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Value": "{DefectCodeGroup}",
+							"_Name": "DefectCodeGroup",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"AllowEmptySelection": true,
+							"AllowMultipleSelection": false,
+							"Caption": "DEFECT CODE",
+							"DataPaging": {
+								"LoadingIndicatorText": "",
+								"PageSize": 10,
+								"ShowLoadingIndicator": true
+							},
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"OnValueChange": "/SmartInspections/Rules/DefectCodeListPicker_OnValueChange.js",
+							"PickerItems": {
+								"ObjectCell": {
+									"AccessoryType": "none",
+									"Description": "{DefCodeDesc}",
+									"DetailImageIsCircular": false,
+									"Footnote": "{DefCodeGroupDesc}",
+									"Icons": [
+									],
+									"PreserveIconStackSpacing": false,
+									"StatusText": "",
+									"Styles": {
+									},
+									"Subhead": "{DefCodeGroup}",
+									"Title": "{DefCode}"
+								},
+								"ReturnValue": "{DefCode}",
+								"Target": {
+									"EntitySet": "DefectCodeSet",
+									"QueryOptions": "/SmartInspections/Rules/DefectCode_QueryOptions.js",
+									"ReadLink": "{@odata.readLink}",
+									"Service": "/SmartInspections/Services/SAM.service"
+								}
+							},
+							"PickerPrompt": "Please select one item",
+							"Search": {
+								"Enabled": true
+							},
+							"_Name": "DefectCode",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					],
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Visible": true,
+					"_Name": "SectionFormCell0",
+					"_Type": "Section.Type.FormCell"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SmartInspections/Rules/QualitativePFFPage_OnLoaded.rule.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "PREV",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Prev.js",
+				"Visible": false,
+				"_Name": "Previous",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "NEXT",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Next.js",
+				"Visible": false,
+				"_Name": "Next",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "CLEAR ALL",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Actions/QualitativePFFClear_ConfirmMessage.action",
+				"Visible": true,
+				"_Name": "ClearAll",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "QualitativePFF",
+	"_Type": "Page"
+}

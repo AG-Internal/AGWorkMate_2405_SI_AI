@@ -1,0 +1,108 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_CurInsp.js",
+						"Footnote": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_PreInsp.js",
+						"StatusText": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_PendingCount.js",
+						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
+						"DetailImageIsCircular": false,
+						"BodyText": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_OrgInsp.js",
+						"HeadlineText": "{{#Property:OrderNumber}} - {{#Property:OrderDescription}}",
+						"Target": {
+							"EntitySet": "TechnicalObjectDetailsSet",
+							"QueryOptions": "$filter=OrderNumber eq '{{#Property:OrderNumber}}' and TechnicalObject eq '{{#Property:TechnicalObject}}'",
+							"Service": "/SmartInspections/Services/SAM.service"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"DataSubscriptions": [
+						"InspectionCharacteristicDetailsSet"
+					],
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "InspectionCharacteristicDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_Sort.js",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumber.js",
+						"Subhead": "{MicShortText}",
+						"Footnote": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicType.js",
+						"StatusText": "Chr {InspectionCharacteristicNumb}",
+						"SubstatusText": "Opr {OperationNumber}",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "none",
+						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
+						"Tags": [
+						],
+						"AvatarStack": {
+							"Avatars": [
+							]
+						},
+						"AvatarGrid": {
+							"Avatars": [
+							]
+						},
+						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"Styles": {
+							"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumberColor.rule.js"
+						}
+					},
+					"DataPaging": {
+						"LoadingIndicatorText": "Loading data...",
+						"PageSize": 20,
+						"ShowLoadingIndicator": true
+					}
+				}
+			],
+			"FilterFeedbackBar": {
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicDetailsSet",
+		"EXGroupSet"
+	],
+	"_Name": "InspectionCharacteristicDetailsList",
+	"Caption": "/SmartInspections/Rules/TechnicalObjectAndDescription_Concat.js",
+	"PrefersLargeCaption": true,
+	"OnReturning": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_OnReturning.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"SystemItem": "Add",
+				"Icon": "res://save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/InspectionCharacteristicDetailsListPage_MorePopover.action",
+				"Text": ""
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

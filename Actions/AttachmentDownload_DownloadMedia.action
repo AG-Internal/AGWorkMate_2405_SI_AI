@@ -1,0 +1,10 @@
+{
+	"OnFailure": "/SAPAssetManager/Actions/Documents/DownloadMediaFailure.action",
+	"OnSuccess": "/SmartInspections/Rules/Attachment_SaveDownloaded.js",
+	"Target": {
+		"EntitySet": "InspectionCharacteristicAttachmentSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.DownloadMedia"
+}

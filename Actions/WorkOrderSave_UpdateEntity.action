@@ -1,0 +1,19 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SmartInspections/Rules/ODataFailure_ErrorMessage.js",
+	"Properties": {
+		"CloseOrder": "{CloseOrder}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"ShowActivityIndicator": true,
+	"Target": {
+		"EntitySet": "WorkOrderHeaderSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

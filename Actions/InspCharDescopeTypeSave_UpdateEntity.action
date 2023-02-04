@@ -1,0 +1,22 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SmartInspections/Actions/InspCharSave_FailureMessage.action",
+	"Properties": {
+		"DescopedOn": "{DescopedOn}",
+		"DescopedTime": "{DescopedTime}",
+		"IsDescopeUpdated": "{IsDescopeUpdated}",
+		"MicDescopeDesc": "{MicDescopeDesc}",
+		"MicDescopeType": "{MicDescopeType}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

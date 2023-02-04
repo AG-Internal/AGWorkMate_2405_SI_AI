@@ -1,0 +1,8 @@
+{
+	"CancelCaption": "CANCEL",
+	"Message": "/SmartInspections/Rules/WorkOrderHeader_MessageText.js",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Actions/NavToSmartInspectionsTabsViewPage.action",
+	"Title": "/SmartInspections/Rules/WorkOrderHeader_MessageCodeText.js",
+	"_Type": "Action.Type.Message"
+}

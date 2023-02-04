@@ -1,0 +1,7 @@
+{
+	"Animated": true,
+	"Duration": 3,
+	"Message": "This error cannot be fixed",
+	"NumberOfLines": 2,
+	"_Type": "Action.Type.ToastMessage"
+}

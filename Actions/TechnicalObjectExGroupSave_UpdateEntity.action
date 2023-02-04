@@ -1,0 +1,19 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"OnFailure": "/SmartInspections/Actions/TechnicalObjectSave_FailureMessage.action",
+	"Target": {
+		"Service": "/SmartInspections/Services/SAM.service",
+		"EntitySet": "TechnicalObjectDetailsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"Status": "{Status}",
+		"ExGrp": "{ExGrp}",
+		"ExGrpDesc": "{ExGrpDesc}",
+		"EXChangedOn": "{EXChangedOn}",
+		"EXChangedTime": "{EXChangedTime}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	}
+}

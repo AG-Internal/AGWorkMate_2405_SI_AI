@@ -1,0 +1,46 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "ErrorArchive",
+						"QueryOptions": "$filter=HTTPStatusCode ne 0",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "SectionObjectTable0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "/SmartInspections/Rules/SmartInspectionsErrorArchive_Message.js",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsErrorArchiveDetails.js"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "$(L,search)",
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SmartInspectionsErrorArchive",
+	"Caption": "Smart Inspections Error Archive"
+}

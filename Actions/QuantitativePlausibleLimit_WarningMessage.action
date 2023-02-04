@@ -1,0 +1,9 @@
+{
+	"CancelCaption": "Cancel",
+	"Message": "Value outside thresholds. Do you want to continue the save?",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Actions/QuantitativeSave_UpdateEntity.action",
+	"ShowActivityIndicator": false,
+	"Title": "WARNING",
+	"_Type": "Action.Type.Message"
+}

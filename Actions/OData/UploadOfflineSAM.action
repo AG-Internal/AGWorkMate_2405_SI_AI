@@ -1,0 +1,9 @@
+{
+	"ActionResult": {
+		"_Name": "sync"
+	},
+	"OnFailure": "/SAPAssetManager/Rules/Sync/OnUploadFailure.js",
+	"OnSuccess": "/SmartInspections/Actions/OData/DownloadOfflineSAM.action",
+	"Service": "/SmartInspections/Services/SAM.service",
+	"_Type": "Action.Type.OfflineOData.Upload"
+}

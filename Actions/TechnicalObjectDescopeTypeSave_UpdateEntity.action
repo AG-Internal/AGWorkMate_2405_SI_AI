@@ -1,0 +1,22 @@
+{
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SmartInspections/Actions/TechnicalObjectSave_FailureMessage.action",
+	"Properties": {
+		"DescopeType": "{DescopeType}",
+		"DescopeTypeDesc": "{DescopeTypeDesc}",
+		"DescopedOn": "{DescopedOn}",
+		"DescopedTime": "{DescopedTime}",
+		"Status": "{Status}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "TechnicalObjectDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

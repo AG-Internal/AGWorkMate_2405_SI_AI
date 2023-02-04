@@ -1,0 +1,6 @@
+{
+	"Duration": 3,
+	"Message": "/SmartInspections/Rules/ODataFailure_ErrorMessage.js",
+	"NumberOfLines": 1,
+	"_Type": "Action.Type.ToastMessage"
+}

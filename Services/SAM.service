@@ -1,0 +1,5 @@
+{
+	"DestinationName": "SAP_SI_OData",
+	"OfflineEnabled": true,
+	"SourceType": "Mobile"
+}

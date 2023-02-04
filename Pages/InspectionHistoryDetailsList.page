@@ -1,0 +1,61 @@
+{
+	"Caption": "Inspection History",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"DataPaging": {
+						"LoadingIndicatorText": "Loading data...",
+						"PageSize": 20,
+						"ShowLoadingIndicator": true
+					},
+					"EmptySection": {
+						"Caption": "No history details found",
+						"FooterVisible": false
+					},
+					"HighlightSelectedItem": false,
+					"ObjectCell": {
+						"AccessoryType": "none",
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Description": "{MicShortText}",
+						"DetailImageIsCircular": false,
+						"Footnote": "/SmartInspections/Rules/InspectionHistoryDetailsList_Footnote.js",
+						"Icons": "/SmartInspections/Rules/InspectionHistoryDetailsList_StatusIcon.js",
+						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"PreserveIconStackSpacing": true,
+						"StatusText": "/SmartInspections/Rules/InspectionHistoryDetailsList_Status.js",
+						"Styles": {
+							"Subhead": "/SmartInspections/Rules/InspectionHistoryDetailsList_StatusColor.js",
+							"SubstatusText": "/SmartInspections/Rules/InspectionHistoryDetailsList_StatusColor.js"
+						},
+						"Subhead": "{TechnicalObjectDescription}",
+						"SubstatusText": "/SmartInspections/Rules/InspectionHistoryDetailsList_Result.js",
+						"Title": "{TechnicalObject}"
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"Target": {
+						"EntitySet": "HistoryDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/InspectionHistoryDetailsList_Query.js",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": [
+		"HistoryDetailsSet"
+	],
+	"_Name": "InspectionHistory",
+	"_Type": "Page"
+}

@@ -1,0 +1,12 @@
+{
+	"PopoverItems": [
+		{
+			"Enabled": "/SmartInspections/Rules/AddTechnicalObjectButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToAdHocTechnicalObjectList.action",
+			"Title": "Add Technical Object",
+			"Visible": true
+		}
+	],
+	"_Type": "Action.Type.PopoverMenu"
+}

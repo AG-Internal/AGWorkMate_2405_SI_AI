@@ -1,0 +1,6 @@
+{
+	"Message": "/SmartInspections/Rules/ODataFailure_ErrorMessage.js",
+	"OKCaption": "OK",
+	"Title": "ERROR",
+	"_Type": "Action.Type.Message"
+}

@@ -1,0 +1,40 @@
+{
+	"OnFailure": "/SmartInspections/Actions/QuantitativeMultipleSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Rules/QuantitativeMultipleUpdateEntity_Success.js",
+	"Properties": {
+		"DefectCode": "{DefectCode}",
+		"DefectCodeGroup": "{DefectCodeGroup}",
+		"FixedValuesResult": "{FixedValuesResult}",
+		"Result": "{Result}",
+		"LongText": "{LongText}",
+		"SampleReading1": "{SampleReading1}",
+		"SampleReading10": "{SampleReading10}",
+		"SampleReading11": "{SampleReading11}",
+		"SampleReading12": "{SampleReading12}",
+		"SampleReading13": "{SampleReading13}",
+		"SampleReading14": "{SampleReading14}",
+		"SampleReading15": "{SampleReading15}",
+		"SampleReading16": "{SampleReading16}",
+		"SampleReading17": "{SampleReading17}",
+		"SampleReading18": "{SampleReading18}",
+		"SampleReading19": "{SampleReading19}",
+		"SampleReading2": "{SampleReading2}",
+		"SampleReading20": "{SampleReading20}",
+		"SampleReading3": "{SampleReading3}",
+		"SampleReading4": "{SampleReading4}",
+		"SampleReading5": "{SampleReading5}",
+		"SampleReading6": "{SampleReading6}",
+		"SampleReading7": "{SampleReading7}",
+		"SampleReading8": "{SampleReading8}",
+		"SampleReading9": "{SampleReading9}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

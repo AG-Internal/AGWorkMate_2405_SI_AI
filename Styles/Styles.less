@@ -1,0 +1,170 @@
+@mdkYellow1: #ffbb33;
+@mdkRed1: #ff0000;
+@mdkblue1: #52a1cc;
+@mdkgreen1: #64d1af;
+@mdkddarkblue: #354a5f;
+//// This style applies to all the ActionBars in the application
+ActionBar {
+    //color: white;
+    //background-color: red;
+}
+
+//// This style applies to all the ToolBars in the application
+ToolBar {
+    color: white !important;
+    background-color: @mdkddarkblue;
+}
+
+//// LogoutToolbarItem is tool bar item for Logout in Main.page
+#LogoutToolbarItem  {
+    color: brown;
+}
+
+//// UploadToolbarItem is tool bar item for Sync in Main.page
+#UploadToolbarItem  {
+    color: green;
+}
+
+//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
+//// below snippet is to style SalesOrder button on Main.page
+.MySalesOrderButton {
+  font-color: @mdkRed1;
+  background-color: black;
+}
+
+//// below snippet is to style Title property of an Object Table control in Customers_List.page
+.ObjectTableTitle {
+  font-color: @mdkYellow1;
+  background-color: @mdkRed1;
+}
+
+//// below snippet is to style Object Header control in Customers_Detail.page
+
+.objectHeaderBodyText {
+  font-color: red;
+}
+
+.objectHeaderDescription {
+  font-color: blue;
+}
+
+.objectHeaderFootNote {
+  font-color: green;
+}
+
+.objectHeaderHeadline {
+  font-color: #ff00ff;
+}
+
+.objectHeaderBackground {
+background-color: #DC143C;
+}
+
+.objectHeaderStatus {
+  background-color: #cccccc;
+  font-color: red;
+  font-name: italicSystem;
+  font-style: italic;
+  font-size: 18;
+}
+
+.objectHeaderSubhead {
+  font-color: @mdkgreen1;
+}
+
+.objectHeaderSubStatus {
+  background-color: #cccccc;
+  font-color: blue;
+  font-name: italicSystem;
+  font-style: italic;
+  font-size: 18;
+}
+.StatusTextCust{
+	font-style: bold;
+    font-size: 14;
+}
+.SubstatusTextCust{
+	font-style: normal;
+    font-size: 14;
+}
+.ObjectSubheadCritical{
+	font-color: @mdkRed1;	
+}
+.SampleButtonText{
+	background-color: #FF00000 !important;
+	width:10%;
+}
+.SampleButtonText1{
+	width:100px;
+	font-color: white !important;
+	font-size: 20px !important;
+	color: white !important;
+}
+
+
+// SI Styles
+.statusColorFail {
+    background-color: #fa8383;
+}
+
+.statusColorFix {
+    background-color: #f4b177;
+}
+
+.statusColorPass {
+    background-color: #83f4b2;
+}
+
+.statusColorNeutral {
+    background-color: #ffffff;
+}
+
+.subTitleText {
+    color: #000000;
+    font-color: #000000;
+    font-weight: bolder;
+	font-size: 18;
+}
+
+.nonEditableFields {
+    background-color: #e5e5e5;
+    tint-color: #FF0000;
+}
+
+.editableFields {
+    background-color: #ffffff;
+    tint-color: #ffffff;
+}
+
+.hideSeparator {
+    border-color: #ffffff;
+    background-color: #ffffff
+}
+
+.totalPendingColor {
+  font-color: #0a6ed1;
+}
+
+.totalPendingNoColor {
+  font-color: #6a6d70;
+}
+
+.textColorFail {
+  font-color: #bb0000;
+}
+
+.textColorFix {
+  font-color: #e9730c;
+}
+
+.textColorPass {
+  font-color: #107e3e;
+}
+
+.textColorNeutral {
+  font-color: #000000;
+}
+
+.textColorGrey{
+  font-color: #A9A9A9;
+}

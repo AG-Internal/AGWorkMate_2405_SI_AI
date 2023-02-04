@@ -1,0 +1,18 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "updating EX Group's related Inspections...",
+	"Target": {
+		"Service": "/SmartInspections/Services/SAM.service",
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"AddInWoSnap": "{AddInWoSnap}",
+		"DeleteFromWoSnap": "{DeleteFromWoSnap}",
+		"EXCallMode": "{EXCallMode}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	}
+}

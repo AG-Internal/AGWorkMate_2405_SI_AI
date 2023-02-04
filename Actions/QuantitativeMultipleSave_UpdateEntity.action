@@ -1,0 +1,40 @@
+{
+	"OnFailure": "/SmartInspections/Actions/QuantitativeMultipleSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Rules/QuantitativeMultipleUpdateEntity_Success.js",
+	"Properties": {
+		"DefectCode": "#Control:DefectCode/#SelectedValue",
+		"DefectCodeGroup": "#Control:DefectCodeGroup/#Value",
+		"FixedValuesResult": "#Control:Status/#SelectedValue",
+		"Result": "#Control:QuantitativeReading/#Value",
+		"LongText": "/SmartInspections/Rules/InspectionCharacteristicDetailsSaveLongText_GetValue.rule.js",
+		"SampleReading1": "#Control:SampleReading1/#Value",
+		"SampleReading10": "#Control:SampleReading10/#Value",
+		"SampleReading11": "#Control:SampleReading11/#Value",
+		"SampleReading12": "#Control:SampleReading12/#Value",
+		"SampleReading13": "#Control:SampleReading13/#Value",
+		"SampleReading14": "#Control:SampleReading14/#Value",
+		"SampleReading15": "#Control:SampleReading15/#Value",
+		"SampleReading16": "#Control:SampleReading16/#Value",
+		"SampleReading17": "#Control:SampleReading17/#Value",
+		"SampleReading18": "#Control:SampleReading18/#Value",
+		"SampleReading19": "#Control:SampleReading19/#Value",
+		"SampleReading2": "#Control:SampleReading2/#Value",
+		"SampleReading20": "#Control:SampleReading20/#Value",
+		"SampleReading3": "#Control:SampleReading3/#Value",
+		"SampleReading4": "#Control:SampleReading4/#Value",
+		"SampleReading5": "#Control:SampleReading5/#Value",
+		"SampleReading6": "#Control:SampleReading6/#Value",
+		"SampleReading7": "#Control:SampleReading7/#Value",
+		"SampleReading8": "#Control:SampleReading8/#Value",
+		"SampleReading9": "#Control:SampleReading9/#Value"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

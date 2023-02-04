@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Message",
+	"Message": "EX Group has been changed Successfully",
+	"Title": "EX Group Changed ",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Actions/NavToInspectionCharacteristicDetailsList.action",
+	"ActionResult": {
+		"_Name": "EXChangedConf"
+	}
+}

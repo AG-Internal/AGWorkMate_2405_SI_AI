@@ -1,0 +1,18 @@
+{
+	"OnFailure": "/SmartInspections/Actions/QualitativeDateSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Rules/QualitativeDateUpdateEntity_Success.js",
+	"Properties": {
+		"DateResult": "{DateResult}",
+		"FixedValuesResult": "{FixedValuesResult}",
+		"LongText": "{LongText}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

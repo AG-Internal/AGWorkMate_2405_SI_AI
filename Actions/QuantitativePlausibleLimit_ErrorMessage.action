@@ -1,0 +1,6 @@
+{
+	"Message": "Value outside thresholds. Please correct.",
+	"OKCaption": "OK",
+	"Title": "ERROR",
+	"_Type": "Action.Type.Message"
+}

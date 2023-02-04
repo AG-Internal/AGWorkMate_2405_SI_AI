@@ -1,0 +1,65 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"InspectionCharacteristicDetailsSet"
+					],
+					"Target": {
+						"EntitySet": "InspectionCharacteristicDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/TechObjAndInspCharInProgressListPage_Sort.js",
+						"ReadLink": "",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "SectionObjectTable1",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{TechnicalObject}",
+						"Subhead": "{{#Property:MicNumber}}  - {{#Property:MicShortText}} ",
+						"Footnote": "/SmartInspections/Rules/TechObjAndInspCharListPage_InspectionType.js",
+						"Description": "{TechnicalObjectDescription}",
+						"StatusText": "/SmartInspections/Rules/TechObjAndInspCharListPage_RecordingStatus.js",
+						"DetailImageIsCircular": true,
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "disclosureIndicator",
+						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
+						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"Styles": {
+							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js"
+						}
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"DataPaging": {
+						"LoadingIndicatorText": "Loading data...",
+						"PageSize": 20,
+						"ShowLoadingIndicator": true
+					},
+					"HighlightSelectedItem": false
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicDetailsSet",
+		"TechnicalObjectDetailsSet"
+	],
+	"_Name": "TechObjAndInspCharInProgressList",
+	"Caption": "TechObjAndInspCharInProgressList",
+	"OnReturning": "/SmartInspections/Rules/TechObjAndInspCharListPage_OnReturning.js"
+}

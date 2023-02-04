@@ -1,0 +1,8 @@
+{
+	"CancelCaption": "Cancel",
+	"Message": "Are you sure want to clear data? This will clear results, notes and attachments.",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Rules/QuantitativeMultiplePage_SaveValidations.rule.js",
+	"Title": "CONFIRM",
+	"_Type": "Action.Type.Message"
+}

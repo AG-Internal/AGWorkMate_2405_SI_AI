@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ShowActivityIndicator": true,
+	"PageToOpen": "/SmartInspections/Pages/SmartInspectionsTabsView.page",
+	"NavigationType": "Cross"
+}

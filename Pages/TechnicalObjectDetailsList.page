@@ -1,0 +1,83 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"InspectionCharacteristicDetailsSet"
+					],
+					"Target": {
+						"EntitySet": "TechnicalObjectDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_Sort.rule.js",
+						"ReadLink": "",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "SectionObjectTable1",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "/SmartInspections/Rules/FLocOrEquipmentDesc.js",
+						"Subhead": "{TechnicalObject}",
+						"Footnote": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PassFixFailCount.rule.js",
+						"Description": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_Desc.js",
+						"StatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_Status.js",
+						"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingCount.rule.js",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "none",
+						"Icons": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_Icon.js",
+						"Tags": [
+						],
+						"AvatarStack": {
+							"Avatars": [
+							]
+						},
+						"AvatarGrid": {
+							"Avatars": [
+							]
+						},
+						"OnPress": "/SmartInspections/Rules/NavToInspectionCharacteristicDetailsList.js",
+						"Styles": {
+							"Title": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechDescColor.js",
+							"Subhead": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechObjColor.rule.js",
+							"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingColor.rule.js"
+						}
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"DataPaging": {
+						"LoadingIndicatorText": "Loading data...",
+						"PageSize": 20,
+						"ShowLoadingIndicator": true
+					}
+				}
+			],
+			"FilterFeedbackBar": {
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicDetailsSet",
+		"TechnicalObjectDetailsSet",
+		"EXGroupSet"
+	],
+	"_Name": "TechnicalObjectDetailsList",
+	"Caption": "Work Order - {{#Property:OrderId}}",
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_OnReturning.js",
+	"OnReturning": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_OnReturning.js"
+}

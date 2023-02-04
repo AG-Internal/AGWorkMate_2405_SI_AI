@@ -1,0 +1,12 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "EXGroup_ConfMsg"
+	},
+	"ShowActivityIndicator": true,
+	"Message": "Are you sure to change the EX Group ?",
+	"Title": "Confirm",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Rules/EXGroup_CreateInsp.js",
+	"CancelCaption": "Cancel"
+}

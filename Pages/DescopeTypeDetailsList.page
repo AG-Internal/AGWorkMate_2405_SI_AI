@@ -1,0 +1,65 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Actions/DescopeTypeDetailsList_Close.action",
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"Text": "",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Descope Types",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"DataPaging": {
+						"LoadingIndicatorText": "",
+						"PageSize": 50,
+						"ShowLoadingIndicator": true
+					},
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"HighlightSelectedItem": true,
+					"ObjectCell": {
+						"AccessoryType": "none",
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"DetailImageIsCircular": false,
+						"OnPress": "/SmartInspections/Rules/DescopeTypeList_OnPress.js",
+						"PreserveIconStackSpacing": false,
+						"Selected": false,
+						"Subhead": "{DescopeTypeDesc}",
+						"Title": "{DescopeType}"
+					},
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					},
+					"Target": {
+						"EntitySet": "DescopeTypeDetailsSet",
+						"QueryOptions": "$orderby=DescopeType",
+						"ReadLink": "",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable1",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Name": "DescopeTypeDetailsList",
+	"_Type": "Page"
+}

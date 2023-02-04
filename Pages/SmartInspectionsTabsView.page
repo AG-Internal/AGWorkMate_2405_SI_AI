@@ -1,0 +1,115 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveAllValidations.js",
+				"Position": "Right",
+				"Text": "Save ALL",
+				"Visible": false
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveSelectedValidations.js",
+				"Position": "Right",
+				"Text": "Save SELECTED",
+				"Visible": false
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Actions/SmartInspectionsTabsView_MorePopover.action",
+				"Position": "Right",
+				"SystemItem": "Add",
+				"Text": "",
+				"Visible": true
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseOrder.js",
+				"Position": "Right",
+				"Text": "CLOSE",
+				"Visible": false
+			}
+		]
+	},
+	"Caption": "Work Order - {{#Property:OrderId}}",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"BodyText": "/SmartInspections/Rules/ParameterUserField01_Text.js",
+						"DetailImageIsCircular": false,
+						"Footnote": "/SmartInspections/Rules/ParameterUserField02_Text.js",
+						"HeadlineText": "{OrderDescription}",
+						"Target": {
+							"EntitySet": "WorkOrderHeaderSet",
+							"QueryOptions": "/SmartInspections/Rules/SIentryWO.js",
+							"Service": "/SmartInspections/Services/SAM.service"
+						}
+					},
+					"Visible": true,
+					"_Name": "SectionObjectHeader0",
+					"_Type": "Section.Type.ObjectHeader"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		},
+		{
+			"Items": [
+				{
+					"Caption": "Equipment View",
+					"Image": "sap-icon://tree",
+					"OnPress": "/SmartInspections/Rules/SmartInspectionsTabsView_OnPress.js",
+					"PageToOpen": "/SmartInspections/Pages/TechnicalObjectDetailsList.page",
+					"ResetIfPressedWhenActive": false,
+					"_Name": "TabItem5",
+					"_Type": "Control.Type.TabItem"
+				},
+				{
+					"Caption": "Outstanding",
+					"Image": "sap-icon://begin",
+					"OnPress": "/SmartInspections/Rules/SmartInspectionsTabsView_OnPress.js",
+					"PageToOpen": "/SmartInspections/Pages/TechObjAndInspCharOpenList.page",
+					"ResetIfPressedWhenActive": false,
+					"_Name": "TabItem2",
+					"_Type": "Control.Type.TabItem"
+				},
+				{
+					"Caption": "In Progress",
+					"Image": "sap-icon://survey",
+					"OnPress": "/SmartInspections/Rules/SmartInspectionsTabsView_OnPress.js",
+					"PageToOpen": "/SmartInspections/Pages/TechObjAndInspCharInProgressList.page",
+					"ResetIfPressedWhenActive": false,
+					"_Name": "TabItem3",
+					"_Type": "Control.Type.TabItem"
+				},
+				{
+					"Caption": "Submit",
+					"Image": "sap-icon://accounting-document-verification",
+					"OnPress": "/SmartInspections/Rules/SmartInspectionsTabsView_OnPress.js",
+					"PageToOpen": "/SmartInspections/Pages/TechnicalObjectPermSaveList.page",
+					"ResetIfPressedWhenActive": false,
+					"_Name": "TabItem4",
+					"_Type": "Control.Type.TabItem"
+				},
+				{
+					"Caption": "All",
+					"Image": "sap-icon://menu",
+					"OnPress": "/SmartInspections/Rules/SmartInspectionsTabsView_OnPress.js",
+					"PageToOpen": "/SmartInspections/Pages/TechObjAndInspCharList.page",
+					"ResetIfPressedWhenActive": false,
+					"_Name": "TabItem1",
+					"_Type": "Control.Type.TabItem"
+				}
+			],
+			"Position": "Top",
+			"_Name": "SmartInspectionsTabsView",
+			"_Type": "Control.Type.Tabs"
+		}
+	],
+	"OnLoaded": "/SmartInspections/Rules/SmartInspectionsTabsView_OnLoaded.js",
+	"_Name": "SmartInspectionsTabsView",
+	"_Type": "Page"
+}

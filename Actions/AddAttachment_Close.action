@@ -1,0 +1,5 @@
+{
+	"CancelPendingActions": false,
+	"OnSuccess": "/SmartInspections/Actions/AddAttachmentSave_SuccessMessage.action",
+	"_Type": "Action.Type.ClosePage"
+}

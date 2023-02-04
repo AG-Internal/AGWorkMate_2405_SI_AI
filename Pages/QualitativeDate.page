@@ -1,0 +1,143 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativeDatePage_SaveValidations.rule.js",
+				"Position": "Left",
+				"SystemItem": "Done",
+				"Text": "",
+				"Visible": true
+			},
+			{
+				"Icon": "sap-icon://message-information",
+				"IsIconCircular": true,
+				"OnPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
+				"Position": "Right",
+				"Text": "",
+				"Visible": "/SmartInspections/Rules/InstructionsButton_SetVisible.js"
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativeDatePage_SaveValidations.rule.js",
+				"Position": "Right",
+				"SystemItem": "Add",
+				"Text": "",
+				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js"
+			}
+		]
+	},
+	"Caption": "/SmartInspections/Rules/TechnicalObjectAndDescription_Concat.js",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"DetailImageIsCircular": false,
+						"HeadlineText": "/SmartInspections/Rules/ResultsRecordingPage_MicNumber.js",
+						"Subhead": "/SmartInspections/Rules/ResultsRecordingPage_CurInsp.js",
+						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
+						"Target": {
+							"Service": "/SmartInspections/Services/SAM.service",
+							"EntitySet": "/SmartInspections/Rules/ResultsRecording_EntitySet.js",
+							"QueryOptions": "/SmartInspections/Rules/ResultsRecording_QueryOptions.js"
+						}
+					},
+					"Visible": true,
+					"_Name": "SectionObjectHeader0",
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"Controls": [
+						{
+							"Caption": "{MicNumber}",
+							"IsEditable": false,
+							"IsVisible": false,
+							"Styles": {
+								"Background": "nonEditableFields",
+								"Caption": "subTitleText"
+							},
+							"Value": "{MicShortText}",
+							"_Name": "MICNumber",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "DATE",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Mode": "date",
+							"OnValueChange": "/SmartInspections/Rules/QualitativeDateReading_OnValueChange.rule.js",
+							"Value": "{DateResult}",
+							"_Name": "QualitativeReading",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						},
+						{
+							"ApportionsSegmentWidthsByContent": false,
+							"Caption": "STATUS",
+							"IsEditable": true,
+							"IsVisible": true,
+							"OnValueChange": "/SmartInspections/Rules/QualitativeDateStatus_OnValueChange.rule.js",
+							"Segments": [
+								"FAIL",
+								"FIX",
+								"PASS"
+							],
+							"Styles": {
+								"Background": "statusColorNeutral"
+							},
+							"Value": "{FixedValuesResult}",
+							"_Name": "Status",
+							"_Type": "Control.Type.FormCell.SegmentedControl"
+						}
+					],
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Visible": true,
+					"_Name": "SectionFormCell0",
+					"_Type": "Section.Type.FormCell"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": [
+		"InspectionCharacteristicDetailsSet"
+	],
+	"OnLoaded": "/SmartInspections/Rules/QualitativeDatePage_OnLoaded.rule.js",
+	"OnReturning": "/SmartInspections/Rules/ResultRecording_OnReturning.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "PREV",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Prev.js",
+				"Visible": false,
+				"_Name": "Previous",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "NEXT",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Next.js",
+				"Visible": false,
+				"_Name": "Next",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "CLEAR ALL",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Actions/QualitativeDateClear_ConfirmMessage.action",
+				"Visible": true,
+				"_Name": "ClearAll",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "QualitativeDate",
+	"_Type": "Page"
+}

@@ -1,0 +1,102 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"EXGroupSet"
+					],
+					"Target": {
+						"Service": "/SmartInspections/Services/SAM.service",
+						"EntitySet": "EXGroupSet",
+						"QueryOptions": "$orderby=EXGrp"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{EXGrp}",
+						"Subhead": "{EXGrpDesc}",
+						"DisplayDescriptionInMobile": true,
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"Tags": [
+						],
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": "",
+									"ImageText": ""
+								}
+							],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [
+							],
+							"ImageIsCircular": false
+						},
+						"OnPress": "/SmartInspections/Rules/EXGroupList_OnPress.js",
+						"Selected": false
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "",
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": true,
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					}
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": ""
+			}
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "",
+		"EntitySet": ""
+	},
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicMasterSet",
+		"EXGroupSet"
+	],
+	"_Name": "EXGroupList",
+	"Caption": "EX Asset Group",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/EXGroupList_Close.action",
+				"Text": ""
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

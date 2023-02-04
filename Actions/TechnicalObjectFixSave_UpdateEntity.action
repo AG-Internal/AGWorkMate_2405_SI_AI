@@ -1,0 +1,18 @@
+{
+	"OnFailure": "/SmartInspections/Actions/TechnicalObjectSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Actions/ErrorFixSave_SuccessMessage.action",
+	"Properties": {
+		"SaveMode": "{SaveMode}",
+		"SelectedToSave": "{SelectedToSave}",
+		"Status": "{Status}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "TechnicalObjectDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

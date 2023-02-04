@@ -1,0 +1,49 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "AttachmentDescription",
+							"IsEditable": true,
+							"IsVisible": true,
+							"PlaceHolder": "Attachment Description"
+						},
+						{
+							"_Type": "Control.Type.FormCell.Attachment",
+							"_Name": "Attachments",
+							"IsVisible": true,
+							"AttachmentActionType": [
+								"AddPhoto",
+								"TakePhoto",
+								"SelectFile"
+							],
+							"AttachmentTitle": "ATTACHED FILES"
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "AddAttachment",
+	"Caption": "Add Attachment",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/AddAttachment_SaveValidation.js",
+				"Text": "Save"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

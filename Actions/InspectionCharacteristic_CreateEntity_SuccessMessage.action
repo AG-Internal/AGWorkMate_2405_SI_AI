@@ -1,0 +1,7 @@
+{
+	"Duration": 3,
+	"Message": "Successfully saved",
+	"NumberOfLines": 1,
+	"OnSuccess": "/SmartInspections/Actions/AdHocOperationNumberList_Close.action",
+	"_Type": "Action.Type.ToastMessage"
+}

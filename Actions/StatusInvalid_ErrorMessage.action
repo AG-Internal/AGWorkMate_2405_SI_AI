@@ -1,0 +1,6 @@
+{
+	"Message": "Invalid Status selected. Please select the correct status.",
+	"OKCaption": "OK",
+	"Title": "ERROR",
+	"_Type": "Action.Type.Message"
+}

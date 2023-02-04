@@ -1,0 +1,6 @@
+{
+	"Message": "Please enter a valid reading",
+	"OKCaption": "OK",
+	"Title": "ERROR",
+	"_Type": "Action.Type.Message"
+}

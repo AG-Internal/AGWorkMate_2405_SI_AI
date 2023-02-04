@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ClosePage",
+	"ActionResult": {
+		"_Name": "EXListMICListClose"
+	},
+	"OnSuccess": "/SmartInspections/Actions/EXChangedConf.action",
+	"DismissModal": "Action.Type.ClosePage.Canceled",
+	"CancelPendingActions": true
+}

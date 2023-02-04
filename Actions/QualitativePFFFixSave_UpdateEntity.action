@@ -1,0 +1,19 @@
+{
+	"OnFailure": "/SmartInspections/Actions/QualitativePFFSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Rules/QualitativePFFUpdateEntity_Success.js",
+	"Properties": {
+		"DefectCode": "{DefectCode}",
+		"DefectCodeGroup": "{DefectCodeGroup}",
+		"FixedValuesResult": "{FixedValuesResult}",
+		"LongText": "{LongText}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

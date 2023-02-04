@@ -1,0 +1,6 @@
+{
+	"Message": "/SmartInspections/Rules/HistoryDetails_MessageText.js",
+	"OKCaption": "OK",
+	"Title": "/SmartInspections/Rules/HistoryDetails_MessageCodeText.js",
+	"_Type": "Action.Type.Message"
+}

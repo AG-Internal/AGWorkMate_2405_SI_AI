@@ -1,0 +1,47 @@
+{
+	"PopoverItems": [
+		{
+			"Enabled": true,
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToInspectionHistoryDetailsList.action",
+			"Title": "History",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/NavToInspectionTypeDetailsList.js",
+			"Title": "Change Inspection Type",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js",
+			"Title": "Descope",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/DescopeTypeClearButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js",
+			"Title": "Bring Back To Scope",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/ClassificationsButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/NavToClassifications.js",
+			"Title": "Classifications",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js",
+			"Title": "Pass All",
+			"Visible": true
+		}
+	],
+	"_Type": "Action.Type.PopoverMenu"
+}

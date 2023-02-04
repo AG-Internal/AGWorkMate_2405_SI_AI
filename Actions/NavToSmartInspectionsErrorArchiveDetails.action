@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/SmartInspections/Pages/SmartInspectionsErrorArchiveDetails.page",
+	"ModalPage": true,
+	"NavigationType": "Cross"
+}

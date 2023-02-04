@@ -1,0 +1,38 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Actions/AddNoteSave_UpdateEntity.action",
+				"Position": "Right",
+				"Text": "Save",
+				"Visible": "/SmartInspections/Rules/InspCharMorePopover_SetVisible.js"
+			}
+		]
+	},
+	"Caption": "Add Note",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"IsEditable": "/SmartInspections/Rules/InspCharMorePopover_SetVisible.js",
+							"IsVisible": true,
+							"MinNumberOfLines": 10,
+							"PlaceHolder": "Enter long text",
+							"Value": "/SmartInspections/Rules/AddNote_SetValue.rule.js",
+							"_Name": "LongText",
+							"_Type": "Control.Type.FormCell.Note"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Name": "AddNote",
+	"_Type": "Page"
+}

@@ -1,0 +1,7 @@
+{
+	"Animated": true,
+	"Duration": 3,
+	"IsIconHidden": true,
+	"Message": "Checking for changes and saving data",
+	"_Type": "Action.Type.ToastMessage"
+}

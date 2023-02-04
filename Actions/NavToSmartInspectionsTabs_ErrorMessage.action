@@ -1,0 +1,6 @@
+{
+	"Message": "/SmartInspections/Rules/WorkOrderHeader_MessageText.js",
+	"OKCaption": "OK",
+	"Title": "/SmartInspections/Rules/WorkOrderHeader_MessageCodeText.js",
+	"_Type": "Action.Type.Message"
+}

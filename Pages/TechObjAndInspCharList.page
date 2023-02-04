@@ -1,0 +1,81 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"InspectionCharacteristicDetailsSet"
+					],
+					"Target": {
+						"EntitySet": "InspectionCharacteristicDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/TechObjAndInspCharListPage_Sort.rule.js",
+						"ReadLink": "",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "SectionObjectTable1",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "/SmartInspections/Rules/FLocOrEquipment.js",
+						"Subhead": "{{#Property:MicNumber}}  - {{#Property:MicShortText}} ",
+						"Footnote": "/SmartInspections/Rules/TechObjAndInspCharListPage_InspectionType.js",
+						"Description": "{TechnicalObjectDescription}",
+						"StatusText": "/SmartInspections/Rules/TechObjAndInspCharListPage_RecordingStatus.js",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "disclosureIndicator",
+						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
+						"Tags": [
+						],
+						"AvatarStack": {
+							"Avatars": [
+							]
+						},
+						"AvatarGrid": {
+							"Avatars": [
+							]
+						},
+						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"Styles": {
+							"Title": "/SmartInspections/Rules/TechObjAndInspCharListPage_TechObjColor.js",
+							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js"
+						}
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"DataPaging": {
+						"LoadingIndicatorText": "Loading data...",
+						"PageSize": 20,
+						"ShowLoadingIndicator": true
+					},
+					"HighlightSelectedItem": false
+				}
+			],
+			"FilterFeedbackBar": {
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicDetailsSet",
+		"TechnicalObjectDetailsSet",
+		"EXGroupSet"
+	],
+	"_Name": "TechObjAndInspCharList",
+	"Caption": "Work Order - {{#Property:OrderId}}",
+	"PrefersLargeCaption": true,
+	"OnReturning": "/SmartInspections/Rules/TechObjAndInspCharListPage_OnReturning.js"
+}

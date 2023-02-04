@@ -1,0 +1,68 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Actions/AdHocTechnicalObjectList_Close.action",
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"Text": "",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Technical Objects",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"DataPaging": {
+						"LoadingIndicatorText": "",
+						"PageSize": 50,
+						"ShowLoadingIndicator": true
+					},
+					"EmptySection": {
+						"Caption": "No Records",
+						"FooterVisible": false
+					},
+					"HighlightSelectedItem": false,
+					"ObjectCell": {
+						"AccessoryType": "none",
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"DetailImageIsCircular": false,
+						"OnPress": "/SmartInspections/Rules/AdHocTechnicalObjectList_OnPress.js",
+						"PreserveIconStackSpacing": false,
+						"Selected": false,
+						"Subhead": "{TechnicalObjectDesc}",
+						"Title": "{TechnicalObject}"
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					},
+					"Target": {
+						"EntitySet": "AdHocTechnicalObjectDetailsSet",
+						"QueryOptions": "/SmartInspections/Rules/AdHocTechnicalObjectListPage_Query.js",
+						"ReadLink": "",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable1",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Name": "AdHocTechnicalObjectList",
+	"_Type": "Page"
+}

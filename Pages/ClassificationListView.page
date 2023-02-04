@@ -1,0 +1,42 @@
+{
+	"Caption": "/SmartInspections/Rules/ClassificationListView_Caption.js",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_classification_available)",
+						"FooterVisible": false
+					},
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"OnPress": "/SAPAssetManager/Actions/Classification/ClassificationDetailsNav.action",
+						"PreserveIconStackSpacing": false,
+						"Subhead": "/SAPAssetManager/Rules/Classification/ClassId.js",
+						"SubstatusText": "/SAPAssetManager/Rules/Classification/ClassTypeDescription.js",
+						"Title": "/SAPAssetManager/Rules/Classification/ClassDescription.js"
+					},
+					"Target": {
+						"EntitySet": "/SmartInspections/Rules/ClassificationListView_EntitySet.js",
+						"QueryOptions": "/SmartInspections/Rules/ClassificationListView_Query.js",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"_Name": "Classification",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Name": "ClassificationPage",
+	"_Type": "Page"
+}

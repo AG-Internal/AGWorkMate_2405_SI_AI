@@ -1,0 +1,10 @@
+{
+	"ActivityIndicatorText": "",
+	"CancelCaption": "CANCEL",
+	"Message": "Are you sure you want to add the selected item to inspection scope?",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Rules/AdHocAdTechObjAndInspChar_Create.js",
+	"ShowActivityIndicator": true,
+	"Title": "CONFIRM",
+	"_Type": "Action.Type.Message"
+}

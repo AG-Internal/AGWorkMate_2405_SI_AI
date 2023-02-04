@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ODATA_DIGITAL_SIGNATURE_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="SignatureConfiguration" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SigningApplication"/>
+                    <PropertyRef Name="DigitalSignatureProcessID"/>
+                    <PropertyRef Name="SigningApplicationSubObject"/>
+                    <PropertyRef Name="DigitalSignatureUser"/>
+                    <PropertyRef Name="DigitalSignatureType"/>
+                    <PropertyRef Name="DigitalSignatureStrategy"/>
+                    <PropertyRef Name="SigningApplicationMetadataBin"/>
+                </Key>
+                <Property Name="SigningApplication" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureProcessID" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Signature ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SigningApplicationSubObject" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Signatory" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Signature Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureStrategy" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Signat. Strategy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SigningApplicationMetadataBin" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DS Enhancement: Sigining Application Metadata" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureMethod" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Signature Method" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureSignatoryName" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Signatory Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureMethodDesc" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrCommentRequirementType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Comment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrRemarkRequirementType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrDocumentRequirementType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="to_SignHistory" Relationship="ODATA_DIGITAL_SIGNATURE_SRV.Assoc_ConfigToSignHistory" FromRole="FromRole_Assoc_ConfigToSignHistory" ToRole="ToRole_Assoc_ConfigToSignHistory"/>
+                <NavigationProperty Name="to_AuthGroup" Relationship="ODATA_DIGITAL_SIGNATURE_SRV.Assoc_ConfigToAuthGroup" FromRole="FromRole_Assoc_ConfigToAuthGroup" ToRole="ToRole_Assoc_ConfigToAuthGroup"/>
+            </EntityType>
+            <EntityType Name="SignatureHistory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SigningApplication"/>
+                    <PropertyRef Name="SigningApplicationSubObject"/>
+                    <PropertyRef Name="DigitalSignatureStrategy"/>
+                </Key>
+                <Property Name="SigningApplication" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SigningApplicationSubObject" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureStrategy" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Signat. Strategy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureProcessID" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Signature ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureProcess" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sign. Process" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessIndex" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Signature Index" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessStep" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Indiv.signature" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessStepName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="IndSign. descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessStepIndex" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Sign. counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureSignatoryName" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Signatory Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureNoteText" Type="Edm.String" Nullable="false" MaxLength="68" sap:unicode="false" sap:label="Remark" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrAuthorizationGroup" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="AGrp Dig.Sign." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrAuthorizationGrpDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="AuthGrp DS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Signatory" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessState" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Process Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessAction" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Signature Step" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessDateTime" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrSignatoryTimeZone" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Time Zone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrSignatoryComment" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Comment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrSignatoryLanguage" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SignatureAuthorizationGrp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SigningApplication"/>
+                    <PropertyRef Name="SigningApplicationSubObject"/>
+                    <PropertyRef Name="DigitalSignatureStrategy"/>
+                </Key>
+                <Property Name="SigningApplication" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Application" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SigningApplicationSubObject" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DigitalSignatureStrategy" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Signat. Strategy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrAuthorizationGroup" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="AGrp Dig.Sign." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrAuthorizationGrpDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="AuthGrp DS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SignatureResult" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DigitalSignatureProcessID"/>
+                </Key>
+                <Property Name="DigitalSignatureProcessID" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Signature ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessState" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Process Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CancelResult" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DigitalSignatureProcessID"/>
+                </Key>
+                <Property Name="DigitalSignatureProcessID" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Signature ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DSgntrProcessState" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Process Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Assoc_ConfigToSignHistory" sap:content-version="1">
+                <End Type="ODATA_DIGITAL_SIGNATURE_SRV.SignatureConfiguration" Multiplicity="0..1" Role="FromRole_Assoc_ConfigToSignHistory"/>
+                <End Type="ODATA_DIGITAL_SIGNATURE_SRV.SignatureHistory" Multiplicity="*" Role="ToRole_Assoc_ConfigToSignHistory"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Assoc_ConfigToSignHistory">
+                        <PropertyRef Name="DigitalSignatureStrategy"/>
+                        <PropertyRef Name="SigningApplicationSubObject"/>
+                        <PropertyRef Name="SigningApplication"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Assoc_ConfigToSignHistory">
+                        <PropertyRef Name="DigitalSignatureStrategy"/>
+                        <PropertyRef Name="SigningApplicationSubObject"/>
+                        <PropertyRef Name="SigningApplication"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Assoc_ConfigToAuthGroup" sap:content-version="1">
+                <End Type="ODATA_DIGITAL_SIGNATURE_SRV.SignatureConfiguration" Multiplicity="0..1" Role="FromRole_Assoc_ConfigToAuthGroup"/>
+                <End Type="ODATA_DIGITAL_SIGNATURE_SRV.SignatureAuthorizationGrp" Multiplicity="*" Role="ToRole_Assoc_ConfigToAuthGroup"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Assoc_ConfigToAuthGroup">
+                        <PropertyRef Name="DigitalSignatureStrategy"/>
+                        <PropertyRef Name="SigningApplicationSubObject"/>
+                        <PropertyRef Name="SigningApplication"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Assoc_ConfigToAuthGroup">
+                        <PropertyRef Name="DigitalSignatureStrategy"/>
+                        <PropertyRef Name="SigningApplicationSubObject"/>
+                        <PropertyRef Name="SigningApplication"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ODATA_DIGITAL_SIGNATURE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SignatureConfigurationSet" EntityType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureConfiguration" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SignatureHistorySet" EntityType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureHistory" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SignatureAuthorizationGrpSet" EntityType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureAuthorizationGrp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SignatureResultCollection" EntityType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureResult" sap:content-version="1"/>
+                <EntitySet Name="CancelResultCollection" EntityType="ODATA_DIGITAL_SIGNATURE_SRV.CancelResult" sap:content-version="1"/>
+                <AssociationSet Name="Assoc_ConfigToAuthGroupSet" Association="ODATA_DIGITAL_SIGNATURE_SRV.Assoc_ConfigToAuthGroup" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SignatureConfigurationSet" Role="FromRole_Assoc_ConfigToAuthGroup"/>
+                    <End EntitySet="SignatureAuthorizationGrpSet" Role="ToRole_Assoc_ConfigToAuthGroup"/>
+                </AssociationSet>
+                <AssociationSet Name="Assoc_ConfigToSignHistorySet" Association="ODATA_DIGITAL_SIGNATURE_SRV.Assoc_ConfigToSignHistory" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SignatureConfigurationSet" Role="FromRole_Assoc_ConfigToSignHistory"/>
+                    <End EntitySet="SignatureHistorySet" Role="ToRole_Assoc_ConfigToSignHistory"/>
+                </AssociationSet>
+                <FunctionImport Name="Sign" ReturnType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureResult" EntitySet="SignatureResultCollection" m:HttpMethod="POST">
+                    <Parameter Name="SigningApplication" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="SigningApplicationSubObject" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DSgntrAuthorizationGroup" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DSgntrSignatoryComment" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="ApplicationObjectSignKey" Type="Edm.String" Mode="In" MaxLength="60"/>
+                    <Parameter Name="DigitalSignatureNoteText" Type="Edm.String" Mode="In" MaxLength="68"/>
+                    <Parameter Name="DigitalSignatureDocumentBin" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="DigitalSignatureProcessID" Type="Edm.String" Mode="In" MaxLength="22"/>
+                    <Parameter Name="SigningApplicationMetadataBin" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="DigitalSignatureStrategy" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DigitalSignatureType" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="DigitalSignatureUser" Type="Edm.String" Mode="In" MaxLength="12"/>
+                    <Parameter Name="DSgntrUserPassword" Type="Edm.String" Mode="In" MaxLength="40"/>
+                    <Parameter Name="DSgntrUserPassphrase" Type="Edm.String" Mode="In" MaxLength="30"/>
+                    <Parameter Name="DSgntrUserTimeBasedToken" Type="Edm.Int32" Mode="In"/>
+                    <Parameter Name="DigitalSignatureMethod" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="DigitalSignatureNoteID" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="DSgntrDocContentType" Type="Edm.String" Mode="In" MaxLength="1"/>
+                </FunctionImport>
+                <FunctionImport Name="CancelSign" ReturnType="ODATA_DIGITAL_SIGNATURE_SRV.SignatureResult" EntitySet="SignatureResultCollection" m:HttpMethod="POST">
+                    <Parameter Name="ApplicationObjectSignKey" Type="Edm.String" Mode="In" MaxLength="60"/>
+                    <Parameter Name="DigitalSignatureDocumentBin" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="DigitalSignatureMethod" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="DigitalSignatureNoteText" Type="Edm.String" Mode="In" MaxLength="68"/>
+                    <Parameter Name="DigitalSignatureNoteID" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="DigitalSignatureProcessID" Type="Edm.String" Mode="In" MaxLength="22"/>
+                    <Parameter Name="DigitalSignatureStrategy" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DigitalSignatureType" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="DigitalSignatureUser" Type="Edm.String" Mode="In" MaxLength="12"/>
+                    <Parameter Name="DSgntrAuthorizationGroup" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DSgntrSignatoryComment" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="DSgntrUserPassphrase" Type="Edm.String" Mode="In" MaxLength="30"/>
+                    <Parameter Name="DSgntrUserPassword" Type="Edm.String" Mode="In" MaxLength="40"/>
+                    <Parameter Name="DSgntrUserTimeBasedToken" Type="Edm.Int32" Mode="In"/>
+                    <Parameter Name="SigningApplication" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="SigningApplicationMetadataBin" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="SigningApplicationSubObject" Type="Edm.String" Mode="In" MaxLength="8"/>
+                    <Parameter Name="DSgntrDocContentType" Type="Edm.String" Mode="In" MaxLength="1"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self" href="https://se-sam-dev-c1sng0vt-se-sam-dev-samsi.cfapps.eu20-001.hana.ondemand.com/DEST_DIGITAL_SIGNATURE_PPROP/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://se-sam-dev-c1sng0vt-se-sam-dev-samsi.cfapps.eu20-001.hana.ondemand.com/DEST_DIGITAL_SIGNATURE_PPROP/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

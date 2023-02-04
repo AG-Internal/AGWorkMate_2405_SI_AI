@@ -1,0 +1,53 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "InspectionCharacteristicAttachmentSet",
+						"QueryOptions": "/SmartInspections/Rules/AttachmentList_Query.js",
+						"ReadLink": "{@odata.readLink}",
+						"Service": "/SmartInspections/Services/SAM.service"
+					},
+					"_Name": "AttachmentList",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [
+							],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{FileName}",
+						"Subhead": "{Description}",
+						"Footnote": "/SmartInspections/Rules/AttachmentList_FileSizeWrapper.js",
+						"DetailImage": "/SmartInspections/Rules/AttachmentList_DocumentTypeImage.js",
+						"DetailImageIsCircular": false,
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"ProgressIndicator": "/SmartInspections/Rules/AttachmentList_SetIndicatorState.js",
+						"Icons": "/SmartInspections/Rules/AttachmentList_Icon.js",
+						"OnPress": "/SmartInspections/Rules/AttachmentList_DownloadOrOpen.js",
+						"OnAccessoryButtonPress": "/SmartInspections/Rules/AttachmentList_DownloadOrOpen.js"
+					},
+					"DataPaging": {
+						"PageSize": 50,
+						"ShowLoadingIndicator": false
+					},
+					"HighlightSelectedItem": false
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicAttachmentSet"
+	],
+	"_Name": "AttachmentList",
+	"Caption": "Attachment List"
+}

@@ -1,0 +1,456 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "/SmartInspections/Rules/ResultsRecordingPage_CurInsp.js",
+						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
+						"DetailImageIsCircular": false,
+						"HeadlineText": "/SmartInspections/Rules/ResultsRecordingPage_MicNumber.js",
+						"Target": {
+							"Service": "/SmartInspections/Services/SAM.service",
+							"EntitySet": "/SmartInspections/Rules/ResultsRecording_EntitySet.js",
+							"QueryOptions": "/SmartInspections/Rules/ResultsRecording_QueryOptions.js"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"Value": "{MicShortText}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "MICNumber",
+							"IsEditable": false,
+							"IsVisible": false,
+							"Styles": {
+								"Background": "nonEditableFields",
+								"Caption": "subTitleText"
+							},
+							"Caption": "{MicNumber}"
+						},
+						{
+							"Value": "{Result}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "QuantitativeReading",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "nonEditableFields"
+							},
+							"Caption": "CALCULATED VALUE",
+							"KeyboardType": "Default",
+							"AlternateInput": "None"
+						},
+						{
+							"Value": "{SampleReading1}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 1",
+							"PlaceHolder": "Enter reading 1",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading2}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 2",
+							"PlaceHolder": "Enter reading 2",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading3}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 3",
+							"PlaceHolder": "Enter reading 3",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading4}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 4",
+							"PlaceHolder": "Enter reading 4",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading5}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 5",
+							"PlaceHolder": "Enter reading 5",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading6}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 6",
+							"PlaceHolder": "Enter reading 6",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading7}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 7",
+							"PlaceHolder": "Enter reading 7",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading8}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 8",
+							"PlaceHolder": "Enter reading 8",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading9}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 9",
+							"PlaceHolder": "Enter reading 9",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading10}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 10",
+							"PlaceHolder": "Enter reading 10",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading11}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 11",
+							"PlaceHolder": "Enter reading 11",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading12}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 12",
+							"PlaceHolder": "Enter reading 12",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading13}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 13",
+							"PlaceHolder": "Enter reading 13",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading14}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 14",
+							"PlaceHolder": "Enter reading 14",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading15}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 15",
+							"PlaceHolder": "Enter reading 15",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading16}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 16",
+							"PlaceHolder": "Enter reading 16",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading17}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 17",
+							"PlaceHolder": "Enter reading 17",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading18}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 18",
+							"PlaceHolder": "Enter reading 18",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading19}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 19",
+							"PlaceHolder": "Enter reading 19",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "{SampleReading20}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SampleReading20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Caption": "READING 20",
+							"PlaceHolder": "Enter reading 20",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleReading_OnValueChange.rule.js"
+						},
+						{
+							"Value": "UNIT OF MEASURE: {{#Property:UnitOfMeasure}}",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "UnitofMeasure",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "nonEditableFields"
+							}
+						},
+						{
+							"Value": "{FixedValuesResult}",
+							"_Type": "Control.Type.FormCell.SegmentedControl",
+							"_Name": "Status",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "statusColorNeutral"
+							},
+							"Caption": "STATUS",
+							"OnValueChange": "/SmartInspections/Rules/QuantitativeMultipleStatus_OnValueChange.rule.js",
+							"ApportionsSegmentWidthsByContent": false,
+							"Segments": [
+								"FAIL",
+								"FIX",
+								"PASS"
+							]
+						},
+						{
+							"Value": "{DefectCodeGroup}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "DefectCodeGroup",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Caption": "DEFECT CODE GROUP"
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "DefectCode",
+							"IsEditable": true,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "DEFECT CODE",
+							"DataPaging": {
+								"LoadingIndicatorText": "",
+								"PageSize": 10,
+								"ShowLoadingIndicator": true
+							},
+							"PickerPrompt": "Please select one item",
+							"OnValueChange": "/SmartInspections/Rules/DefectCodeListPicker_OnValueChange.js",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": false,
+							"Search": {
+								"Enabled": true
+							},
+							"PickerItems": {
+								"ObjectCell": {
+									"AccessoryType": "none",
+									"Description": "{DefCodeDesc}",
+									"DetailImageIsCircular": false,
+									"Footnote": "{DefCodeGroupDesc}",
+									"Icons": [
+									],
+									"PreserveIconStackSpacing": false,
+									"StatusText": "",
+									"Styles": {
+									},
+									"Subhead": "{DefCodeGroup}",
+									"Title": "{DefCode}"
+								},
+								"ReturnValue": "{DefCode}",
+								"Target": {
+									"EntitySet": "DefectCodeSet",
+									"QueryOptions": "/SmartInspections/Rules/DefectCode_QueryOptions.js",
+									"ReadLink": "{@odata.readLink}",
+									"Service": "/SmartInspections/Services/SAM.service"
+								}
+							}
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"Value": "LIMITS",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle0",
+							"IsEditable": false,
+							"IsVisible": true
+						},
+						{
+							"Value": "LOWER LIMIT: {{#Property:LowerLimit}}",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "LowerLimit",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "nonEditableFields"
+							}
+						},
+						{
+							"Value": "UPPER LIMIT: {{#Property:UpperLimit}}",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "UpperLimit",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Styles": {
+								"Background": "nonEditableFields"
+							}
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell1"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "QuantitativeMultiple",
+	"Caption": "/SmartInspections/Rules/TechnicalObjectAndDescription_Concat.js",
+	"OnLoaded": "/SmartInspections/Rules/QuantitativeMultiplePage_OnLoaded.rule.js",
+	"OnReturning": "/SmartInspections/Rules/ResultRecording_OnReturning.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"SystemItem": "Done",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/QuantitativeMultiplePage_SaveValidations.rule.js",
+				"Text": ""
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": false,
+				"OnPress": "/SmartInspections/Rules/QuantitativeMultiplePage_SaveValidations.rule.js",
+				"Text": ""
+			},
+			{
+				"_Name": "ActionBarItem2",
+				"Icon": "sap-icon://message-information",
+				"Position": "Right",
+				"IsIconCircular": true,
+				"Visible": "/SmartInspections/Rules/InstructionsButton_SetVisible.js",
+				"OnPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
+				"Text": ""
+			},
+			{
+				"_Name": "ActionBarItem3",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js",
+				"OnPress": "/SmartInspections/Rules/QuantitativeMultiplePage_SaveValidations.rule.js",
+				"Text": ""
+			}
+		],
+		"_Name": "ActionBar0"
+	},
+	"ToolBar": {
+		"Controls": [
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "Previous",
+				"Caption": "PREV",
+				"Enabled": true,
+				"Visible": false,
+				"Clickable": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Prev.js"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "Next",
+				"Caption": "NEXT",
+				"Enabled": true,
+				"Visible": false,
+				"Clickable": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Next.js"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "ClearAll",
+				"Caption": "CLEAR ALL",
+				"Enabled": true,
+				"Visible": true,
+				"Clickable": true,
+				"OnPress": "/SmartInspections/Actions/QuantitativeMultipleClear_ConfirmMessage.action"
+			}
+		]
+	}
+}

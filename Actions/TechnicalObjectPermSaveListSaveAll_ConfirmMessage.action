@@ -1,0 +1,8 @@
+{
+	"CancelCaption": "CANCEL",
+	"Message": "Are you sure you want to permanently save all the technical objects?",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveAll.js",
+	"Title": "CONFIRM",
+	"_Type": "Action.Type.Message"
+}

@@ -1,0 +1,97 @@
+{
+	"_Type": "Action.Type.OfflineOData.Initialize",
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SmartInspections/Actions/OData/InitializeOfflineODataCreateFailureMessage.action",
+	"OnSuccess": "/SmartInspections/Actions/SIApplicationStartupMessage.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "$(L,loading)",
+	"Service": "/SmartInspections/Services/SAM.service",
+	"DefiningRequests": [
+		{
+			"Name": "WorkOrderHeaderSet",
+			"Query": "WorkOrderHeaderSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "TechnicalObjectDetailsSet",
+			"Query": "TechnicalObjectDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InspectionCharacteristicDetailsSet",
+			"Query": "InspectionCharacteristicDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "DefectCodeGroupSet",
+			"Query": "DefectCodeGroupSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "DefectCodeSet",
+			"Query": "DefectCodeSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "ResultsDataSet",
+			"Query": "ResultsDataSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InspectionCharacteristicAttachmentSet",
+			"Query": "InspectionCharacteristicAttachmentSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "HistoryDetailsSet",
+			"Query": "HistoryDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "DescopeTypeDetailsSet",
+			"Query": "DescopeTypeDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InspectionTypeDetailsSet",
+			"Query": "InspectionTypeDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "AdHocTechnicalObjectDetailsSet",
+			"Query": "AdHocTechnicalObjectDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "AdHocOperationNumberDetailsSet",
+			"Query": "AdHocOperationNumberDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InspectionCharacteristicMasterSet",
+			"Query": "InspectionCharacteristicMasterSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InternalCharacteristicDetailsSet",
+			"Query": "InternalCharacteristicDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "InspectionCharDescopeTypeDetailsSet",
+			"Query": "InspectionCharDescopeTypeDetailsSet"
+		},
+		{
+			"AutomaticallyRetrievesStreams": false,
+			"Name": "ParameterDetailsSet",
+			"Query": "ParameterDetailsSet"
+		},
+		{
+			"Name": "EXGroupSet",
+			"Query": "EXGroupSet",
+			"AutomaticallyRetrievesStreams": false
+		}
+	]
+}

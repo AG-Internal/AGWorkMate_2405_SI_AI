@@ -1,0 +1,21 @@
+{
+	"OnFailure": "/SmartInspections/Actions/QuantitativeSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Rules/QuantitativeUpdateEntity_Success.js",
+	"Properties": {
+		"DefectCode": "#Control:DefectCode/#SelectedValue",
+		"DefectCodeGroup": "#Control:DefectCodeGroup/#Value",
+		"FixedValuesResult": "#Control:Status/#SelectedValue",
+		"Result": "#Control:QuantitativeReading/#Value",
+		"LongText": "/SmartInspections/Rules/InspectionCharacteristicDetailsSaveLongText_GetValue.rule.js"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"ShowActivityIndicator": true,
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

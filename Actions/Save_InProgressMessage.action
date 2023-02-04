@@ -1,0 +1,8 @@
+{
+	"Animated": true,
+	"Duration": 4,
+	"IsIconHidden": true,
+	"Message": "Saving in-progress. Please wait.",
+	"NumberOfLines": 2,
+	"_Type": "Action.Type.ToastMessage"
+}

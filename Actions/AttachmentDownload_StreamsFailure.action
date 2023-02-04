@@ -1,0 +1,6 @@
+{
+    "Message": "Attachment download failed",
+    "Duration": 2,
+    "Animated": true,
+    "_Type": "Action.Type.BannerMessage"
+}

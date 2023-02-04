@@ -1,0 +1,30 @@
+{
+	"Headers": {
+		"slug": "{Slug}"
+	},
+	"IsOnlineRequest": false,
+	"Media": "{Attachment}",
+	"OnFailure": "/SmartInspections/Actions/AddAttachmentSave_FailureMessage.action",
+	"Properties": {
+		"Description": "{Description}",
+		"FileName": "{FileName}",
+		"InspectionCharacteristicNumb": "{InspectionCharacteristicNumb}",
+		"InspectionSampleNumber": "{InspectionSampleNumber}",
+		"MicNumber": "{MicNumber}",
+		"MimeType": "{ContentType}",
+		"MultipleSample": "{MultipleSample}",
+		"NodeNumber": "{NodeNumber}",
+		"OperationNumber": "{OperationNumber}",
+		"OrderNumber": "{OrderNumber}",
+		"TechnicalObject": "{TechnicalObject}"
+	},
+	"RequestOptions": {
+		"RemoveCreatedEntityAfterUpload": true
+	},
+	"ShowActivityIndicator": true,
+	"Target": {
+		"EntitySet": "InspectionCharacteristicAttachmentSet",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.CreateMedia"
+}

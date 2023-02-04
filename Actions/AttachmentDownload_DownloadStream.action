@@ -1,0 +1,13 @@
+{
+	"DefiningRequests": [
+		{
+			"AutomaticallyRetrievesStreams": true,
+			"Name": "/SmartInspections/Rules/AttachmentStreamName_Get.js",
+			"Query": "/SmartInspections/Rules/AttachmentStreamQuery_Get.js"
+		}
+	],
+	"OnFailure": "/SAPAssetManager/Actions/Documents/DownloadDocumentStreamsFailure.action",
+	"OnSuccess": "/SmartInspections/Actions/AttachmentDownload_DownloadMedia.action",
+	"Service": "/SmartInspections/Services/SAM.service",
+	"_Type": "Action.Type.OfflineOData.Download"
+}

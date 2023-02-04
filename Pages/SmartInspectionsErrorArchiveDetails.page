@@ -1,0 +1,58 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsErrorArchiveAffectedEntity.js",
+				"Position": "Right",
+				"Text": "$(L,fix)",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Smart Inspections Error Archive Details",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "$(L,details)",
+						"UseTopPadding": true
+					},
+					"KeyAndValues": [
+						{
+							"KeyName": "$(L,error)",
+							"Value": "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsMessage.js"
+						},
+						{
+							"KeyName": "$(L,request_body)",
+							"Value": "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsRequestBody.js"
+						},
+						{
+							"KeyName": "$(L,request_url)",
+							"Value": "#Property:ErrorObject/#Property:RequestURL"
+						},
+						{
+							"KeyName": "$(L,https_status_code)",
+							"Value": "#Property:ErrorObject/#Property:HTTPStatusCode"
+						}
+					],
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 1
+					},
+					"MaxItemCount": 1,
+					"_Name": "Notes",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Name": "SmartInspectionsErrorArchiveDetails",
+	"_Type": "Page"
+}

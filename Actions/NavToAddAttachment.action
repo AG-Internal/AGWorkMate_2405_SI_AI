@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/SmartInspections/Pages/AddAttachment.page",
+	"ModalPage": true,
+	"ModalPageFullscreen": true,
+	"NavigationType": "Cross"
+}

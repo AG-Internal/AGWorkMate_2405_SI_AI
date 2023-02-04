@@ -1,0 +1,16 @@
+{
+	"OnFailure": "/SmartInspections/Actions/AddNoteSave_FailureMessage.action",
+	"OnSuccess": "/SmartInspections/Actions/AddNote_Close.action",
+	"Properties": {
+		"LongText": "/SmartInspections/Rules/AddNoteSave_GetValue.rule.js"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	},
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
+	"_Type": "Action.Type.ODataService.UpdateEntity"
+}

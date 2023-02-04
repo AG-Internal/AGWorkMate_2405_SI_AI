@@ -1,0 +1,40 @@
+{
+	"PopoverItems": [
+		{
+			"Enabled": true,
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToAddNote.action",
+			"Title": "Add Note",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/InspCharMorePopover_SetVisible.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToAddAttachment.action",
+			"Title": "Add Attachment",
+			"Visible": true
+		},
+		{
+			"Enabled": true,
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToAttachmentList.action",
+			"Title": "Attachment List",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/InspCharDescopeTypeButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Actions/NavToInspCharDescopeTypeDetailsList.action",
+			"Title": "Descope",
+			"Visible": true
+		},
+		{
+			"Enabled": "/SmartInspections/Rules/InspCharDescopeTypeClearButton_SetEnabled.js",
+			"Icon": "",
+			"OnPress": "/SmartInspections/Rules/InspCharDescopeTypeClearButton_OnPress.js",
+			"Title": "Bring Back To Scope",
+			"Visible": true
+		}
+	],
+	"_Type": "Action.Type.PopoverMenu"
+}

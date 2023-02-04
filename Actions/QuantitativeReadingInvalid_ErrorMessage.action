@@ -1,0 +1,6 @@
+{
+	"Message": "/SmartInspections/Rules/QuantitativeReadingInvalid_ErrorMessage.rule.js",
+	"OKCaption": "OK",
+	"Title": "ERROR",
+	"_Type": "Action.Type.Message"
+}
