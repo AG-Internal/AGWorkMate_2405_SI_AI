@@ -1,6 +1,6 @@
 {
 	"_Type": "Action.Type.ToastMessage",
-	"OnSuccess": "/SAPAssetManager/Rules/DigitalSignature/DigitalSignatureCommit.js,/SmartInspections/Actions/OData/UploadOfflineSAM.action",
+	"OnSuccess": "/SmartInspections/Actions/OData/UploadOfflineSAM.action",
 	"Message": "$(L,sync_success)",
 	"Duration": 3,
 	"IsIconHidden": false,

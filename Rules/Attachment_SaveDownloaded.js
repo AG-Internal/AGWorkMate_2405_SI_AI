@@ -1,6 +1,7 @@
-let fs = require('file-system');
+//let fs = require('file-system');
 
 export default function Attachment_SaveDownloaded(pageProxy) {
+	let fs = sectionedTableProxy.nativescript.fileSystemModule;//CF by RB
 	let pageClientData = pageProxy.getClientData();
 	let actionBinding = pageProxy.getActionBinding();
 	const docDownloadID = actionBinding.DocumentId;
