@@ -1,6 +1,7 @@
-let fs = require('file-system');
+// let fs = require('file-system');
 
 export default function AttachmentList_DownloadOrOpen(sectionedTableProxy) {
+	let fs = sectionedTableProxy.nativescript.fileSystemModule;//CF by RB
 	const pageProxy = sectionedTableProxy.getPageProxy();
 	let pageClientData = pageProxy.getClientData();
 	let documentObject = pageProxy.getActionBinding();
