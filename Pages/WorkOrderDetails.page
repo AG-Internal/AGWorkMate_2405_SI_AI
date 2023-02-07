@@ -786,11 +786,21 @@
 								"_Name": "SectionSimplePropertyCell11",
 								"KeyName": "Smart Inspections",
 								"AccessoryType": "disclosureIndicator",
-								"Visible": true,
+								"Visible": "/SmartInspections/Rules/WOexistInSI.js",
 								"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsTabsViewPage.js"
 							}
 
-                        }
+                        },
+                        {
+							"SimplePropertyCell": {
+								"Value": "/SmartInspections/Rules/InspectionHistoryDetailsList_Count.js",
+								"_Name": "SectionSimplePropertyCell12",
+								"KeyName": "Inspection History",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SmartInspections/Rules/InspectionHistoryDetailsList_SetVisible.js",
+								"OnPress": "/SmartInspections/Rules/NavToInspectionHistoryDetailsList.js"
+							}
+						}
                     ],
                     "Layout": {
                         "NumberOfColumns": 2,
