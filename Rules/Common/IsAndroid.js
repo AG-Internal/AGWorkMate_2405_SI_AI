@@ -1,4 +1,4 @@
-import NativeScriptObject from './Library/NativeScriptObject';
+import NativeScriptObject from '../../../SAPAssetManager/Rules/Common/Library/NativeScriptObject';
 
 export default function IsAndroid(context) {
     if (NativeScriptObject.getNativeScriptObject(context).platformModule.isAndroid) {
