@@ -50,6 +50,9 @@
 						"Headline": "{Headline}",
 						"Timestamp": "{Timestamp}"
 					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
 					"_Type": "Section.Type.TimelinePreview",
 					"DataSubscriptions": [
 						"PMMobileStatuses"
@@ -57,9 +60,6 @@
 					"Target": "/SAPAssetManager/Rules/TimelineControl/Timeline.js",
 					"_Name": "DynamicTimelinePreviewSection",
 					"Visible": "/SAPAssetManager/Rules/TimelineControl/IsTimelineControlVisible.js",
-					"EmptySection": {
-						"FooterVisible": false
-					},
 					"TimestampType": "MonthDayTime"
 				},
 				{
@@ -72,6 +72,7 @@
 							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrderMapNav.js"
 						}
 					],
+					"MaxItemCount": 1,
 					"_Type": "Section.Type.KeyValue",
 					"DataSubscriptions": [
 						"Geometries",
@@ -82,7 +83,6 @@
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"MaxItemCount": 1,
 					"Layout": {
 						"NumberOfColumns": 1
 					}
@@ -141,14 +141,14 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
-						"Title": "/SAPAssetManager/Rules/Supervisor/Reject/RejectReasonText.js",
-						"PreserveIconStackSpacing": false,
-						"AccessoryType": "none",
-						"Tags": [],
 						"ContextMenu": {
 							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
-						}
+						},
+						"Title": "/SAPAssetManager/Rules/Supervisor/Reject/RejectReasonText.js",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"Tags": []
 					}
 				},
 				{
@@ -179,6 +179,7 @@
 							"KeyName": "$(L,due_date)"
 						}
 					],
+					"MaxItemCount": 1,
 					"_Type": "Section.Type.KeyValue",
 					"Target": {
 						"EntitySet": "{@odata.readLink}",
@@ -194,7 +195,6 @@
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"MaxItemCount": 1,
 					"Layout": {
 						"NumberOfColumns": 2
 					}
@@ -281,6 +281,7 @@
 							"KeyName": "$(L,contract_end_date)"
 						}
 					],
+					"MaxItemCount": 1,
 					"_Type": "Section.Type.KeyValue",
 					"DataSubscriptions": [
 						"MyWorkOrderHeaders",
@@ -301,7 +302,6 @@
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"MaxItemCount": 1,
 					"Layout": {
 						"NumberOfColumns": 2
 					}
@@ -337,6 +337,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
 						"Subhead": "{OrderId}",
 						"Footnote": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderDueDate.js",
@@ -344,11 +348,7 @@
 						"AccessoryType": "disclosureIndicator",
 						"Icons": "/SAPAssetManager/Rules/Operations/OperationsListViewIconImages.js",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/WorkOrderOperationDetailsNav.js",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/WorkOrderOperationDetailsNav.js"
 					},
 					"MaxItemCount": 2
 				},
@@ -380,6 +380,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{{#Property:InspectionLot_Nav/#Property:ShortDesc}}",
 						"Subhead": "{#Property:InspectionLot_Nav/#Property:InspectionLot}",
 						"Footnote": "/SAPAssetManager/Rules/WorkOrders/InspectionLot/InspectionLotEndDate.js",
@@ -391,10 +395,6 @@
 						"OnAccessoryButtonPress": "/SAPAssetManager/Actions/InspectionCharacteristics/Update/InspectionCharacteristicsUpdateNav.action",
 						"Styles": {
 							"StatusText": "/SAPAssetManager/Rules/WorkOrders/InspectionLot/InspectionLotValuationStyle.js"
-						},
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
 						}
 					},
 					"MaxItemCount": 2
@@ -426,16 +426,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{{#Property:ShortDesc}}",
 						"Subhead": "{{#Property:InspectionLot}}",
 						"Footnote": "/SAPAssetManager/Rules/WorkOrders/InspectionLot/InspectionLotDetailsInspectionEndDate.js",
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Actions/WorkOrders/InspectionLot/InspectionLotDetails.action",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Actions/WorkOrders/InspectionLot/InspectionLotDetails.action"
 					}
 				},
 				{
@@ -466,16 +466,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{EquipDesc}",
 						"Subhead": "{EquipId}",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsNav.js",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsNav.js"
 					},
 					"MaxItemCount": 2
 				},
@@ -507,16 +507,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{FuncLocDesc}",
 						"Subhead": "{FuncLocId}",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationDetailsNav.action",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationDetailsNav.action"
 					},
 					"MaxItemCount": 2
 				},
@@ -541,6 +541,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{NotificationDescription}",
 						"Subhead": "{{#Property:NotificationNumber}} - {{#Property:NotificationType}}",
 						"Footnote": "/SAPAssetManager/Rules/Notifications/ListView/NotificationsListViewFormat.js",
@@ -552,10 +556,6 @@
 						"OnPress": "/SAPAssetManager/Actions/Notifications/NotificationDetailsNav.action",
 						"Styles": {
 							"StatusText": "/SAPAssetManager/Rules/Priority/NotificationPriorityStatusStyle.js"
-						},
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
 						}
 					}
 				},
@@ -587,6 +587,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{OrderDescription}",
 						"Subhead": "{OrderId}",
 						"Footnote": "/SAPAssetManager/Rules/DateTime/DueDate.js",
@@ -600,10 +604,6 @@
 						"Styles": {
 							"StatusText": "/SAPAssetManager/Rules/Priority/WOPriorityStatusStyle.js",
 							"SubstatusText": "/SAPAssetManager/Rules/Supervisor/Reject/RejectedStatusStyle.js"
-						},
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
 						}
 					},
 					"MaxItemCount": 1
@@ -627,16 +627,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{MaterialNum}",
 						"Subhead": "{Description}",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Rules/WorkOrders/AssemblyBOMPageNav.js",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/AssemblyBOMPageNav.js"
 					}
 				},
 				{
@@ -744,6 +744,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
 						"Subhead": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
 						"Footnote": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
@@ -751,11 +755,7 @@
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Actions/WorkOrders/Meter/MeterDetailsNav.action",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Actions/WorkOrders/Meter/MeterDetailsNav.action"
 					},
 					"MaxItemCount": 2
 				},
@@ -791,6 +791,10 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
 						"Subhead": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
 						"Footnote": "/SAPAssetManager/Rules/Meter/Format/MeterObjectCell.js",
@@ -799,11 +803,7 @@
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Actions/WorkOrders/Meter/MeterDetailsNav.action",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Actions/WorkOrders/Meter/MeterDetailsNav.action"
 					},
 					"MaxItemCount": 2
 				},
@@ -826,16 +826,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "/SAPAssetManager/Rules/WorkOrders/Meter/ReferenceObject/ConnectionObjectBasicInfo.js",
 						"Subhead": "/SAPAssetManager/Rules/WorkOrders/Meter/ReferenceObject/DeviceLocationBasicInfo.js",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Actions/Meters/ConnectionObjectNav.action",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Actions/Meters/ConnectionObjectNav.action"
 					}
 				},
 				{
@@ -860,16 +860,16 @@
 						"FooterVisible": false
 					},
 					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
 						"Title": "{{#Property:DisconnectActivityType_Nav/#Property:ActivityTypeDescription}}",
 						"Subhead": "{{#Property:DisconnectActivityStatus_Nav/#Property:Status}} - {{#Property:DisconnectActivityStatus_Nav/#Property:Description}}",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
 						"Tags": [],
-						"OnPress": "/SAPAssetManager/Rules/WorkOrders/Meter/Activity/ActivityDetailsNav.js",
-						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
-						}
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/Meter/Activity/ActivityDetailsNav.js"
 					}
 				},
 				{
@@ -994,11 +994,12 @@
 						},
 						{
 							"SimplePropertyCell": {
-								"Value": "Value",
+								"Value": "/SmartInspections/Rules/SmartInspection_TechnicalObjectCount.rule.js",
 								"_Name": "SectionSimplePropertyCell11",
-								"KeyName": "KeyName",
+								"KeyName": "Smart Inspections",
 								"AccessoryType": "disclosureIndicator",
-								"Visible": true
+								"Visible": true,
+								"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsTabsViewPage.js"
 							}
 						}
 					],
