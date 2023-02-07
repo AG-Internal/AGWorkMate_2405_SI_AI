@@ -28,26 +28,26 @@ export default function WorkOrderListViewIconImages(context) {
     if (libCommon.getTargetPathValue(context, '#Property:@sap.isLocal') || libCommon.getTargetPathValue(context, '#Property:OrderMobileStatus_Nav/#Property:@sap.isLocal') || libCommon.getTargetPathValue(context, '#Property:HeaderLongText/#Property:0/#Property:@sap.isLocal')) {
         iconImage.push(isAndroid(context) ? '/SAPAssetManager/Images/syncOnListIcon.android.png' : '/SAPAssetManager/Images/syncOnListIcon.png');
     }
-    
-	// Added for smart inspections - Start
-	// Checking if the work order is a SI order
-	let workOrder = binding.OrderId;
-	let query = "$filter=OrderNumber eq '" + workOrder + "'";
-	let countSIHisPromise = context.count('/SmartInspections/Services/SAM.service', 'HistoryDetailsSet', query);
-	let countSIPromise = context.count('/SmartInspections/Services/SAM.service', 'WorkOrderHeaderSet', query);
+    // Added for smart inspections - Start
+    // Checking if the work order is a SI order
+    let workOrder = binding.OrderId;
+    let query = "$filter=OrderNumber eq '" + workOrder + "'";
+    let countSIHisPromise = context.count('/SmartInspections/Services/SAM.service', 'HistoryDetailsSet', query);
+    let countSIPromise = context.count('/SmartInspections/Services/SAM.service', 'WorkOrderHeaderSet', query);
 
-	return Promise.all([countSIHisPromise, countSIPromise]).then(function (counts) {
-		let countSIHis = counts[0];
-		let countSI = counts[1];
+    return Promise.all([countSIHisPromise, countSIPromise]).then(function (counts) {
+        let countSIHis = counts[0];
+        let countSI = counts[1];
 
-		if (countSIHis > 0 || countSI > 0) {
-			iconImage.push('sap-icon://inspection');
-			return iconImage;
-		} else {
-			return iconImage;
-		}
-	});
-	// Added for smart inspections - End
-	
+        if (countSIHis > 0 || countSI > 0) {
+            iconImage.push('sap-icon://inspection');
+            return iconImage;
+        } else {
+            return iconImage;
+        }
+    });
+    // Added for smart inspections - End
+
     return iconImage;
 }
+

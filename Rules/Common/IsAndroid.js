@@ -1,5 +1,7 @@
+import NativeScriptObject from './Library/NativeScriptObject';
+
 export default function IsAndroid(context) {
-    if (context.nativescript.platformModule.isAndroid) {
+    if (NativeScriptObject.getNativeScriptObject(context).platformModule.isAndroid) {
         return true;
     } else {
         return false;
