@@ -8,7 +8,8 @@ New Rule
  */
 function Wait() {
 	//Resolves after 1 s
-	return new Promise(r => setTimeout(r, 1000))
+	//return new Promise(r => setTimeout(r, 1));
+	return Promise.resolve();
 }
 
 function ExecuteTechObjectUpdateEntity(clientAPI, binding) {
