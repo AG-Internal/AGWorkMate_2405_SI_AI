@@ -14,8 +14,8 @@ function ExecuteInspCharCreateEntity(pageProxy, binding) {
 }
 
 function Wait() {
-	//return new Promise(r => setTimeout(r, 1000))
-	return Promise.resolve();
+	return new Promise(r => setTimeout(r, 1));
+	//return Promise.resolve();
 }
 
 export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
