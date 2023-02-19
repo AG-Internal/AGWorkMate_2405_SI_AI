@@ -4,6 +4,19 @@ export default function ResultRecording_OnReturning(clientAPI) {
 	let currentPage = clientAPI.getPageProxy().currentPage;
 	let currentPageString = currentPage.toString();
 	var micDescopeType = clientAPI.getPageProxy().getBindingObject().MicDescopeType;
+	//B.O.A by RB for AM0001
+	var pageClientData = clientAPI.getPageProxy().getClientData();
+	if (pageClientData.fromDGListPkr) {
+		//get the Control and Set the Data
+		var defectCodeGroupControl = clientAPI.evaluateTargetPath('#Page:' + pageClientData.pageName + '/#Control:DefectCodeGroup');
+		defectCodeGroupControl.setValue(pageClientData.defectCodeGroupValue, false);
+		defectCodeGroupControl.redraw();
+		//Clear the Client Data & Flag After setting data
+		pageClientData.defectCodeGroupValue = "";
+		pageClientData.pageName = "";
+		pageClientData.fromDGListPkr = false;
+	}
+	//E.O.A by RB for AM0001
 
 	if (micDescopeType === '') {
 		return;

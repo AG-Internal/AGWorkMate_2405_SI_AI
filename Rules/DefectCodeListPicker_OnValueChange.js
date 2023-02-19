@@ -21,4 +21,10 @@ export default function DefectCodeListPicker_OnValueChange(context) {
 	var defectCodeGroupControl = context.evaluateTargetPath('#Page:' + pageName + '/#Control:DefectCodeGroup');
 	defectCodeGroupControl.setValue(defectCodeGroupValue, false);
 	defectCodeGroupControl.redraw();
+	//B.O.A by RB for AM0001
+	//set the Data & Flag in Client data and handle in OnReturning
+	pageClientData.fromDGListPkr = true;
+	pageClientData.pageName = pageName;
+	pageClientData.defectCodeGroupValue =  defectCodeGroupValue;
+	//E.O.A by RB for AM0001
 }
