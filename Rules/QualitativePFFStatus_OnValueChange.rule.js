@@ -50,10 +50,17 @@ export default function QualitativePFFStatus_OnValueChange(clientAPI) {
 	} else if (status === 'PASS') {
 		statusControl.setStyle('statusColorPass', 'Background');
 		statusControl.redraw();
-		defectCodeGroupControl.setValue('', false);
-		defectCodeGroupControl.setEditable(false);
-		defectCodeGroupControl.setStyle('nonEditableFields', 'Background');
-		defectCodeGroupControl.redraw();
+		//B.O.A by RB for AM0001
+		if (defectCodeGroupControl.getValue() === "") {
+			//do nothing
+		}
+		else {
+			defectCodeGroupControl.setValue("", false, true);
+			defectCodeGroupControl.setEditable(false);
+			defectCodeGroupControl.setStyle('nonEditableFields', 'Background');
+			defectCodeGroupControl.redraw();
+		}
+		//E.O.A by RB for AM0001
 		defectCodeControl.setValue('', false);
 		defectCodeControl.setEditable(false);
 		defectCodeControl.setStyle('nonEditableFields', 'Background');
