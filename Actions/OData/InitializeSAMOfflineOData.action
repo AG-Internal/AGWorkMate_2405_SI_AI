@@ -92,6 +92,11 @@
 			"Name": "EXGroupSet",
 			"Query": "EXGroupSet",
 			"AutomaticallyRetrievesStreams": false
+		},
+		{
+			"Name": "CatalogProfileDetailsSet",
+			"Query": "CatalogProfileDetailsSet",
+			"AutomaticallyRetrievesStreams": false
 		}
 	]
 }
