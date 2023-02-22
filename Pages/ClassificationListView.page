@@ -1,42 +1,44 @@
 {
-	"Caption": "/SmartInspections/Rules/ClassificationListView_Caption.js",
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"EntitySet": "/SmartInspections/Rules/ClassificationListView_EntitySet.js",
+						"QueryOptions": "/SmartInspections/Rules/ClassificationListView_Query.js"
+					},
+					"_Name": "Classification",
 					"EmptySection": {
 						"Caption": "$(L,no_classification_available)",
 						"FooterVisible": false
 					},
-					"Header": {
-						"UseTopPadding": false
-					},
 					"ObjectCell": {
-						"AccessoryType": "disclosureIndicator",
-						"ContextMenu": {
-							"Items": [
-							],
-							"PerformFirstActionWithFullSwipe": true
-						},
-						"OnPress": "/SAPAssetManager/Actions/Classification/ClassificationDetailsNav.action",
-						"PreserveIconStackSpacing": false,
+						"Title": "/SAPAssetManager/Rules/Classification/ClassDescription.js",
 						"Subhead": "/SAPAssetManager/Rules/Classification/ClassId.js",
 						"SubstatusText": "/SAPAssetManager/Rules/Classification/ClassTypeDescription.js",
-						"Title": "/SAPAssetManager/Rules/Classification/ClassDescription.js"
-					},
-					"Target": {
-						"EntitySet": "/SmartInspections/Rules/ClassificationListView_EntitySet.js",
-						"QueryOptions": "/SmartInspections/Rules/ClassificationListView_Query.js",
-						"Service": "/SAPAssetManager/Services/AssetManager.service"
-					},
-					"_Name": "Classification",
-					"_Type": "Section.Type.ObjectTable"
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"Tags": [],
+						"OnPress": "/SAPAssetManager/Actions/Classification/ClassificationDetailsNav.action",
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						}
+					}
 				}
-			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			]
 		}
 	],
+	"_Type": "Page",
 	"_Name": "ClassificationPage",
-	"_Type": "Page"
+	"Caption": "/SmartInspections/Rules/ClassificationListView_Caption.js",
+	"PrefersLargeCaption": true
 }
