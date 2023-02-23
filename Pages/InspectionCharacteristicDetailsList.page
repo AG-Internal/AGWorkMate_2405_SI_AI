@@ -10,9 +10,11 @@
 						"Footnote": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_PreInsp.js",
 						"StatusText": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_PendingCount.js",
 						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
-						"DetailImageIsCircular": false,
 						"BodyText": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_OrgInsp.js",
 						"HeadlineText": "{{#Property:OrderNumber}} - {{#Property:OrderDescription}}",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading",
 						"Target": {
 							"EntitySet": "TechnicalObjectDetailsSet",
 							"QueryOptions": "$filter=OrderNumber eq '{{#Property:OrderNumber}}' and TechnicalObject eq '{{#Property:TechnicalObject}}'",
@@ -25,6 +27,50 @@
 					],
 					"_Name": "SectionObjectHeader0",
 					"Visible": true
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "Classification",
+							"Title": "Classification",
+							"TextAlignment": "Right",
+							"Alignment": "Right",
+							"ButtonType": "Secondary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/NavToClassifications.js",
+								"UserInteraction": {
+									"Enabled": "/SmartInspections/Rules/ClassificationsButton_SetEnabled.js",
+									"Title": "Classification"
+								}
+							}
+						},
+						{
+							"_Name": "SectionButton0",
+							"Title": "Pass All",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
+							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
+						}
+					],
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Trailing"
+					}
 				},
 				{
 					"_Type": "Section.Type.ObjectTable",
@@ -41,8 +87,7 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [
-							],
+							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumber.js",
@@ -50,19 +95,15 @@
 						"Footnote": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicType.js",
 						"StatusText": "Chr {InspectionCharacteristicNumb}",
 						"SubstatusText": "Opr {OperationNumber}",
-						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": true,
 						"AccessoryType": "none",
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
-						"Tags": [
-						],
+						"Tags": [],
 						"AvatarStack": {
-							"Avatars": [
-							]
+							"Avatars": []
 						},
 						"AvatarGrid": {
-							"Avatars": [
-							]
+							"Avatars": []
 						},
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
 						"Styles": {
@@ -75,10 +116,7 @@
 						"ShowLoadingIndicator": true
 					}
 				}
-			],
-			"FilterFeedbackBar": {
-				"_Type": "Control.Type.FilterFeedbackBar"
-			}
+			]
 		}
 	],
 	"_Type": "Page",
@@ -93,14 +131,15 @@
 	"ActionBar": {
 		"Items": [
 			{
+				"Text": "",
 				"_Name": "ActionBarItem0",
+				"Caption": "",
 				"SystemItem": "Add",
 				"Icon": "res://save",
 				"Position": "Right",
 				"IsIconCircular": false,
 				"Visible": true,
-				"OnPress": "/SmartInspections/Actions/InspectionCharacteristicDetailsListPage_MorePopover.action",
-				"Text": ""
+				"OnPress": "/SmartInspections/Actions/InspectionCharacteristicDetailsListPage_MorePopover.action"
 			}
 		],
 		"_Name": "ActionBar0"
