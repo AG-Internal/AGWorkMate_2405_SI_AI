@@ -29,6 +29,10 @@
 					"Visible": true
 				},
 				{
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Trailing"
+					},
 					"_Type": "Section.Type.ButtonTable",
 					"_Name": "SectionButtonTable0",
 					"Visible": true,
@@ -66,11 +70,7 @@
 							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
 							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
 						}
-					],
-					"Layout": {
-						"LayoutType": "Horizontal",
-						"HorizontalAlignment": "Trailing"
-					}
+					]
 				},
 				{
 					"_Type": "Section.Type.ObjectTable",
@@ -97,6 +97,7 @@
 						"SubstatusText": "Opr {OperationNumber}",
 						"PreserveIconStackSpacing": true,
 						"AccessoryType": "none",
+						"AccessoryButtonIcon": "sap-icon://message-information",
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
 						"Tags": [],
 						"AvatarStack": {
@@ -106,6 +107,7 @@
 							"Avatars": []
 						},
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
 							"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumberColor.rule.js"
 						}

@@ -1,32 +1,47 @@
 {
-	"Caption": "Instructions",
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
 					"Controls": [
 						{
+							"Value": "/SmartInspections/Rules/Instructions_SetValue.js",
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
 							"IsEditable": false,
 							"IsVisible": true,
 							"MaxNumberOfLines": 9999,
-							"MinNumberOfLines": 9999,
-							"Value": "/SmartInspections/Rules/Instructions_SetValue.js",
-							"_Name": "FormCellNote0",
-							"_Type": "Control.Type.FormCell.Note"
+							"MinNumberOfLines": 9999
 						}
 					],
+					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"Visible": true,
-					"_Name": "SectionFormCell0",
-					"_Type": "Section.Type.FormCell"
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
-			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			]
 		}
 	],
+	"_Type": "Page",
 	"_Name": "Instructions",
-	"_Type": "Page"
+	"Caption": "Instructions",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"Icon": "sap-icon://decline",
+				"Position": "Right",
+				"IsIconCircular": true,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/CloseModalPage.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }
