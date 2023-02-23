@@ -5,10 +5,10 @@
  * 
  */
 
-import charValue from '../../SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValue';
-import Logger from '../../SAPAssetManager/Rules/Log/Logger';
-import parentEntityType from '../../SAPAssetManager/Rules/Classification/ClassificationParentEntityType';
-import prettyPrint from '../../SAPAssetManager/Rules/Classification/Characteristics/ClassificationCharacteristicsPrettyPrint';
+import charValue from '../../../SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValue';
+import Logger from '../../../SAPAssetManager/Rules/Log/Logger';
+import parentEntityType from '../../../SAPAssetManager/Rules/Classification/ClassificationParentEntityType';
+import prettyPrint from '../../../SAPAssetManager/Rules/Classification/Characteristics/ClassificationCharacteristicsPrettyPrint';
 export default function CharacteristicDisplayValue(context, withUOM = true) {
 	var charValues = [];
 	if (parentEntityType(context) === 'Equipments') {
