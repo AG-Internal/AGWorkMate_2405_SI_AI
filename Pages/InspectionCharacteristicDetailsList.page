@@ -105,7 +105,8 @@
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
 						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
-							"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumberColor.rule.js"
+							"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumberColor.rule.js",
+							"BackgroundColor": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicLineColor.js"
 						}
 					},
 					"DataPaging": {

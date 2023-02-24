@@ -1,5 +1,10 @@
-export default function InspectionCharacteristicDetailsListPage_MicNumberColor(sectionedTableProxy) {
-	var binding = sectionedTableProxy.binding;
+/**
+ * Describe this function...
+ * @param {IClientAPI} clientAPI
+ */
+export default function InspectionCharacteristicDetailsListPage_MicLineColor(clientAPI) {
+
+    var binding = clientAPI.binding;
 	var orderNumber = binding.OrderNumber;
 	var technicalObject = binding.TechnicalObject;
 	var inspectionSampleNumber = binding.InspectionSampleNumber;
@@ -11,23 +16,25 @@ export default function InspectionCharacteristicDetailsListPage_MicNumberColor(s
 		"' and InspectionSampleNumber eq '" + inspectionSampleNumber + "' and OperationNumber eq '" + operationNumber +
 		"' and InspectionCharacteristicNumb eq '" + inspectionCharacteristicNumb + "' and MicNumber eq '" + micNumber + "'";
 
-	return sectionedTableProxy.read('/SmartInspections/Services/SAM.service', 'InspectionCharacteristicDetailsSet', [], inspCharQueryOptions).then(
+	return clientAPI.read('/SmartInspections/Services/SAM.service', 'InspectionCharacteristicDetailsSet', [], inspCharQueryOptions).then(
 		function (results) {
-			var style = 'textColorNeutral';
-			style = 'textColorWhite';
-			return style;
+			var style = 'micColorNeutral';
 			if (results && results.length > 0) {
 				results.forEach(function (value) {
 					if (value.FixedValuesResult == 'PASS') {
-						style = 'textColorPass';
+						style = 'micLineColorPass';
+						
 					} else if (value.FixedValuesResult == 'FIX') {
-						style = 'textColorFix';
+						style = 'micLineColorFix';
+					
 					} else if (value.FixedValuesResult == 'FAIL') {
-						style = 'textColorFail';
+						style = 'micLineColorFail';
+						
 					} else if (value.micDescopeType !== '') {
-						style = 'textColorGrey';
+						style = 'micLineColorDescope';
+						
 					} else {
-						style = 'textColorNeutral';
+						style = 'micColorNeutral';
 					}
 				});
 				return style;
@@ -35,4 +42,5 @@ export default function InspectionCharacteristicDetailsListPage_MicNumberColor(s
 				return style;
 			}
 		});
+
 }
