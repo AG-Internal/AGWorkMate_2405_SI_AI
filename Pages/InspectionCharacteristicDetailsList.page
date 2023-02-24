@@ -41,7 +41,43 @@
 					},
 					"Buttons": [
 						{
-							"_Name": "Classification",
+							"_Name": "ButtonDescope",
+							"Title": "Descope",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
+							"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js"
+						},
+						{
+							"_Name": "ButtonScopeBack",
+							"Title": "Bring Back To Scope",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/DescopeTypeClearButton_SetEnabled.js",
+							"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js"
+						},
+						{
+							"_Name": "ButtonEXGroup",
+							"Title": "Change EX Group",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/EXGroupButton_SetEnabled.js",
+							"OnPress": "/SmartInspections/Actions/NavToExGroupList.action"
+						},
+						{
+							"_Name": "ButtonClassification",
 							"Title": "Classification",
 							"TextAlignment": "Right",
 							"Alignment": "Right",
@@ -50,16 +86,10 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
-							"OnPress": {
-								"Handler": "/SmartInspections/Rules/NavToClassifications.js",
-								"UserInteraction": {
-									"Enabled": "/SmartInspections/Rules/ClassificationsButton_SetEnabled.js",
-									"Title": "Classification"
-								}
-							}
+							"OnPress": "/SmartInspections/Rules/NavToClassifications.js"
 						},
 						{
-							"_Name": "SectionButton0",
+							"_Name": "ButtonPassAll",
 							"Title": "Pass All",
 							"TextAlignment": "Center",
 							"Alignment": "Center",
