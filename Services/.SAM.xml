@@ -67,8 +67,10 @@
                     <PropertyRef Name="OrderNumber"/>
                     <PropertyRef Name="TechnicalObject"/>
                 </Key>
-                <Property Name="CatalogProfile" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Catalog Profile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="AbcIndicator" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ABC Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CatalogProfile" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Catalog Profile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastInspDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Last Inspection Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastInspDateChar" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Last Inspection Date Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="FunctionalLocationInt" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Functional Location Internal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="AdhocFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ad-Hoc Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ChangedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -272,8 +274,8 @@
                     <PropertyRef Name="MicNumber"/>
                 </Key>
                 <Property Name="HasMsg" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Has Message" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="MicPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MIC Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescoped" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MicPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MIC Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MessageType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescopedTo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Technical Object Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -351,6 +353,7 @@
                 <Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Functional Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MaintenancePlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Maintenance Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsProposed" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Proposed" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CatalogProfile" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Catalog Profile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="AdHocOperationNumberDetails" sap:content-version="1">
                 <Key>
@@ -508,6 +511,7 @@
             <EntityType Name="CatalogProfileDetails" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="CatalogProfile"/>
+                    <PropertyRef Name="DefectCodeGroup"/>
                 </Key>
                 <Property Name="CatalogProfile" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Catalog Profile"/>
                 <Property Name="DefectCodeGroup" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Code Group"/>
