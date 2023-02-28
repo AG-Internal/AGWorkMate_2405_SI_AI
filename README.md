@@ -17,8 +17,10 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 ## Change History
 ###### Change ID - Date - Dev Initials- Description
 1. CR013 - 23-Feb-23 - RB - Screen Simplification Long Text Icon
+2. D070  - 28-Feb-23 - RB - Clock out Screen
 
 
 ## Pages Change History
 ###### Page Name - [Change ID]
 1. InspectionCharacteristicDetailsList.page - [ CR013 ]
+2. WorkOrderChangeStatusPopover.js [ D070 ]
