@@ -3,7 +3,7 @@
 	"ActionResult": {
 		"_Name": "CloseWorkOrderToComplete"
 	},
-	"Message": "Please Close the Smart Inspections Order to COMPLETE ",
-	"Title": "Close Smart Inspections",
+	"Message": "$(L,'si_orderclose_msg')",
+	"Title": "$(L,'si_orderclose_Title')",
 	"OKCaption": "OK"
 }
