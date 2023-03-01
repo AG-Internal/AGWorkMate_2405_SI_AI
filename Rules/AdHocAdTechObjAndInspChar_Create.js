@@ -326,6 +326,8 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 								EXOperationNumber: adHocOperationNumber,
 								/*E.O.A by RB for SIV2203*/
 								/*B.O.A for D062*/
+								EXChangedOn: new Date().toISOString(),
+								EXChangedTime: time[1],
 								CatalogProfile: CatalogProfile
 								/*B.O.A for D062*/
 							}

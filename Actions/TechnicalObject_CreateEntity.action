@@ -58,6 +58,8 @@
 		"ExGrpDesc": "{ExGrpDesc}",
 		"ExGrpOrg": "{ExGrpOrg}",
 		"ExGrpOrgDesc": "{ExGrpOrgDesc}",
+		"EXChangedOn": "{EXChangedOn}",
+		"EXChangedTime": "{EXChangedTime}",
 		"EXNodeNumber": "{EXNodeNumber}",
 		"EXOperationNumber": "{EXOperationNumber}"
 	},
