@@ -30,7 +30,7 @@ export default function DefectCode_QueryOptions(clientAPI) {
 			}
 			//Build Final Filter String
 			var sGroups = aCodeGroupsFlines.join(" or ");
-			var sFilterQuery = "$filter=(" + sGroups + ")&$orderby=DefCode";
+			var sFilterQuery = "$filter=(" + sGroups + ")&$orderby=DefCodeGroup,DefCode";
 			return sFilterQuery;
 		});//then
 
