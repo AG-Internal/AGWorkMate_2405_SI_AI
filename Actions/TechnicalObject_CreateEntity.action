@@ -12,6 +12,7 @@
 	},
 	"Properties": {
 		"AbcIndicator": "{AbcIndicator}",
+		"CatalogProfile": "{CatalogProfile}",
 		"AdhocFlag": "{AdhocFlag}",
 		"ChangedBy": "{ChangedBy}",
 		"ChangedByAlias": "{ChangedByAlias}",

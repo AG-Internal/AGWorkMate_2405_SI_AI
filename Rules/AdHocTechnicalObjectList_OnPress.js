@@ -1,9 +1,14 @@
+/*--------------------------------------------------------------------*
+* Change Tag    :  D062 - Catalog Profile for ADHOC
+*--------------------------------------------------------------------*/
+
 export default function AdHocTechnicalObjectList_OnPress(clientAPI) {
 	var binding = clientAPI.getPageProxy().getActionBinding();
 	var technicalObject = binding.TechnicalObject;
 	var technicalObjectDesc = binding.TechnicalObjectDesc;
 	var functionalLocation = binding.FunctionalLocation;
 	var equipmentNumber = binding.EquipmentNumber;
+	var CatalogProfile = binding.CatalogProfile;//++ for D062
 	let pageProxy = clientAPI.getPageProxy();
 	let pageClientData = pageProxy.getClientData();
 	var operationNumber = '';
@@ -14,6 +19,7 @@ export default function AdHocTechnicalObjectList_OnPress(clientAPI) {
 	pageClientData.AdHocTechnicalObjectDesc = technicalObjectDesc;
 	pageClientData.AdHocEquipmentNumber = equipmentNumber;
 	pageClientData.AdHocFunctionalLocation = functionalLocation;
+	pageClientData.CatalogProfile = CatalogProfile;//++ for D062
 
 	let myListPageClientData = '';
 	var query = '';

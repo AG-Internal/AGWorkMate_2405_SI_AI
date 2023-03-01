@@ -18,6 +18,7 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 ###### Change ID - Date - Dev Initials- Description
 1. CR013 - 23-Feb-23 - RB - Screen Simplification Long Text Icon
 2. D070  - 28-Feb-23 - RB - Clock out Screen
+3. D062  - 01-Mar-23 - RB - Adhoc Catalog Profiles
 
 
 ## Pages Change History
