@@ -34,7 +34,7 @@ export default function PassAllButton_OnPress(clientAPI) {
 	let pageProxy = clientAPI.getPageProxy();
 	let pageClientData = pageProxy.getClientData();
 	//B.O.A for D072
-	var nActivityInd = clientAPI.showActivityIndicator("'Pass All' Action in Progess. Please wait..");
+	var nActivityInd = clientAPI.showActivityIndicator("PASS ALL in progress. Please wait...");
 	//E.O.A for D072
 	var inspCharQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "' and TechnicalObject eq '" + technicalObject +
 		"' and FixedValuesResult eq '' and MicDescopeType eq '' and substringof('" + inspectionType +
@@ -131,16 +131,18 @@ export default function PassAllButton_OnPress(clientAPI) {
 			var passAllObjects = pageClientData.mic03Objects;
 			var selectedCodes = pageClientData.SelectedCode;
 			var latestPromise = Promise.resolve();
-
-			if (resultsDataMic.length > 0) {
-				for (var i = 0; i < pageClientData.mic02Objects.length; i++) {
-					if (resultsDataMic.includes(pageClientData.mic02Objects[i].MicNumber)) {
-						passAllObjects.push(pageClientData.mic02Objects[i]);
+			//B.O.Comment for D072
+			/*	if (resultsDataMic.length > 0) {
+					for (var i = 0; i < pageClientData.mic02Objects.length; i++) {
+						if (resultsDataMic.includes(pageClientData.mic02Objects[i].MicNumber)) {
+							passAllObjects.push(pageClientData.mic02Objects[i]);
+						}
 					}
-				}
-			}
+				}*/
+			//E.O.Comment for D072
 			//B.O.A for D072
 			//append in the same sequence
+			passAllObjects = [];//Clear This for new logic to sort
 			var aPassAllObjectsSorted = [];
 			let bPush = false;
 			let bCheckMic02 = false;
