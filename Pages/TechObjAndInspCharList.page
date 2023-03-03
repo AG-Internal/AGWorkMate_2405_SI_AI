@@ -23,33 +23,31 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [
-							],
+							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/FLocOrEquipment.js",
-						"Subhead": "{{#Property:MicNumber}}  - {{#Property:MicShortText}} ",
+						"Subhead": "{MicShortText}",
 						"Footnote": "/SmartInspections/Rules/TechObjAndInspCharListPage_InspectionType.js",
 						"Description": "{TechnicalObjectDescription}",
 						"StatusText": "/SmartInspections/Rules/TechObjAndInspCharListPage_RecordingStatus.js",
 						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": true,
 						"AccessoryType": "disclosureIndicator",
+						"AccessoryButtonIcon": "/SmartInspections/Rules/InstructionsAccessoryIcon.js",
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
-						"Tags": [
-						],
+						"Tags": [],
 						"AvatarStack": {
-							"Avatars": [
-							]
+							"Avatars": []
 						},
 						"AvatarGrid": {
-							"Avatars": [
-							]
+							"Avatars": []
 						},
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
 							"Title": "/SmartInspections/Rules/TechObjAndInspCharListPage_TechObjColor.js",
-							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js"
+							"BackgroundColor": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicLineColor.js"
 						}
 					},
 					"Search": {
@@ -62,10 +60,7 @@
 					},
 					"HighlightSelectedItem": false
 				}
-			],
-			"FilterFeedbackBar": {
-				"_Type": "Control.Type.FilterFeedbackBar"
-			}
+			]
 		}
 	],
 	"_Type": "Page",

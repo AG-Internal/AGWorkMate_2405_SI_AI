@@ -1,21 +1,21 @@
 {
+	"_Type": "Action.Type.ODataService.UpdateEntity",
 	"ActionResult": {
 		"_Name": "result"
 	},
-	"ShowActivityIndicator": true,
 	"OnFailure": "/SmartInspections/Actions/ODataFailure_ErrorMessage.action",
 	"OnSuccess": "/SmartInspections/Actions/Save_InProgressMessage.action",
+	"ShowActivityIndicator": false,
+	"Target": {
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}",
+		"Service": "/SmartInspections/Services/SAM.service"
+	},
 	"Properties": {
 		"FixedValuesResult": "{FixedValuesResult}",
 		"Result": "{Result}"
 	},
 	"RequestOptions": {
 		"UpdateMode": "Replace"
-	},
-	"Target": {
-		"EntitySet": "InspectionCharacteristicDetailsSet",
-		"ReadLink": "{@odata.readLink}",
-		"Service": "/SmartInspections/Services/SAM.service"
-	},
-	"_Type": "Action.Type.ODataService.UpdateEntity"
+	}
 }
