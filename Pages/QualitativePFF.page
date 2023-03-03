@@ -1,96 +1,119 @@
 {
+	"ActionBar": {
+		"Items": [
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js",
+				"Position": "Left",
+				"SystemItem": "Done",
+				"Text": "",
+				"Visible": true
+			},
+			{
+				"Icon": "sap-icon://message-information",
+				"IsIconCircular": true,
+				"OnPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
+				"Position": "Right",
+				"Text": "",
+				"Visible": "/SmartInspections/Rules/InstructionsButton_SetVisible.js"
+			},
+			{
+				"IsIconCircular": false,
+				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js",
+				"Position": "Right",
+				"SystemItem": "Add",
+				"Text": "",
+				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js"
+			}
+		]
+	},
+	"Caption": "/SmartInspections/Rules/TechnicalObjectAndDescription_Concat.js",
 	"Controls": [
 		{
-			"_Type": "Control.Type.SectionedTable",
-			"_Name": "SectionedTable0",
 			"Sections": [
 				{
 					"ObjectHeader": {
-						"Subhead": "/SmartInspections/Rules/ResultsRecordingPage_CurInsp.js",
-						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
 						"DetailImageIsCircular": false,
 						"HeadlineText": "/SmartInspections/Rules/ResultsRecordingPage_MicNumber.js",
+						"Subhead": "/SmartInspections/Rules/ResultsRecordingPage_CurInsp.js",
+						"SubstatusImage": "/SmartInspections/Rules/InspectionCharacteristicDetailsPage_DescopeIcon.js",
 						"Target": {
 							"Service": "/SmartInspections/Services/SAM.service",
 							"EntitySet": "/SmartInspections/Rules/ResultsRecording_EntitySet.js",
 							"QueryOptions": "/SmartInspections/Rules/ResultsRecording_QueryOptions.js"
 						}
 					},
-					"_Type": "Section.Type.ObjectHeader",
+					"Visible": true,
 					"_Name": "SectionObjectHeader0",
-					"Visible": true
+					"_Type": "Section.Type.ObjectHeader"
 				},
 				{
 					"Controls": [
 						{
-							"Value": "{MicShortText}",
-							"_Type": "Control.Type.FormCell.SimpleProperty",
-							"_Name": "MICNumber",
+							"Caption": "{MicNumber}",
 							"IsEditable": false,
 							"IsVisible": false,
 							"Styles": {
 								"Background": "nonEditableFields",
 								"Caption": "subTitleText"
 							},
-							"Caption": "{MicNumber}"
+							"Value": "{MicShortText}",
+							"_Name": "MICNumber",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
 						},
 						{
-							"Value": "{FixedValuesResult}",
-							"_Type": "Control.Type.FormCell.SegmentedControl",
-							"_Name": "Status",
+							"ApportionsSegmentWidthsByContent": false,
+							"Caption": "RESULT",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Styles": {
-								"Background": "statusColorNeutral"
-							},
-							"Caption": "RESULT",
 							"OnValueChange": "/SmartInspections/Rules/QualitativePFFStatus_OnValueChange.rule.js",
-							"ApportionsSegmentWidthsByContent": false,
 							"Segments": [
 								"FAIL",
 								"FIX",
 								"PASS"
-							]
+							],
+							"Styles": {
+								"Background": "statusColorNeutral"
+							},
+							"Value": "{FixedValuesResult}",
+							"_Name": "Status",
+							"_Type": "Control.Type.FormCell.SegmentedControl"
 						},
 						{
-							"Value": "{DefectCodeGroup}",
-							"_Type": "Control.Type.FormCell.SimpleProperty",
-							"_Name": "DefectCodeGroup",
+							"Caption": "DEFECT CODE GROUP",
 							"IsEditable": false,
 							"IsVisible": true,
-							"Caption": "DEFECT CODE GROUP"
+							"Value": "{DefectCodeGroup}",
+							"_Name": "DefectCodeGroup",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
 						},
 						{
-							"_Type": "Control.Type.FormCell.ListPicker",
-							"_Name": "DefectCode",
-							"IsEditable": true,
-							"IsVisible": true,
-							"AllowMultipleSelection": false,
 							"AllowEmptySelection": true,
+							"AllowMultipleSelection": false,
 							"Caption": "DEFECT CODE",
 							"DataPaging": {
 								"LoadingIndicatorText": "",
 								"PageSize": 10,
 								"ShowLoadingIndicator": true
 							},
-							"PickerPrompt": "Please select one item",
-							"OnValueChange": "/SmartInspections/Rules/DefectCodeListPicker_OnValueChange.js",
-							"IsSelectedSectionEnabled": false,
+							"IsEditable": true,
 							"IsPickerDismissedOnSelection": true,
 							"IsSearchCancelledAfterSelection": false,
-							"Search": {
-								"Enabled": true
-							},
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"OnValueChange": "/SmartInspections/Rules/DefectCodeListPicker_OnValueChange.js",
 							"PickerItems": {
 								"ObjectCell": {
 									"AccessoryType": "none",
 									"Description": "{DefCodeDesc}",
 									"DetailImageIsCircular": false,
 									"Footnote": "{DefCodeGroupDesc}",
-									"Icons": [],
+									"Icons": [
+									],
 									"PreserveIconStackSpacing": false,
 									"StatusText": "",
-									"Styles": {},
+									"Styles": {
+									},
 									"Subhead": "{DefCodeGroup}",
 									"Title": "{DefCode}"
 								},
@@ -101,61 +124,63 @@
 									"ReadLink": "{@odata.readLink}",
 									"Service": "/SmartInspections/Services/SAM.service"
 								}
-							}
+							},
+							"PickerPrompt": "Please select one item",
+							"Search": {
+								"Enabled": true
+							},
+							"_Name": "DefectCode",
+							"_Type": "Control.Type.FormCell.ListPicker"
 						}
 					],
-					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0"
+					"Visible": true,
+					"_Name": "SectionFormCell0",
+					"_Type": "Section.Type.FormCell"
 				}
-			]
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
 		}
 	],
-	"_Type": "Page",
 	"DataSubscriptions": [
 		"InspectionCharacteristicDetailsSet"
 	],
-	"_Name": "QualitativePFF",
-	"Caption": "/SmartInspections/Rules/TechnicalObjectAndDescription_Concat.js",
-	"PrefersLargeCaption": true,
 	"OnLoaded": "/SmartInspections/Rules/QualitativePFFPage_OnLoaded.rule.js",
 	"OnReturning": "/SmartInspections/Rules/ResultRecording_OnReturning.js",
-	"ActionBar": {
-		"Items": [
+	"ToolBar": {
+		"Controls": [
 			{
-				"Text": "",
-				"_Name": "ActionBarItem0",
-				"Caption": "",
-				"SystemItem": "Done",
-				"Position": "Left",
-				"IsIconCircular": false,
+				"Caption": "PREV",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Prev.js",
+				"Visible": false,
+				"_Name": "Previous",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "NEXT",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Rules/InspectionCharacteristicDetails_Next.js",
+				"Visible": false,
+				"_Name": "Next",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "CLEAR ALL",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SmartInspections/Actions/QualitativePFFClear_ConfirmMessage.action",
 				"Visible": true,
-				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js"
-			},
-			{
-				"Text": "",
-				"_Name": "ActionBarItem1",
-				"Caption": "",
-				"Icon": "sap-icon://message-information",
-				"Position": "Right",
-				"IsIconCircular": true,
-				"Visible": "/SmartInspections/Rules/InstructionsButton_SetVisible.js",
-				"OnPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js"
-			},
-			{
-				"Text": "",
-				"_Name": "ActionBarItem2",
-				"Caption": "",
-				"SystemItem": "Add",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js",
-				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js"
+				"_Name": "ClearAll",
+				"_Type": "Control.Type.ToolbarItem"
 			}
-		],
-		"_Name": "ActionBar1"
-	}
+		]
+	},
+	"_Name": "QualitativePFF",
+	"_Type": "Page"
 }
