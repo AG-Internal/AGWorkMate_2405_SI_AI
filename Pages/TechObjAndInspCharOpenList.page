@@ -23,20 +23,21 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [
-							],
+							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "{TechnicalObject}",
-						"Subhead": "{{#Property:MicNumber}}  - {{#Property:MicShortText}} ",
+						"Subhead": "{MicShortText}",
 						"Footnote": "/SmartInspections/Rules/TechObjAndInspCharListPage_InspectionType.js",
 						"Description": "{TechnicalObjectDescription}",
-						"StatusText": "/SmartInspections/Rules/TechObjAndInspCharListPage_RecordingStatus.js",
 						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
+						"AccessoryButtonIcon": "/SmartInspections/Rules/InstructionsAccessoryIcon.js",
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
+						"Tags": [],
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
+						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
 							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js"
 						}
@@ -61,5 +62,6 @@
 	],
 	"_Name": "TechObjAndInspCharOpenList",
 	"Caption": "TechObjAndInspCharOpenList",
+	"PrefersLargeCaption": true,
 	"OnReturning": "/SmartInspections/Rules/TechObjAndInspCharListPage_OnReturning.js"
 }
