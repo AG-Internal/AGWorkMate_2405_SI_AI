@@ -121,7 +121,7 @@
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumber.js",
-						"PreserveIconStackSpacing": true,
+						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
 						"AccessoryButtonIcon": "/SmartInspections/Rules/InstructionsAccessoryIcon.js",
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
