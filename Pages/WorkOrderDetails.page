@@ -138,10 +138,6 @@
 					},
 					"KeyAndValues": [
                         {
-							"KeyName": "$(L,assignedto)",
-							"Value": "/SAPAssetManager/Rules/Supervisor/Assign/WorkOrderAssignedTo.js"
-						},
-                        {
 							"KeyName": "$(L,planner_group)",
                             "Value": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsPlannerGroup.js"
 						},
