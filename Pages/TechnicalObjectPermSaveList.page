@@ -7,7 +7,8 @@
 				{
 					"_Type": "Section.Type.ObjectTable",
 					"DataSubscriptions": [
-						"InspectionCharacteristicDetailsSet"
+						"InspectionCharacteristicDetailsSet",
+						"TechnicalObjectDetailsSet"
 					],
 					"Target": {
 						"EntitySet": "TechnicalObjectDetailsSet",
@@ -23,8 +24,7 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [
-							],
+							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/FLocOrEquipmentDesc.js",
@@ -35,10 +35,11 @@
 						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
+						"Tags": [],
 						"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_AddRemoveSelection.js",
 						"Styles": {
-							"Subhead": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechObjColor.rule.js",
-							"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingColor.rule.js"
+							"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingColor.rule.js",
+							"BackgroundColor": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechObjLineColor.js"
 						}
 					},
 					"DataPaging": {
@@ -48,7 +49,11 @@
 					},
 					"HighlightSelectedItem": true
 				}
-			]
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Checking Recorded Inspections"
+			}
 		}
 	],
 	"_Type": "Page",
@@ -58,8 +63,8 @@
 	],
 	"_Name": "TechnicalObjectPermSaveList",
 	"Caption": "Work Order - {{#Property:OrderId}}",
+	"PrefersLargeCaption": true,
 	"OnLoaded": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_OnReturning.js",
 	"OnReturning": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_OnReturning.js",
-	"Result": [
-	]
+	"Result": []
 }
