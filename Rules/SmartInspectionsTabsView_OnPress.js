@@ -5,6 +5,13 @@ export default function SmartInspectionsTabsView_OnPress(clientAPI) {
 	let pageClientData = pageProxy.getClientData();
 
 	if (tabPressed.indexOf("TabItem4") !== -1) {
+		
+		//B.O.A for D058
+		if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
+			clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
+		}
+		//E.O.A for D058
+
 		var orderNumber = clientAPI.getPageProxy().getBindingObject().OrderId;
 		var techObjQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "'";
 		var techObjPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'TechnicalObjectDetailsSet', [], techObjQueryOptions).then(
@@ -40,20 +47,20 @@ export default function SmartInspectionsTabsView_OnPress(clientAPI) {
 				var inspCharQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "'";
 				var inspCharPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'InspectionCharacteristicDetailsSet', [],
 					inspCharQueryOptions).then(
-					function (results) {
-						var inspCharDescopeType = [];
-						if (results && results.length > 0) {
-							results.forEach(function (value) {
-								if (techObjDescopeType.includes(value.TechnicalObject) && !(pageClientData.permSavedTechObj.includes(value.TechnicalObject))) {
-									if (value.MicDescopeType === '') {
-										inspCharDescopeType.push(value.TechnicalObject);
+						function (results) {
+							var inspCharDescopeType = [];
+							if (results && results.length > 0) {
+								results.forEach(function (value) {
+									if (techObjDescopeType.includes(value.TechnicalObject) && !(pageClientData.permSavedTechObj.includes(value.TechnicalObject))) {
+										if (value.MicDescopeType === '') {
+											inspCharDescopeType.push(value.TechnicalObject);
+										}
 									}
-								}
-							});
+								});
+								return inspCharDescopeType;
+							}
 							return inspCharDescopeType;
-						}
-						return inspCharDescopeType;
-					});
+						});
 
 				return Promise.all([inspCharPromise]).then(function (inspObjects) {
 					var inspCharDescopeType = inspObjects[0];

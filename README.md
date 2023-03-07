@@ -20,6 +20,7 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 2. D070  - 28-Feb-23 - RB - Clock out Screen
 3. D062  - 01-Mar-23 - RB - Adhoc Catalog Profiles
 4. D072  - 02-Mar-23 - RB - Pass All Order by
+5. D058  - 07-Mar-23 - VN - Submit Tab REDRAW 
 
 
 ## Pages Change History
@@ -27,3 +28,4 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 1. InspectionCharacteristicDetailsList.page - [ CR013 ]
 2. WorkOrderChangeStatusPopover.js [ D070 ]
 3. PassAllButton_OnPress.js [ D072 ]
+4. SmartInspectionsTabsView_OnPress.js [ D058 ]
