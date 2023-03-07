@@ -779,6 +779,10 @@
                         {
                             "SimplePropertyCell": {
 								"Value": "/SmartInspections/Rules/SmartInspection_TechnicalObjectCount.rule.js",
+								"DataSubscriptions": [
+									"InspectionCharacteristicDetailsSet",
+									"TechnicalObjectDetailsSet"
+								],
 								"_Name": "SectionSimplePropertyCell11",
 								"KeyName": "Smart Inspections",
 								"AccessoryType": "disclosureIndicator",
@@ -833,5 +837,6 @@
     },
     "_Type": "Page",
     "_Name": "WorkOrderDetailsPage",
-    "DataSubscriptions": ["MyWorkOrderOperations","MyWorkOrderDocuments","PMMobileStatuses","UserTimeEntries"]
+    "DataSubscriptions": ["MyWorkOrderOperations","MyWorkOrderDocuments","PMMobileStatuses","UserTimeEntries","InspectionCharacteristicDetailsSet",
+		"TechnicalObjectDetailsSet"]
 }

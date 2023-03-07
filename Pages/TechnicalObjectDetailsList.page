@@ -58,7 +58,11 @@
 						"ShowLoadingIndicator": true
 					}
 				}
-			]
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading Data"
+			}
 		}
 	],
 	"_Type": "Page",
