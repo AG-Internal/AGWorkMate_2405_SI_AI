@@ -45,8 +45,8 @@
 						"OnPress": "/SmartInspections/Rules/NavToInspectionCharacteristicDetailsList.js",
 						"Styles": {
 							"Title": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechDescColor.js",
-							"Subhead": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechObjColor.rule.js",
-							"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingColor.rule.js"
+							"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingColor.rule.js",
+							"BackgroundColor": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_TechObjLineColor.js"
 						}
 					},
 					"Search": {
