@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "TechObjectDetailList_AllLoaded"
+	},
+	"Message": "All Records are loaded",
+	"Duration": 2,
+	"IsIconHidden": true,
+	"Animated": true
+}
