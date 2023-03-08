@@ -1,0 +1,20 @@
+/**
+ * Describe this function...
+ * @param {IClientAPI} clientAPI
+ */
+export default function SIEquipViewRefresh(clientAPI) {
+  /* Redraw all the pages */
+  var acontrols = [
+    { page: "#Page:TechnicalObjectDetailsList", control: "SectionedTable0" },
+    { page: "#Page:TechObjAndInspCharInProgressList", control: "SectionedTable0" },
+    { page: "#Page:TechObjAndInspCharOpenList", control: "SectionedTable0" },
+    { page: "#Page:TechObjAndInspCharList", control: "SectionedTable0" }
+  ];
+
+  for (var i = 0; i < acontrols.length; i++) {
+    if (clientAPI.evaluateTargetPathForAPI(acontrols[i].page)) {
+      //  clientAPI.evaluateTargetPathForAPI(acontrols[i].page).getControl(acontrols[i].control).redraw();
+      clientAPI.evaluateTargetPathForAPI(acontrols[i].page).redraw();
+    }
+  }
+}

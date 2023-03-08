@@ -5,7 +5,7 @@ function ExecuteUpdateEntity(pageProxy, binding) {
 }
 
 function Wait() {
-	return new Promise(r => setTimeout(r, 2000))
+	return new Promise(r => setTimeout(r, 100))
 }
 
 export default function TechnicalObjectPermSaveList_SaveSelectedValidations(clientAPI) {
@@ -14,7 +14,7 @@ export default function TechnicalObjectPermSaveList_SaveSelectedValidations(clie
 
 	try {
 		myListPageClientData = clientAPI.evaluateTargetPath("#Page:TechnicalObjectPermSaveList/#ClientData");
-	} catch (err) {}
+	} catch (err) { }
 
 	if (myListPageClientData.SelectedBindingObjects === undefined || myListPageClientData.SelectedBindingObjects.length === 0) {
 		return pageProxy.executeAction('/SmartInspections/Actions/NoChangesToSave_Message.action');
@@ -27,18 +27,30 @@ export default function TechnicalObjectPermSaveList_SaveSelectedValidations(clie
 		pageProxy.executeAction('/SmartInspections/Actions/Save_InProgressMessage.action');
 
 		var latestPromise = Promise.resolve();
-
+		var bSaveDone = false;//++D048
 		for (var i = 0; i < myListPageClientData.SelectedBindingObjects.length; i++) {
 			let binding = myListPageClientData.SelectedBindingObjects[i];
 			if (binding.Status !== 'P') {
+				bSaveDone = true;//++D048
 				latestPromise = latestPromise.then(() => {
 					binding.Status = 'P';
 					return ExecuteUpdateEntity(pageProxy, binding);
 				}).then(Wait);
 			}
 		}
-
+		//B.O.A for D048
+		if (bSaveDone) {
+			if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
+				clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
+			}
+		}
+		//E.O.A for D048
 		return latestPromise.then(function () {
+			//B.O.A for D048
+			if (bSaveDone) {
+				return pageProxy.executeAction('/SmartInspections/Actions/TechObjsSubmitSuccess.action');
+			}
+			//E.O.A for D048
 			return pageProxy.executeAction('/SmartInspections/Actions/Save_SuccessMessage.action');
 		}.bind(pageProxy));
 	}

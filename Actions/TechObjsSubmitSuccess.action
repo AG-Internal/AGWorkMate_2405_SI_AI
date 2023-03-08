@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TechObjsSubmitSuccess"
+	},
+	"Message": "Equipments submitted Successfully",
+	"Title": "Save Success",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Rules/SIEquipViewRefresh.js"
+}

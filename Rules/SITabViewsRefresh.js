@@ -12,6 +12,9 @@ export default function SITabViewsRefresh(clientAPI) {
     ];
 
     for (var i = 0; i < acontrols.length; i++) {
-        clientAPI.evaluateTargetPathForAPI(acontrols[i].page).getControl(acontrols[i].control).redraw();
+        if (clientAPI.evaluateTargetPathForAPI(acontrols[i].page)) {
+            //  clientAPI.evaluateTargetPathForAPI(acontrols[i].page).getControl(acontrols[i].control).redraw();
+            clientAPI.evaluateTargetPathForAPI(acontrols[i].page).redraw();
+        }
     }
 }

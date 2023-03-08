@@ -7,9 +7,9 @@ export default function SmartInspectionsTabsView_OnPress(clientAPI) {
 	if (tabPressed.indexOf("TabItem4") !== -1) {
 		
 		//B.O.A for D058
-		if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
-			clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
-		}
+		// if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
+		// 	clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
+		// }
 		//E.O.A for D058
 
 		var orderNumber = clientAPI.getPageProxy().getBindingObject().OrderId;
