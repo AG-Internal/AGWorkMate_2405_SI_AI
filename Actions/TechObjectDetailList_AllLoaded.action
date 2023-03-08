@@ -3,6 +3,7 @@
 	"ActionResult": {
 		"_Name": "TechObjectDetailList_AllLoaded"
 	},
+	"OnSuccess": "/SmartInspections/Rules/SITabViewsRefresh.js",
 	"Message": "All Records are loaded",
 	"Duration": 2,
 	"IsIconHidden": true,

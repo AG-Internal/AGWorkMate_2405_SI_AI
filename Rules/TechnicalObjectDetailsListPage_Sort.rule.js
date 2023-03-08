@@ -21,6 +21,8 @@ export default function TechnicalObjectDetailsListPage_Sort(context) {
 	//initialize Action variable
 	if (!pageClientData.Action) {
 		pageClientData.Action = "";//Set Action Empty
+	}
+	if (!pageClientData.InspCharObjects) {
 		//variable Format
 		pageClientData.InspCharObjects = [{ "TechnicalObject": "", DeleteFromWoSnap: false }];
 	}
@@ -48,7 +50,7 @@ export default function TechnicalObjectDetailsListPage_Sort(context) {
 					pageClientData.Action = "REDRAWED"; // Set it once Redrawed
 					context.redraw();
 					return context.getPageProxy().executeAction("/SmartInspections/Actions/TechObjectDetailList_AllLoaded.action");
-					
+
 				}
 			);
 
