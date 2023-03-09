@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "PassAllCompleted"
+	},
+	"Message": "Pass All Action Completed",
+	"Title": "Success",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Actions/DummyMessage.action"
+}

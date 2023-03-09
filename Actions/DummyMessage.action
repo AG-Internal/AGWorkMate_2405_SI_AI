@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "DummyMessage"
+	},
+	"Message": "Action Completed",
+	"NumberOfLines": 1,
+	"Duration": 1
+}

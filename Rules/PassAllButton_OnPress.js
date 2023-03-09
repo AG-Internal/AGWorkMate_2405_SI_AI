@@ -195,7 +195,8 @@ export default function PassAllButton_OnPress(clientAPI) {
 				}
 				return latestPromise.then(function () {
 					clientAPI.dismissActivityIndicator(nActivityInd); //++D072
-					return pageProxy.executeAction('/SmartInspections/Actions/Save_SuccessMessage.action');
+					return pageProxy.executeAction('/SmartInspections/Actions/PassAllCompleted.action');//++D048
+					return pageProxy.executeAction('/SmartInspections/Actions/Save_SuccessMessage.action');//--D048
 				}.bind(pageProxy));
 			} else {
 				clientAPI.dismissActivityIndicator(nActivityInd); //++D072

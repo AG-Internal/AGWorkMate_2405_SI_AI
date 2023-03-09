@@ -6,9 +6,9 @@ export default function SIEquipViewRefresh(clientAPI) {
   /* Redraw all the pages */
   var acontrols = [
     { page: "#Page:TechnicalObjectDetailsList", control: "SectionedTable0" },
-    { page: "#Page:TechObjAndInspCharInProgressList", control: "SectionedTable0" },
-    { page: "#Page:TechObjAndInspCharOpenList", control: "SectionedTable0" },
-    { page: "#Page:TechObjAndInspCharList", control: "SectionedTable0" }
+    // { page: "#Page:TechObjAndInspCharInProgressList", control: "SectionedTable0" }
+    // { page: "#Page:TechObjAndInspCharOpenList", control: "SectionedTable0" },
+    // { page: "#Page:TechObjAndInspCharList", control: "SectionedTable0" }
   ];
 
   for (var i = 0; i < acontrols.length; i++) {
