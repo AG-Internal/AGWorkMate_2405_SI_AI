@@ -6,12 +6,11 @@ export default function SmartInspectionsTabsView_OnPress(clientAPI) {
 
 	if (tabPressed.indexOf("TabItem4") !== -1) {
 		
-		//B.O.A for D058
-		// if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
-		// 	clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
-		// }
-		//E.O.A for D058
-
+		//B.O.A for D106 
+		/* Simplified the CLose Button in to the Perm list page*/ 
+		return true;
+		//E.O.A for D106
+	
 		var orderNumber = clientAPI.getPageProxy().getBindingObject().OrderId;
 		var techObjQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "'";
 		var techObjPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'TechnicalObjectDetailsSet', [], techObjQueryOptions).then(
