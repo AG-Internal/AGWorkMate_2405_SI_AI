@@ -5,7 +5,15 @@
 			"_Name": "SectionedTable0",
 			"Sections": [
 				{
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Trailing"
+					},
 					"_Type": "Section.Type.ButtonTable",
+					"DataSubscriptions": [
+						"TechnicalObjectDetailsSet",
+						"InspectionCharacteristicDetailsSet"
+					],
 					"_Name": "SectionButtonTable0",
 					"Visible": true,
 					"EmptySection": {
@@ -35,12 +43,24 @@
 							"FullWidth": false,
 							"Visible": true,
 							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveSelectedValidations.js"
+						},
+						{
+							"DataSubscriptions": [
+								"TechnicalObjectDetailsSet",
+								"InspectionCharacteristicDetailsSet"
+							],
+							"_Name": "CloseButton",
+							"Title": "CLOSE",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseButtonEnable.js",
+							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseOrder.js"
 						}
-					],
-					"Layout": {
-						"LayoutType": "Horizontal",
-						"HorizontalAlignment": "Trailing"
-					}
+					]
 				},
 				{
 					"_Type": "Section.Type.ObjectTable",
