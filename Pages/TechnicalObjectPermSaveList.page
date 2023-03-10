@@ -5,6 +5,44 @@
 			"_Name": "SectionedTable0",
 			"Sections": [
 				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "saveAllButton",
+							"Title": "Save ALL",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveAllValidations.js"
+						},
+						{
+							"_Name": "SaveSelButton",
+							"Title": "Save SELECTED",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveSelectedValidations.js"
+						}
+					],
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Trailing"
+					}
+				},
+				{
 					"_Type": "Section.Type.ObjectTable",
 					"DataSubscriptions": [
 						"InspectionCharacteristicDetailsSet",
