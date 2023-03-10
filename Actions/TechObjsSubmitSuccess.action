@@ -3,6 +3,7 @@
 	"ActionResult": {
 		"_Name": "TechObjsSubmitSuccess"
 	},
+	"OnSuccess": "/SmartInspections/Rules/TechObjectAfterSaveAutoClose.js",
 	"Message": "Equipments submitted Successfully",
 	"Title": "Save Success",
 	"OKCaption": "OK",

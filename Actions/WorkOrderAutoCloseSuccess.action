@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "WorkOrderAutoCloseSuccess"
+	},
+	"Message": "Congrats! All the Inspections are Submitted & Order can be completed.",
+	"NumberOfLines": 1,
+	"Duration": 1
+}
