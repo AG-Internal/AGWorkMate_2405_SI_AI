@@ -5,7 +5,7 @@ function ExecuteUpdateEntity(pageProxy, binding) {
 }
 
 function Wait() {
-	return new Promise(r => setTimeout(r, 100))
+	return new Promise(r => setTimeout(r, 200))
 }
 
 export default function TechnicalObjectPermSaveList_SaveSelectedValidations(clientAPI) {
@@ -38,14 +38,15 @@ export default function TechnicalObjectPermSaveList_SaveSelectedValidations(clie
 				}).then(Wait);
 			}
 		}
-		//B.O.A for D048
-		if (bSaveDone) {
-			if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
-				clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
-			}
-		}
-		//E.O.A for D048
+
 		return latestPromise.then(function () {
+			//B.O.A for D048
+			if (bSaveDone) {
+				if (clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList')) {
+					clientAPI.evaluateTargetPathForAPI('#Page:TechnicalObjectPermSaveList').getControl('SectionedTable0').redraw();
+				}
+			}
+			//E.O.A for D048
 			//B.O.A for D048
 			if (bSaveDone) {
 				return pageProxy.executeAction('/SmartInspections/Actions/TechObjsSubmitSuccess.action');
