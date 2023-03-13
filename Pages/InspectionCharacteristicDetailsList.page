@@ -65,6 +65,18 @@
 							"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js"
 						},
 						{
+							"_Name": "ButtonChangeInsp",
+							"Title": "Change Inspection Type",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
+							"OnPress": "/SmartInspections/Rules/NavToInspectionTypeDetailsList.js"
+						},
+						{
 							"_Name": "ButtonEXGroup",
 							"Title": "Change EX Group",
 							"TextAlignment": "Center",
@@ -140,9 +152,9 @@
 						}
 					},
 					"DataPaging": {
+						"ShowLoadingIndicator": true,
 						"LoadingIndicatorText": "Loading data...",
-						"PageSize": 20,
-						"ShowLoadingIndicator": true
+						"PageSize": 70
 					}
 				}
 			]

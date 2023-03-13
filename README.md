@@ -22,13 +22,17 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 4. D072  - 02-Mar-23 - RB - Pass All Order by
 5. D058  - 07-Mar-23 - VN - Submit Tab REDRAW 
 6. D048  - 08-Mar-23 - RB - Equipment Screen
-6. D106  - 10-Mar-23 - RB - Simplified Closed button
+7. D106  - 10-Mar-23 - RB - Simplified Closed button
+8. D111  - 13-Mar-23 - RB - Remove History option
+9. D108  - 13-Mar-23 - RB - Add Chanege Insp Type Button ins screen
+9. D112  - 13-Mar-23 - RB - Increase Loading size of insp table
 
 
 ## Pages Change History
 ###### Page Name - [Change ID]
-1. InspectionCharacteristicDetailsList.page - [ CR013 ]
+1. InspectionCharacteristicDetailsList.page - [ CR013 , D108]
 2. WorkOrderChangeStatusPopover.js [ D070 ]
 3. PassAllButton_OnPress.js [ D072 ]
 4. SmartInspectionsTabsView_OnPress.js [ D058 ]
 5. TechnicalObjectDetailsListPage_Sort.js [ D048 ]
+5. InspectionCharacteristicDetailsListPage_MorePopover [ D111 ]

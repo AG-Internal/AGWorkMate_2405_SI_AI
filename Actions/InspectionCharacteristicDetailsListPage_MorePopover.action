@@ -6,7 +6,7 @@
 			"Icon": "",
 			"OnPress": "/SmartInspections/Actions/NavToInspectionHistoryDetailsList.action",
 			"Title": "History",
-			"Visible": true
+			"Visible": false
 		},
 		{
 			"Enabled": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
