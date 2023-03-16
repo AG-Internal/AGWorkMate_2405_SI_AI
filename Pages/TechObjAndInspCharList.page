@@ -60,7 +60,8 @@
 					},
 					"HighlightSelectedItem": false
 				}
-			]
+			],
+			"OnRendered": "/SmartInspections/Rules/TechObjAndInspCharListPage_OnRender.js"
 		}
 	],
 	"_Type": "Page",
