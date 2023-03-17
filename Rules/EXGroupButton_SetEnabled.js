@@ -20,7 +20,7 @@ export default function EXGroupButton_SetEnabled(clientAPI) {
 	let countWorkOrderPromise = clientAPI.count('/SmartInspections/Services/SAM.service', 'WorkOrderHeaderSet', workOrderQueryOptions);
 
 	var inspCharQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "' and TechnicalObject eq '" + technicalObject +
-		"' and FixedValuesResult ne ''";
+		"' and ( FixedValuesResult ne '' or MicDescopeType ne '' )"; // Added MicDescopeType for T019
 	let countInspCharPromise = clientAPI.count('/SmartInspections/Services/SAM.service', 'InspectionCharacteristicDetailsSet',
 		inspCharQueryOptions);
 

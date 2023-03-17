@@ -24,7 +24,7 @@ export default function DescopeTypeButton_SetEnabled(clientAPI) {
 			var returnValue = true;
 			if (results && results.length > 0) {
 				results.forEach(function (value) {
-					if (value.FixedValuesResult !== '') {
+					if (value.FixedValuesResult !== '' || value.MicDescopeType !== '') { //Added MicDescopeType for T019
 						returnValue = false;
 					}
 				});
