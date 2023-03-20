@@ -96,6 +96,44 @@
 					"Visible": true,
 					"_Name": "SectionFormCell0",
 					"_Type": "Section.Type.FormCell"
+				},
+				{
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "btnAttach",
+							"Title": "Contains Attachment(s)",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"Image": "/SAPAssetManager/Images/attachmentStepIcon.android.png",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/ResultRecordingPage_AttachIconEnabled.js"
+						},
+						{
+							"_Name": "btnNotes",
+							"Title": "Contains Notes",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"Image": "sap-icon://notes",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/ResultRecordingPage_NotesIconEnabled.js"
+						}
+					]
 				}
 			],
 			"_Name": "SectionedTable0",
