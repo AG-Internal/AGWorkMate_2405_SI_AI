@@ -12,11 +12,14 @@ export default function TechnicalObjectDetailsListPage_PassFixFailCount(sectione
 
 	try {
 		clientData = sectionedTableProxy.evaluateTargetPath("#Page:TechnicalObjectDetailsList/#ClientData");
-	} catch (err) {}
+	} catch (err) { }
 	var inspCharObjectsArray = clientData.InspCharObjects;
 
-	var inspCharObjects = inspCharObjectsArray.filter(element => element.TechnicalObject === technicalObject);
-
+//	var inspCharObjects = inspCharObjectsArray.filter(element => element.TechnicalObject === technicalObject);//Commeneted for SIV2203 T024
+	/*B.O.A by RB for SIV2203 - T024*/
+	var inspCharObjects = inspCharObjectsArray.filter(element => element.TechnicalObject === technicalObject && element.DeleteFromWoSnap ===
+		false);
+	/*E.O.A by RB for SIV2203 - T024*/
 	for (var i = 0; i < inspCharObjects.length; i++) {
 		var value = inspCharObjects[i];
 		//if (value.TechnicalObject === technicalObject) {

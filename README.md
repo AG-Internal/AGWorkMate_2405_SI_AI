@@ -27,7 +27,8 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 9.  D108  - 13-Mar-23 - RB - Add Chanege Insp Type Button ins screen
 10. D112  - 13-Mar-23 - RB - Increase Loading size of insp table
 11. T014  - 16-Mar-23 - RB - Hide Pass ALL when no Pending MIC
-12. T019  - 17-mar-23 - RB - Hide Change Insp, Descope, Change EX when any MIC is descoped
+12. T019  - 17-Mar-23 - RB - Hide Change Insp, Descope, Change EX when any MIC is descoped
+13. T024  - 23-Mar-23 - RB - Pass Count in Equipment View
 
 
 ## Pages Change History
@@ -40,5 +41,6 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 6. InspectionCharacteristicDetailsListPage_MorePopover [ D111 ]
 7. PassAllButton_SetEnabled.js [ T014 ]
 8. InspectionTypeButton_SetEnabled.js [ T019 ]
-9. DescopeTypeButton_SetEnabled.js [T019 ]
-10. EXGroupButton_SetEnabled [T019 ]
+9. DescopeTypeButton_SetEnabled.js [ T019 ]
+10. EXGroupButton_SetEnabled [ T019 ]
+11. TechnicalObjectDetailsListPage_PassFixFailCount.js [ T024 ]
