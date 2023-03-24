@@ -36,8 +36,9 @@ export default function PassAllButton_OnPress(clientAPI) {
 	//B.O.A for D072
 	var nActivityInd = clientAPI.showActivityIndicator("PASS ALL in progress. Please wait...");
 	//E.O.A for D072
+	// For T024 - Added "DeleteFromWoSnap eq false" in the Query
 	var inspCharQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "' and TechnicalObject eq '" + technicalObject +
-		"' and FixedValuesResult eq '' and MicDescopeType eq '' and substringof('" + inspectionType +
+		"' and FixedValuesResult eq '' and MicDescopeType eq '' and  DeleteFromWoSnap eq false and substringof('" + inspectionType +
 		"', InspectionTypes) eq true and (MicType eq '02' or MicType eq '03')";
 	//B.O.A for D072
 	var sOrderby = "&$orderby=SortNumber, ListCounter, OperationNumber, InspectionCharacteristicNumb";
