@@ -1,8 +1,9 @@
 {
-	"Animated": true,
-	"Duration": 3,
-	"IsIconHidden": false,
+	"_Type": "Action.Type.ToastMessage",
+	"OnSuccess": "/SmartInspections/Rules/AutoSync/SIApplicationAfterStartUp.js",
 	"Message": "SI Application Initialized",
 	"NumberOfLines": 2,
-	"_Type": "Action.Type.ToastMessage"
+	"Duration": 3,
+	"IsIconHidden": false,
+	"Animated": true
 }

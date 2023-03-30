@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"Message": "SI Sync Successful & Auto Sync has been enabled",
+	"NumberOfLines": 2,
+	"Duration": 3
+}

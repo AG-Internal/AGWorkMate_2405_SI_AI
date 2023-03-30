@@ -3,6 +3,7 @@
 	"ActionResult": {
 		"_Name": "WorkOrderAutoCloseSuccess"
 	},
+	"OnSuccess": "/SmartInspections/Rules/AutoSync/SIAutoSyncOnPermSave.js",
 	"Message": "Congrats! All the Inspections are Submitted & Order can be completed.",
 	"NumberOfLines": 1,
 	"Duration": 1

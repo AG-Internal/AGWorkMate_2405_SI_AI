@@ -2,6 +2,8 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
+import { AutoSync } from "./AutoSync/AutoSync";
+import ResultType from "./SIentryWO";
 function ExecuteUpdateEntity(pageProxy, binding) {
     pageProxy.setActionBinding(binding);
     //Must return the promised returned by executeAction to keep the chain alive.
@@ -17,7 +19,7 @@ export default function TechObjectAfterSaveAutoClose(clientAPI) {
     let pageClientData = pageProxy.getClientData();
     var orderNumber = clientAPI.getPageProxy().getBindingObject().OrderId;
 
-  
+
     var techObjQueryOptions = "$filter=OrderNumber eq '" + orderNumber + "'";
     var techObjPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'TechnicalObjectDetailsSet', [], techObjQueryOptions).then(
         function (results) {
@@ -33,13 +35,13 @@ export default function TechObjectAfterSaveAutoClose(clientAPI) {
                         pSaveCount = pSaveCount + 1;
                     } else if (value.DescopeType !== '') {
                         descopeCount = descopeCount + 1;
-                    }else{
+                    } else {
                         notRecCount = notRecCount + 1;
                     }
                 });
             }
             RecCount = pSaveCount + descopeCount;
-           
+
             if (TotalCount === RecCount && TotalCount > 0) {
                 bCanClose = true;
             }
@@ -65,8 +67,10 @@ export default function TechObjectAfterSaveAutoClose(clientAPI) {
         var latestPromise = Promise.resolve();
         var binding = object[0];
         var bCanClose = object[1];
+        var bClosedAlready = false;
         if (binding.CloseOrder === 'X') {
-            return true;
+            bClosedAlready = true;
+            //return true;
             //return pageProxy.executeAction('/SmartInspections/Actions/WorkOrderAlreadyClosed_ErrorMessage.action');
         } else if (bCanClose) {
             latestPromise = latestPromise.then(() => {
@@ -78,8 +82,13 @@ export default function TechObjectAfterSaveAutoClose(clientAPI) {
                 return pageProxy.executeAction('/SmartInspections/Actions/WorkOrderAutoCloseSuccess.action');
             }.bind(pageProxy));
         } else {
-            return true;
-          //  alert("Sorry Not Qualified to  Close now");
+            bClosedAlready = true;
+            //return true;
+            //  alert("Sorry Not Qualified to  Close now");
+        }
+        if (bClosedAlready) {
+            /* Do Auto Sync if need */
+            return AutoSync.doAutoSyncOnsave(clientAPI);
         }
     });
 

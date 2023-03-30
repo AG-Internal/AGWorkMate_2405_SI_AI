@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"OnSuccess": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js",
+	"Message": "Starting Auto Sync",
+	"NumberOfLines": 2,
+	"Duration": 3
+}
