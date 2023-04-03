@@ -66,7 +66,6 @@ export class AutoSync {
             //Retrived or Set Locally
             this._LastsyncDateTime = null; /* Last Sync Time */
             this._autoSyncActive = false; /* Auto Sync Feature can be made active with Parameters */
-            this.isAutoSyncTimerSet = false; /* Timers set  */
         }
         // Do Calculation
         this.setAutoSyncParams(paFrom);
@@ -96,7 +95,6 @@ export class AutoSync {
         this.calcMilliSecs();
         //Flags
         this._autoSyncActive = false;
-        this.isAutoSyncTimerSet = false;
         //set Active or Inactive Flag
         if (this._autoSyncEnabled) {
             this._autoSyncActive = true;
@@ -106,6 +104,9 @@ export class AutoSync {
 
         var scenario = "";
         var currentTime = new Date();
+        if (paFrom === "RESET") {
+            this._LastsyncDateTime = new Date();
+        }
         //Next Sync Time
         var nextSyncTime = new Date(this._LastsyncDateTime.getTime());
         nextSyncTime.setMilliseconds(nextSyncTime.getMilliseconds() + this._autoSync_MilliSec);
@@ -116,6 +117,10 @@ export class AutoSync {
             this._autoSync_Min = this._SyncTimeExceed_Min;
             this._alertBefore_Min = this._SyncTimeExceed_Min;
             scenario = "Current Time Greater than To be Auto Synced Time";
+            if (paFrom === "SIAPPINIT") {
+                //Reset Last Sync Time
+                this._LastsyncDateTime = new Date();
+            }
 
         } else {
             //set Auto sync time based on remainig  time
@@ -134,19 +139,20 @@ export class AutoSync {
         }
         this.calcMilliSecs();
 
-        if (paFrom === "PROMISE") {
+        if (paFrom === "SYNCSUCCESS" || paFrom === "RESET" || paFrom === "SIAPPINIT") {
             alert("  -> Last Sync Time: " + this._LastsyncDateTime + "  -> Current Time: " + currentTime + " -> Next Sync Time" + nextSyncTime +
-                "Next Alert Before :" + this._alertBefore_Min + " -->Scenario: " + scenario);
+                "Next Alert Before :" + this._alertBefore_Min + " call From " + paFrom + " -->Scenario: " + scenario);
 
         }
     }
 
 
-    static setSyncAlertTimeOuts(context) {
+    static setSyncAlertTimeOuts(context, paFrom) {
+        var sPaFrom = "INIT";
+        this.initAutoSyncParams(sPaFrom);
 
         // Init Params
-        this.initAutoSyncParams("INIT");
-
+        sPaFrom = paFrom;
         //Call Promises to get Params
         var oPromise = this.getParams(context);/* SI Params */
         var oSAMPromise = this.getSAMLastSync(context);/* SAM Params */
@@ -155,24 +161,24 @@ export class AutoSync {
         Promise.all([oPromise, oSAMPromise]).then(function (param) {
 
             //Set Parameter after set variables
-            AutoSync.setAutoSyncParams("PROMISE");
+            AutoSync.setAutoSyncParams(sPaFrom);
 
             if (!AutoSync._autoSyncActive) {
                 return;
             }
-            //Set Time set Flag
-            AutoSync.isAutoSyncTimerSet = true;
             //init
             AutoSync.initSyncTimeout(context);
             AutoSync.initAlertTimeout();
-        });
 
+        });
     }
+
 
     static initSyncTimeout(context) {
         /*Init Auto Sync Timer*/
         this._autoSync_TimeOut = setTimeout(function () {
-            return context.executeAction('/SmartInspections/Actions/StartingAutoSync.action');
+            context.executeAction('/SmartInspections/Actions/StartingAutoSync.action');
+            AutoSync.resetSyncOnceAttemptedSync(context);
         },
             this._autoSync_MilliSec);
         //show message
@@ -204,18 +210,22 @@ export class AutoSync {
             clearTimeout(this._alert_TimeOut);
         }
     }
+
+    static resetSyncOnceAttemptedSync(context) {
+        this.clearTimeOuts();
+        this.setSyncAlertTimeOuts(context, "RESET");
+    }
+
+    static checkSyncAfterSISyncSuccess(context) {
+        /* Set the Timer if not set */
+        this.clearTimeOuts();
+        this.setSyncAlertTimeOuts(context, "SYNCSUCCESS");
+    }
+
     static checkSyncAfterSIAppInit(context) {
-        /* Check whether to Sync after Init */
-        if (this.isAutoSyncTimerSet) {
-            /* if timer is Already set , then Trigger the Auto sync when its intialized again 
-            beacuse when App is Closed and Opend Time out will be deleted*/
-            this.clearTimeOuts();
-            return context.executeAction('/SmartInspections/Actions/StartingAutoSync.action');
-        } else {
-            /* Set the Timer if not set */
-            this.clearTimeOuts();
-            this.setSyncAlertTimeOuts(context);
-        }
+        /* App Initialization */
+        this.clearTimeOuts();
+        this.setSyncAlertTimeOuts(context, "SIAPPINIT");
     }
 
     static doAutoSyncOnsave(context) {
@@ -224,7 +234,8 @@ export class AutoSync {
             return true;
         }
         this.clearTimeOuts();
-        return context.executeAction('/SmartInspections/Actions/StartingAutoSync.action');
+        context.executeAction('/SmartInspections/Actions/StartingAutoSync.action');
+        this.resetSyncOnceAttemptedSync(context);
     }
 
 }
