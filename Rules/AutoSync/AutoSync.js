@@ -66,6 +66,7 @@ export class AutoSync {
             //Retrived or Set Locally
             this._LastsyncDateTime = null; /* Last Sync Time */
             this._autoSyncActive = false; /* Auto Sync Feature can be made active with Parameters */
+            this._alertMsg = "";
         }
         // Do Calculation
         this.setAutoSyncParams(paFrom);
@@ -139,11 +140,11 @@ export class AutoSync {
         }
         this.calcMilliSecs();
 
-        if (paFrom === "SYNCSUCCESS" || paFrom === "RESET" || paFrom === "SIAPPINIT") {
-            alert("  -> Last Sync Time: " + this._LastsyncDateTime + "  -> Current Time: " + currentTime + " -> Next Sync Time" + nextSyncTime +
-                "Next Alert Before :" + this._alertBefore_Min + " call From " + paFrom + " -->Scenario: " + scenario);
-
-        }
+        /*  if (paFrom === "SYNCSUCCESS" || paFrom === "RESET" || paFrom === "SIAPPINIT") {
+              alert("  -> Last Sync Time: " + this._LastsyncDateTime + "  -> Current Time: " + currentTime + " -> Next Sync Time" + nextSyncTime +
+                  "Next Alert Before :" + this._alertBefore_Min + " call From " + paFrom + " -->Scenario: " + scenario);
+  
+          }*/
     }
 
 
@@ -168,7 +169,7 @@ export class AutoSync {
             }
             //init
             AutoSync.initSyncTimeout(context);
-            AutoSync.initAlertTimeout();
+            AutoSync.initAlertTimeout(context);
 
         });
     }
@@ -181,11 +182,14 @@ export class AutoSync {
             AutoSync.resetSyncOnceAttemptedSync(context);
         },
             this._autoSync_MilliSec);
-        //show message
-        return context.executeAction('/SmartInspections/Actions/SIAutoSyncSet.action');
+        //show message after few seconds
+        setTimeout(function () {
+            context.executeAction('/SmartInspections/Actions/SIAutoSyncSet.action');
+        }, 5000);
+
     }
 
-    static initAlertTimeout() {
+    static initAlertTimeout(context) {
         /* Init Alert Message Timer */
         var sAlertMsg = "Information: Sync will start in " + this._alertBefore_Min + " Minute(s)";
         if (this._alertBefore_Min < 1) {
@@ -194,9 +198,17 @@ export class AutoSync {
         else if (this._alertBefore_Min = 0) {
             sAlertMsg = "Information: Auto Sync will start now";
         }
+        //Set it Global to Access Via Rule
+        this._alertMsg = sAlertMsg;
 
         //Timeout
-        this._alert_TimeOut = setTimeout(() => alert(sAlertMsg), this._alert_MilliSec);
+        //this._alert_TimeOut = setTimeout(() => alert(sAlertMsg), this._alert_MilliSec);
+
+        this._alert_TimeOut = setTimeout(function () {
+            context.executeAction('/SmartInspections/Actions/AutoSyncAlertMessage.action');
+        }, this._alert_MilliSec);
+
+
     }
 
     static clearTimeOuts() {

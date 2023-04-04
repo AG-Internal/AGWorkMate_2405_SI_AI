@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "AutoSyncAlertMessage"
+	},
+	"Message": "/SmartInspections/Rules/AutoSync/AutoSyncGetAlertMessage.js",
+	"Duration": 5,
+	"IsIconHidden": true,
+	"Animated": true
+}
