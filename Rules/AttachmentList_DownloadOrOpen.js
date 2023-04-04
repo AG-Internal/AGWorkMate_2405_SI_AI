@@ -1,125 +1,222 @@
+/*--------------------------------------------------------------------*
+* Change Tag    :  UAT019 - Altering the Attachment Review Logic After 
+							Uploading.
+*--------------------------------------------------------------------*/
 // let fs = require('file-system');
+//B.O.A for UAT019
+import GetDocumentSection from '../../SAPAssetManager/Rules/Documents/GetDocumentSection';
+import DocumentPath from '../../SAPAssetManager/Rules/Documents/DocumentPath';
+import writeDocument from '../../SAPAssetManager/Rules/Documents/Save/DocumentSave';
+import Logger from '../../SAPAssetManager/Rules/Log/Logger';
+import libVal from '../../SAPAssetManager/Rules/Common/Library/ValidationLibrary';
+import libCommon from '../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
+//E.O.A for UAT019
 
 export default function AttachmentList_DownloadOrOpen(sectionedTableProxy) {
 	let fs = sectionedTableProxy.nativescript.fileSystemModule;//CF by RB
 	const pageProxy = sectionedTableProxy.getPageProxy();
-	let pageClientData = pageProxy.getClientData();
+	//let pageClientData = pageProxy.getClientData();
 	let documentObject = pageProxy.getActionBinding();
 	let readLink = documentObject['@odata.readLink'];
 	let serviceName = '/SmartInspections/Services/SAM.service';
 	let entitySet = readLink.split('(')[0];
-	const docDownloadID = documentObject.DocumentId;
+	const docDownloadID = 'DocDownload.' + documentObject.DocumentId;
 
-	// Check if media already exists or needs to be downloaded
-	return sectionedTableProxy.isMediaLocal(serviceName, entitySet, readLink).then((isMediaLocal) => {
-		if (isMediaLocal) {
-			//let documentPath = DocumentPath(sectionedTableProxy, documentObject);
-			let odataID = documentObject['@odata.id'];
-			// Retrieving ID from the string
-			let start = odataID.indexOf('\'');
-			let end = odataID.lastIndexOf('\'');
-			// Need to do start+1 because we dont want ' in our id
-			let documentID = odataID.substring(start + 1, end);
+	if (documentObject.ObjectType === 'URL') {
+		return Promise.resolve(sectionedTableProxy.nativescript.utilsModule.openUrl(documentObject.URL.replace('&KEY&', '')));
+	} else {
+		// Check if media already exists or needs to be downloaded
+		return sectionedTableProxy.isMediaLocal(serviceName, entitySet, readLink).then((isMediaLocal) => {
+			if (isMediaLocal) {
+				let documentPath = DocumentPath(sectionedTableProxy, documentObject);
 
-			//let documentID = actionBinding.DocumentId;
-			let filename = documentObject.FileName;
-			let tempFolder = fs.knownFolders.temp();
-			var documentPath;
+				//B.O.A for UAT019
+				//let odataID = documentObject['@odata.id'];
+				// Retrieving ID from the string
+				//let start = odataID.indexOf('\'');
+				//let end = odataID.lastIndexOf('\'');
+				// Need to do start+1 because we dont want ' in our id
+				//let documentID = odataID.substring(start + 1, end);
 
-			if (filename && documentID) {
-				documentPath = fs.path.join(tempFolder.path, documentID, filename);
-			} else {
-				documentPath = '';
-			}
-			let writeError = undefined;
-			let promise = Promise.resolve(documentPath);
+				//let documentID = actionBinding.DocumentId;
+				//let filename = documentObject.FileName;
+				//let tempFolder = fs.knownFolders.temp();
+				//var documentPath;
 
-			if (!fs.File.exists(documentPath)) {
-				promise = sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadMedia.action').then(
-					() => {
-						// the media has been downloaded, we can open it -> the path needs to be provided in the action definition
-						// or it should come from binding
-						let documentFileObject = fs.File.fromPath(documentPath);
+				//if (filename && documentID) {
+				//	documentPath = fs.path.join(tempFolder.path, documentID, filename);
+				//} else {
+				//	documentPath = '';
+				//}
+
+				//E.O.A for UAT019
+				let writeError = undefined;
+				let promise = Promise.resolve(documentPath);
+
+				//B.O.A for UAT019
+				/*if (!fs.File.exists(documentPath)) {
+					
+					promise = sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadMedia.action').then(
+						() => {
+							// the media has been downloaded, we can open it -> the path needs to be provided in the action definition
+							// or it should come from binding						
+							let documentFileObject = fs.File.fromPath(documentPath);						
+	
+							let content = pageProxy.getClientData()[documentObject['@odata.readLink']];
+	
+							//if (libVal.evalIsEmpty(documentPath) || typeof documentObject === 'undefined') {
+							if (!documentPath) {
+								return pageProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
+							}
+							documentFileObject.writeSync(content, err => {
+								writeError = err;
+							});
+							//libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
+							pageClientData.docDownloadID = undefined;
+							
+							return documentPath;
+						});
+				}*/
+				//E.O.A for UAT019
+
+				//B.O.A for UAT019
+				if (!fs.File.exists(documentPath)) {
+					promise = sectionedTableProxy.executeAction({
+						'Name': '/SmartInspections/Actions/AttachmentDownload_DownloadMedia.action',
+						'Properties': {
+							'Target': {
+								'EntitySet': 'InspectionCharacteristicAttachmentSet',
+								'ReadLink': readLink,
+								'Service': '/SmartInspections/Services/SAM.service',
+							},
+							'OnSuccess': '',
+						},
+					}).then(() => {
+						writeDocument(pageProxy, documentObject);
+						let documentFileObject = sectionedTableProxy.nativescript.fileSystemModule.File.fromPath(documentPath);
 						let content = pageProxy.getClientData()[documentObject['@odata.readLink']];
-
-						//if (libVal.evalIsEmpty(documentPath) || typeof documentObject === 'undefined') {
-						if (!documentPath) {
+						if (libVal.evalIsEmpty(documentPath) || typeof documentObject === 'undefined') {
 							return pageProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
 						}
 						documentFileObject.writeSync(content, err => {
 							writeError = err;
 						});
-						//libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
-						pageClientData.docDownloadID = undefined;
-
+						libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
 						return documentPath;
+					}).catch(err => {
+						Logger.error(err);
 					});
-			}
-
-			return promise.then(docPath => {
-				if (writeError) {
-					actionPath = '/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action';
 				}
-				pageProxy.setActionBinding({
-					'FileName': docPath,
-				});
-				
-				let actionPath = '/SmartInspections/Actions/Attachment_Open.action';
-				return pageProxy.executeAction(actionPath);
-			});
+				//E.O.A for UAT019
 
-		} else {
-			// The media is on the server. This server could be SAP backend or it could be cached on OData Offline Service on HCP.
-			// We need to download it.
-			/*
-			    Check state of media. If media download is already in progress, then prevent user from requesting
-			    media from server again. Multiple clicks from the user, send multiple requests for the same media 
-			    to the server, resulting in errors being thrown and the document still downloading successfully.
-			*/
-
-			let isDownloadInProgress = pageClientData.docDownloadID;
-
-			// If download is already in progress, ignore the click from user.
-			if (!isDownloadInProgress) {
-				// The media is on the server. This is the user's first request\click to download the media.
-
-				//Set internal media state to 'in progress'.
-				//libCommon.setStateVariable(sectionedTableProxy, docDownloadID, 'inProgress');
-				pageClientData.docDownloadID = 'inProgress';
-
-				//Set indicator icon on ObjectCell to be 'in progress' pic to tell user download of media is in progress.
-				const pressedItem = pageProxy.getPressedItem();
-				let objectTableSection;
-				sectionedTableProxy.getSections().forEach(function (key) {
-					if (key.getName() === 'AttachmentList') {
-						objectTableSection = key;
+				return promise.then(docPath => {
+					if (writeError) {
+						actionPath = '/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action';
 					}
-				});
+					pageProxy.setActionBinding({
+						'FileName': docPath,
+					});
+					let actionPath = '/SmartInspections/Actions/Attachment_Open.action';
+					return pageProxy.executeAction(actionPath);
+					//B.O.A for UAT019
+				}).catch(err => { Logger.error(err) });
+				//E.O.A for UAT019
 
-				objectTableSection.setIndicatorState('inProgress', pressedItem);
+			} else {
+				// The media is on the server. This server could be SAP backend or it could be cached on OData Offline Service on HCP.
+				// We need to download it.
+				/*
+					Check state of media. If media download is already in progress, then prevent user from requesting
+					media from server again. Multiple clicks from the user, send multiple requests for the same media 
+					to the server, resulting in errors being thrown and the document still downloading successfully.
+				*/
 
-				return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadStream.action')
-					.then((result) => {
-						//MDK OfflineOData.Download action returns a resoved Promise on download error. This bug is fixed in MDK 2.1.200.
-						if (result.data && result.data.search(/error/i)) {
+				//B.O.A for UAT019	
+				/*let isDownloadInProgress = pageClientData.docDownloadID;
+	
+				// If download is already in progress, ignore the click from user.
+				if (!isDownloadInProgress) {
+					// The media is on the server. This is the user's first request\click to download the media.
+	
+					//Set internal media state to 'in progress'.
+					//libCommon.setStateVariable(sectionedTableProxy, docDownloadID, 'inProgress');
+					pageClientData.docDownloadID = 'inProgress';
+	
+					//Set indicator icon on ObjectCell to be 'in progress' pic to tell user download of media is in progress.
+					const pressedItem = pageProxy.getPressedItem();
+					let objectTableSection;
+					sectionedTableProxy.getSections().forEach(function (key) {
+						if (key.getName() === 'AttachmentList') {
+							objectTableSection = key;
+						}
+					});
+	
+					objectTableSection.setIndicatorState('inProgress', pressedItem);
+	
+					return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadStream.action')
+						.then((result) => {
+							//MDK OfflineOData.Download action returns a resoved Promise on download error. This bug is fixed in MDK 2.1.200.
+							if (result.data && result.data.search(/error/i)) {
+								//libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
+								pageClientData.docDownloadID = undefined;
+								objectTableSection.setIndicatorState('toDownload', pressedItem);
+								//sectionedTableProxy.redraw();
+								return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
+							}
+							return Promise.resolve();
+						}, () => {
 							//libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
 							pageClientData.docDownloadID = undefined;
 							objectTableSection.setIndicatorState('toDownload', pressedItem);
 							//sectionedTableProxy.redraw();
 							return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
-						}
-						return Promise.resolve();
-					}, () => {
-						//libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
-						pageClientData.docDownloadID = undefined;
-						objectTableSection.setIndicatorState('toDownload', pressedItem);
-						//sectionedTableProxy.redraw();
-						return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
-					});
-			} else {
-				return Promise.resolve();
-			}
-		}
-	});
+						});
+				} else {
+					return Promise.resolve();
+				}*/
+				//E.O.A for UAT019
 
+				//B.O.A for UAT019
+				// The media is on the server. This server could be SAP backend or it could be cached on OData Offline Service on HCP.
+				// We need to download it.
+				/*
+					Check state of media. If media download is already in progress, then prevent user from requesting
+					media from server again. Multiple clicks from the user, send multiple requests for the same media 
+					to the server, resulting in errors being thrown and the document still downloading successfully.
+				*/
+				let isDownloadInProgress = libCommon.getStateVariable(sectionedTableProxy, docDownloadID);
+
+				// If download is already in progress, ignore the click from user.			
+				if (!isDownloadInProgress) {
+
+					// The media is on the server. This is the user's first request\click to download the media.
+					//Set internal media state to 'in progress'.
+					libCommon.setStateVariable(sectionedTableProxy, docDownloadID, 'inProgress');
+
+					//Set indicator icon on ObjectCell to be 'in progress' pic to tell user download of media is in progress.
+					const pressedItem = pageProxy.getPressedItem();
+					const objectTableSection = GetDocumentSection(sectionedTableProxy.getSections());
+					objectTableSection.setIndicatorState('inProgress', pressedItem);
+
+					return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadStream.action')
+						.then((result) => {
+							//MDK OfflineOData.Download action returns a resoved Promise on download error. This bug is fixed in MDK 2.1.200.
+							if (result.data && result.data.search(/error/i)) {
+								libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
+								objectTableSection.setIndicatorState('toDownload', pressedItem);
+								return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
+							}
+							return Promise.resolve();
+						}, () => {
+							libCommon.clearFromClientData(sectionedTableProxy, docDownloadID, undefined, true);
+							objectTableSection.setIndicatorState('toDownload', pressedItem);
+							return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_StreamsFailure.action');
+						});
+				} else {
+					return Promise.resolve();
+				}
+				//E.O.A for UAT019
+			}
+		});
+	}
 }

@@ -1,15 +1,31 @@
 //let fs = require('file-system');
+/*--------------------------------------------------------------------*
+* Change Tag    :  UAT019 - Altering the Attachment Review Logic After 
+							Uploading.
+*--------------------------------------------------------------------*/
+//B.O.A for UAT019
+import writeDocument from '../../SAPAssetManager/Rules/Documents/Save/DocumentSave';
+import	DocumentActionBinding from '../../SAPAssetManager/Rules/Documents/DocumentActionBinding';
+//E.O.A for UAT019
 
 export default function Attachment_SaveDownloaded(pageProxy) {
-	let fs = sectionedTableProxy.nativescript.fileSystemModule;//CF by RB
+//B.O.A for UAT019				
+	let actionBinding = DocumentActionBinding(pageProxy);		
+	let documentobject = actionBinding.Document ? actionBinding.Document : actionBinding.PRTDocument;
+	writeDocument(pageProxy,documentobject);
+}
+//E.O.A for UAT019		
+
+//B.O.A for UAT019	
+	/*let fs = sectionedTableProxy.nativescript.fileSystemModule;//CF by RB
 	let pageClientData = pageProxy.getClientData();
 	let actionBinding = pageProxy.getActionBinding();
 	const docDownloadID = actionBinding.DocumentId;
 	if (!actionBinding) {
 		actionBinding = pageProxy.getPendingDownload('AttachmentList');
-	}
+	}*/
 
-	if (actionBinding) {
+	/*if (actionBinding) {
 		let odataID = actionBinding['@odata.id'];
 		// Retrieving ID from the string
 		let start = odataID.indexOf('\'');
@@ -43,7 +59,9 @@ export default function Attachment_SaveDownloaded(pageProxy) {
 		
 		let actionPath = '/SAPAssetManager/Actions/Documents/DocumentOpen.action';
 		return pageProxy.executeAction(actionPath);*/
-	} else {
+	//}*/ 
+	//else {
 		//Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryDocuments.global').getValue(), 'Cannot write document');
-	}
-}
+	//}
+//E.O.A for UAT019	
+//}

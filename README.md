@@ -29,7 +29,7 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 11. T014  - 16-Mar-23 - RB - Hide Pass ALL when no Pending MIC
 12. T019  - 17-Mar-23 - RB - Hide Change Insp, Descope, Change EX when any MIC is descoped
 13. T024  - 23-Mar-23 - RB - Pass Count in Equipment View
-
+14. UAT019 - 29-Mar-23 - VN - Altering the Attachment Review Logic.
 
 ## Pages Change History
 ###### Page Name - [Change ID]
@@ -44,3 +44,5 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 9. DescopeTypeButton_SetEnabled.js [ T019 ]
 10. EXGroupButton_SetEnabled [ T019 ]
 11. TechnicalObjectDetailsListPage_PassFixFailCount.js [ T024 ]
+12. AttachmentList_DownloadOrOpen [ UAT019 ]
+13. Attachment_SaveDownloaded [ UAT019 ]
