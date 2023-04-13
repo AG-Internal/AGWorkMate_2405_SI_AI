@@ -1,5 +1,6 @@
 {
-	"CancelPendingActions": true,
+	"_Type": "Action.Type.ClosePage",
+	"OnSuccess": "/SmartInspections/Rules/SIEquipViewRefresh.js",
 	"DismissModal": "Action.Type.ClosePage.Canceled",
-	"_Type": "Action.Type.ClosePage"
+	"CancelPendingActions": true
 }
