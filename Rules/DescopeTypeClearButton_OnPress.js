@@ -33,6 +33,7 @@ export default function DescopeTypeClearButton_OnPress(clientAPI) {
 	}).then(Wait);
 
 	return latestPromise.then(function () {
-		return true;
+		//return true;
+		return clientAPI.executeAction("/SmartInspections/Actions/BringBackToScope_Done.action");
 	});
 }

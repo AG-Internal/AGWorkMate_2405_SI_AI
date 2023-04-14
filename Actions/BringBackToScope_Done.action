@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "BringBackToScope_Done"
+	},
+	"OnSuccess": "/SmartInspections/Rules/SIEquipViewRefresh.js",
+	"Message": "Action Completed"
+}
