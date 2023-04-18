@@ -803,7 +803,7 @@
 						},
                         {
 							"SimplePropertyCell": {
-								"Value": "/SmartInspections/Rules/SmartInspection_TechnicalObjectCount_His.js",
+								"Value": "/SmartInspections/Rules/SmartInspection_TechnicalObjectCount_His.rule.js",
                                 "DataSubscriptions": [
 									"InspectionCharacteristicDetailsSet",
 									"TechnicalObjectDetailsSet"
