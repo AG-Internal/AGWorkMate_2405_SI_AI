@@ -786,7 +786,7 @@
 								"_Name": "SectionSimplePropertyCell11",
 								"KeyName": "Smart Inspections",
 								"AccessoryType": "disclosureIndicator",
-								"Visible": "/SmartInspections/Rules/WOexistInSI.js",
+								"Visible": "/SmartInspections/Rules/WOexistInSI_Open.js",
 								"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsTabsViewPage.js"
 							}
 
@@ -799,6 +799,20 @@
 								"AccessoryType": "disclosureIndicator",
 								"Visible": "/SmartInspections/Rules/InspectionHistoryDetailsList_SetVisible.js",
 								"OnPress": "/SmartInspections/Rules/NavToInspectionHistoryDetailsList.js"
+							}
+						},
+                        {
+							"SimplePropertyCell": {
+								"Value": "/SmartInspections/Rules/SmartInspection_TechnicalObjectCount_His.js",
+                                "DataSubscriptions": [
+									"InspectionCharacteristicDetailsSet",
+									"TechnicalObjectDetailsSet"
+								],
+								"_Name": "SectionSimplePropertyCell13",
+								"KeyName": "Inspection History",
+								"AccessoryType": "disclosureIndicator",
+							    "Visible": "/SmartInspections/Rules/WOexistInSI_Closed.js",
+							    "OnPress": "/SmartInspections/Rules/NavToSmartInspectionsTabsViewPage.js"
 							}
 						}
                     ],
