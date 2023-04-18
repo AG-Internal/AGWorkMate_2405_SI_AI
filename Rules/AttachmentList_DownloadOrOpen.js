@@ -195,9 +195,16 @@ export default function AttachmentList_DownloadOrOpen(sectionedTableProxy) {
 
 					//Set indicator icon on ObjectCell to be 'in progress' pic to tell user download of media is in progress.
 					const pressedItem = pageProxy.getPressedItem();
-					const objectTableSection = GetDocumentSection(sectionedTableProxy.getSections());
+					//B.O.A for UAT019-2
+					//const objectTableSection = GetDocumentSection(sectionedTableProxy.getSections());
+					let objectTableSection;
+					sectionedTableProxy.getSections().forEach(function (key) {
+						if (key.getName() === 'AttachmentList') {
+							objectTableSection = key;
+						}
+					});
 					objectTableSection.setIndicatorState('inProgress', pressedItem);
-
+					//B.O.A for UAT019-2
 					return sectionedTableProxy.executeAction('/SmartInspections/Actions/AttachmentDownload_DownloadStream.action')
 						.then((result) => {
 							//MDK OfflineOData.Download action returns a resoved Promise on download error. This bug is fixed in MDK 2.1.200.
