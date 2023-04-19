@@ -111,6 +111,24 @@
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
 							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
+						},
+						{
+							"_Name": "SectionButton0",
+							"Title": "Clear All",
+							"TextAlignment": "Center",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/ClearAllButton_SetEnabled.js",
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/ClearAllButton_OnPress.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Clear All"
+								}
+							}
 						}
 					]
 				},

@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "ClearAllNoDataToSave_Message"
+	},
+	"Message": "No data was changed",
+	"NumberOfLines": 2,
+	"Duration": 3
+}

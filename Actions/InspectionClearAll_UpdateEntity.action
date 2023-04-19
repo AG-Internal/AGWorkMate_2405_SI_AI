@@ -1,0 +1,30 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "InspectionClearAll_UpdateEntity"
+	},
+	"Target": {
+		"Service": "/SmartInspections/Services/SAM.service",
+		"EntitySet": "InspectionCharacteristicDetailsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"IsAdhocAdded": "{IsAdhocAdded}",
+		"IsDescopeUpdated": "{IsDescopeUpdated}",
+		"DefectCode": "{DefectCode}",
+		"DefectCodeGroup": "{DefectCodeGroup}",
+		"FixedValuesResult": "{FixedValuesResult}",
+		"InspectionCharacteristicNumb": "{InspectionCharacteristicNumb}",
+		"InspectionSampleNumber": "{InspectionSampleNumber}",
+		"LongText": "{LongText}",
+		"MicDescopeType": "{MicDescopeType}",
+		"MicNumber": "{MicNumber}",
+		"OperationNumber": "{OperationNumber}",
+		"OrderNumber": "{OrderNumber}",
+		"Result": "{Result}",
+		"TechnicalObject": "{TechnicalObject}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	}
+}
