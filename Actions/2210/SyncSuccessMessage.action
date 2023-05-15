@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"OnSuccess": "/SAPAssetManager/Rules/DigitalSignature/DigitalSignatureCommit.js",
+	"Message": "$(L,sync_success)",
+	"Duration": 3,
+	"IsIconHidden": false,
+	"Animated": true,
+	"MaxNumberOfLines": 2
+}
