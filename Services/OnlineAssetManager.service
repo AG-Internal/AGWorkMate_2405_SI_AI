@@ -1,6 +1,6 @@
 {
 	"ServiceUrl": "/destinations/mobileservices",
-	"DestinationName": "DEST_SAM2205_ONLINE_PPROP",
+	"DestinationName": "DEST_SAM2210_ONLINE_PPROP",
 	"Headers": {
 		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"
 	},
