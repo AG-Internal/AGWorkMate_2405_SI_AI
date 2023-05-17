@@ -1,5 +1,5 @@
-import libCommon from './Common/CommonLibrary';
-import isAndroid from './Common/IsAndroid';
+import libCommon from '../Common/CommonLibrary';
+import isAndroid from '../Common/IsAndroid';
 
 export default function WorkOrderListViewIconImages(context) {
     let binding = context.getBindingObject();
