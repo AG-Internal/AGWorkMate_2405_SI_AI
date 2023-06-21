@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "FullDetailsToNONWMwoPage"
+	},
+	"PageToOpen": "/SmartInspections/Pages/2210/NON_WM/WorkOrderDetails.page"
+}

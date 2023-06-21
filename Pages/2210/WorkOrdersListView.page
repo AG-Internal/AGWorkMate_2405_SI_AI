@@ -1,0 +1,109 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"EntitySet": "MyWorkOrderHeaders",
+						"QueryOptions": "/SmartInspections/Rules/2210/SI/Inspections/InspectionsSIOrderQuery.js"
+					},
+					"_Name": "WorkOrdersListSection",
+					"EmptySection": {
+						"Caption": "/SAPAssetManager/Rules/WorkOrders/NoWorkOrdersCaption.js",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true,
+							"Items": "/SAPAssetManager/Rules/ContextMenuTable.js",
+							"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+							"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+						},
+						"Title": "{OrderDescription}",
+						"Subhead": "{{#Property:OrderId}} - {{#Property:OrderType}}",
+						"Footnote": "/SAPAssetManager/Rules/DateTime/DueDate.js",
+						"Description": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewDescription.js",
+						"StatusText": "#Property:WOPriority/#Property:PriorityDescription",
+						"SubstatusText": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewFormat.js",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "disclosureIndicator",
+						"Icons": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewIconImages.js",
+						"Tags": [],
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrderDetailsNav.js",
+						"Styles": {
+							"StatusText": "/SAPAssetManager/Rules/Priority/WOPriorityStatusStyle.js",
+							"SubstatusText": "/SAPAssetManager/Rules/Supervisor/Reject/RejectedStatusStyle.js",
+							"BackgroundColor": "ObjectCellBG1"
+						}
+					},
+					"Search": {
+						"Enabled": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+	"_Name": "WorkOrdersListViewPage",
+	"Caption": "/SmartInspections/Rules/2210/WorkOrderListView/SIWorkOrderListViewCaption.js",
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "Sync",
+				"Caption": "Sync",
+				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
+				"Position": "right",
+				"IsIconCircular": false,
+				"IconText": "SyncIcon",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+			},
+			{
+				"Text": "$(L,add)",
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Add",
+				"Position": "right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/IsWorkOrderAllowedToCreateUpdate.js",
+				"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+				"Position": "right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWO.js",
+				"OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action"
+			},
+			{
+				"Text": "$(L,filter)",
+				"_Name": "ActionBarItem2",
+				"Caption": "",
+				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png)",
+				"Position": "right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewFilterVisible.js",
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

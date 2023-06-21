@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "SIInspectionToWOList"
+	},
+	"PageToOpen": "/SmartInspections/Pages/2210/WorkOrdersListView.page"
+}

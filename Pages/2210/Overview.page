@@ -1,0 +1,311 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "OverviewPageSectionedTable",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"DataSubscriptions": [
+						"WorkOrderHeaderSet",
+						"/SAPAssetManager/Rules/Common/DataSubscriptions.js"
+					],
+					"_Name": "Cards",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Cards": [
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard0",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/WorkOrderTitle.js",
+							"DetailImage": "/SAPAssetManager/Images/orders.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor1",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG1"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard3",
+							"Visible": true,
+							"Title": "/SmartInspections/Rules/2210/SI/OVPCardTitles/InspectionsTitleCount.js",
+							"DetailImage": "/SAPAssetManager/Images/stocksearch.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SmartInspections/Actions/WorkMate/SIInspectionToWOList.action",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor2",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG2"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard4",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/CalibrationsTitle.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/Calibration.png",
+							"DetailImageIsCircular": true,
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor3",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG3"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard2",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/NotificationsTitle.js",
+							"DetailImage": "/SAPAssetManager/Images/notifications.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Actions/Notifications/NotificationsListViewNav.action",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor4",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG4"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard5",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/FunctionalLocationTitle.js",
+							"DetailImage": "/SAPAssetManager/Images/functionallocations.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationListViewNav.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor5",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG5"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard6",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/EquipmentTitle.js",
+							"DetailImage": "/SAPAssetManager/Images/equipment.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentListViewNav.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor6",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG6"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard7",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/RemindersCount.js",
+							"DetailImage": "/SAPAssetManager/Images/reminders.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Actions/Reminders/RemindersListViewNav.action",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTextColor7",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG7"
+							}
+						}
+					],
+					"Layout": {
+						"LayoutType": "Vertical"
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"Target": {
+						"Service": "/SAPAssetManagerExt/Services/AssetManager.service",
+						"EntitySet": "MyWorkOrderHeaders",
+						"QueryOptions": "$expand=OrderMobileStatus_Nav&$filter=Priority eq '1' or  Priority eq '2'&$orderby=Priority,DueDate,OrderId"
+					},
+					"_Name": "SectionObjectCardCollection0",
+					"Header": {
+						"Styles": {
+							"Caption": "ovpV2CardCaptionText"
+						},
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": false,
+						"Caption": "$(L,high_workorders)"
+					},
+					"Footer": {
+						"_Name": "SectionFooter0",
+						"Caption": "See All",
+						"AttributeLabel": "/SAPAssetManager/Rules/WorkOrders/WorkOrderHighPriorityOrdersCount.js",
+						"AccessoryType": "disclosureIndicator",
+						"FooterStyle": "title",
+						"Visible": true,
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersHighPriorityListView.js",
+						"UseBottomPadding": false
+					},
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "$(L,no_high_text)",
+						"FooterVisible": false
+					},
+					"MaxItemCount": 2,
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"Card": {
+						"Visible": true,
+						"Title": "#Property:OrderDescription",
+						"Subhead": "{OrderId}",
+						"Footnote": "/SAPAssetManager/Rules/DateTime/DueDate.js",
+						"DetailImageIsCircular": false,
+						"StatusText": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewFormat.js",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrderHighPriorityDetailsNav.js",
+						"OverflowButtons": [],
+						"PrimaryAction": {
+							"Style": "",
+							"Title": "Primary",
+							"Visible": false
+						},
+						"SecondaryAction": {
+							"Style": "",
+							"Title": "Secondary",
+							"Visible": false
+						},
+						"Styles": {
+							"BackgroundColor": "ovpV2CardBG"
+						},
+						"_Type": "Control.Type.ObjectCard"
+					},
+					"Layout": {
+						"LayoutType": "HorizontalScroll"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "OverviewPage",
+	"Caption": "$(L,ag_app_title)",
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageReturning.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "Sync",
+				"Caption": "Sync",
+				"Icon": "$(PLT, /SAPAssetManager/Images/sync.dark.pdf, /SAPAssetManager/Images/sync.android.dark.png)",
+				"Position": "right",
+				"IsIconCircular": false,
+				"IconText": "SyncIcon",
+				"Visible": "/SAPAssetManager/Rules/Sync/IsAutoSyncNotInProgress.js",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+			},
+			{
+				"_Name": "AutoSync",
+				"Caption": "AutoSync",
+				"Icon": "$(PLT, /SAPAssetManager/Images/auto-sync.dark.pdf, /SAPAssetManager/Images/auto-sync.android.dark.png)",
+				"Position": "right",
+				"IsIconCircular": false,
+				"IconText": "SyncIcon",
+				"Visible": "/SAPAssetManager/Rules/Sync/IsAutoSyncInProgress.js",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

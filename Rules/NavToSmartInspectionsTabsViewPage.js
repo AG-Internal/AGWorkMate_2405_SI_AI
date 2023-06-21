@@ -1,7 +1,8 @@
 export default function NavToSmartInspectionsTabsViewPage(clientAPI) {
 	let pageProxy = clientAPI.getPageProxy();
 	let pageClientData = pageProxy.getClientData();
-	var binding = clientAPI.getPageProxy().getActionBinding();
+	//var binding = clientAPI.getPageProxy().getActionBinding();
+	var binding = clientAPI.getPageProxy().binding;
 	var orderNumber = binding.OrderId;
 	var query = "$filter=OrderNumber eq '" + orderNumber + "'";
 
