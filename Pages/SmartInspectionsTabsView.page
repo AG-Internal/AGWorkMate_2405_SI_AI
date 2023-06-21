@@ -16,6 +16,9 @@
 							"EntitySet": "WorkOrderHeaderSet",
 							"QueryOptions": "/SmartInspections/Rules/SIentryWO.js",
 							"Service": "/SmartInspections/Services/SAM.service"
+						},
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
 						}
 					},
 					"_Type": "Section.Type.ObjectHeader",

@@ -49,6 +49,9 @@
 							"Service": "/SmartInspections/Services/SAM.service",
 							"EntitySet": "/SmartInspections/Rules/ResultsRecording_EntitySet.js",
 							"QueryOptions": "/SmartInspections/Rules/ResultsRecording_QueryOptions.js"
+						},
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
 						}
 					},
 					"Visible": true,

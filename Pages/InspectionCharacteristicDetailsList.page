@@ -19,6 +19,9 @@
 							"EntitySet": "TechnicalObjectDetailsSet",
 							"QueryOptions": "$filter=OrderNumber eq '{{#Property:OrderNumber}}' and TechnicalObject eq '{{#Property:TechnicalObject}}'",
 							"Service": "/SmartInspections/Services/SAM.service"
+						},
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
 						}
 					},
 					"_Type": "Section.Type.ObjectHeader",
@@ -43,85 +46,99 @@
 						{
 							"_Name": "ButtonDescope",
 							"Title": "Descope",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js"
 						},
 						{
 							"_Name": "ButtonScopeBack",
 							"Title": "Bring Back To Scope",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeClearButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js"
 						},
 						{
 							"_Name": "ButtonChangeInsp",
 							"Title": "Change Inspection Type",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/NavToInspectionTypeDetailsList.js"
 						},
 						{
 							"_Name": "ButtonEXGroup",
 							"Title": "Change EX Group",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/EXGroupButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Actions/NavToExGroupList.action"
 						},
 						{
 							"_Name": "ButtonClassification",
 							"Title": "Classification",
-							"TextAlignment": "Right",
 							"Alignment": "Right",
 							"ButtonType": "Primary",
 							"Semantic": "Normal",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/NavToClassifications.js"
 						},
 						{
 							"_Name": "ButtonPassAll",
 							"Title": "Pass All",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
 						},
 						{
 							"_Name": "SectionButton0",
 							"Title": "Clear All",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/ClearAllButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/ClearAllButton_OnPress.js",
 								"UserInteraction": {

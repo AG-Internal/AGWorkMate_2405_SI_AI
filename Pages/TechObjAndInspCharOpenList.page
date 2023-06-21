@@ -30,7 +30,6 @@
 						"Subhead": "{MicShortText}",
 						"Footnote": "/SmartInspections/Rules/TechObjAndInspCharListPage_InspectionType.js",
 						"Description": "{TechnicalObjectDescription}",
-						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
 						"AccessoryButtonIcon": "/SmartInspections/Rules/InstructionsAccessoryIcon.js",
@@ -39,7 +38,8 @@
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
 						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
-							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js"
+							"Subhead": "/SmartInspections/Rules/TechObjAndInspCharListPage_MicDescriptionColor.rule.js",
+							"BackgroundColor": "ObjectCellBG1"
 						}
 					},
 					"Search": {
