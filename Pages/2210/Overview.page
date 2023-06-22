@@ -27,10 +27,10 @@
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCard0",
 							"Visible": true,
-							"Title": "/SAPAssetManagerExt/Rules/2210/Overview/WorkOrderTitle.js",
+							"Title": "/SmartInspections/Rules/2210/SI/OVPCardTitles/WorkOrdersCount.js",
 							"DetailImage": "/SAPAssetManager/Images/orders.android.dark.png",
 							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js",
+							"OnPress": "/SmartInspections/Rules/2210/SI/OVPCardTitles/onPressWorkOrders.js",
 							"OverflowButtons": [],
 							"PrimaryAction": {
 								"Style": "",
@@ -55,7 +55,7 @@
 							"Title": "/SmartInspections/Rules/2210/SI/OVPCardTitles/InspectionsTitleCount.js",
 							"DetailImage": "/SAPAssetManager/Images/stocksearch.android.dark.png",
 							"DetailImageIsCircular": true,
-							"OnPress": "/SmartInspections/Actions/WorkMate/SIInspectionToWOList.action",
+							"OnPress": "/SmartInspections/Rules/2210/SI/OVPCardTitles/onPressInspections.js",
 							"OverflowButtons": [],
 							"PrimaryAction": {
 								"Style": "",

@@ -61,8 +61,6 @@
 	"_Name": "WorkOrdersListViewPage",
 	"Caption": "/SmartInspections/Rules/2210/WorkOrderListView/SIWorkOrderListViewCaption.js",
 	"PrefersLargeCaption": true,
-	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
-	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
 	"ActionBar": {
 		"Items": [
 			{

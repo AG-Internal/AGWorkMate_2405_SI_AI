@@ -45,7 +45,10 @@ export default function DataSubscriptions(context) {
                 'PMMobileStatuses', 
                 'MyWorkOrderHeaderLongTexts',
                 'UserTimeEntries',
+                'MyWorkOrderHeaders',
                 '/SAPAssetManager/Services/AssetManager.service',
+                'WorkOrderHeaderSet',
+                '/SmartInspections/Services/SAM.service',
             ];
         case 'MeterDetailsPage', 'PeriodicMeterDetailsPage':
             if (context.binding.ISUProcess !== 'INSTALL') {
