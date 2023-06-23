@@ -20,9 +20,10 @@
 							"_Name": "OverviewBlank",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableIfNoPersona.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -33,9 +34,10 @@
 							"_Name": "OverviewMT",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMaintenanceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -46,9 +48,10 @@
 							"_Name": "OverviewIC",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -59,9 +62,10 @@
 							"_Name": "OverviewST",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableFieldServiceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -72,9 +76,10 @@
 							"_Name": "Download",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -85,9 +90,10 @@
 							"_Name": "AddGoodsIssue",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -98,9 +104,10 @@
 							"_Name": "AddGoodsReceipt",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -111,9 +118,10 @@
 							"_Name": "AddStockTransfer",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -124,9 +132,10 @@
 							"_Name": "AddPhysicalInventyry",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -137,9 +146,10 @@
 							"_Name": "StockLookup",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableInventoryClerk.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -150,9 +160,10 @@
 							"_Name": "VehicleStockLookup",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableStockLookUp.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -163,9 +174,10 @@
 							"_Name": "Map",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/Maps/IsMTGISEnabled.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -176,9 +188,10 @@
 							"_Name": "FSMMap",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/Maps/IsFSMGISEnabled.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -189,9 +202,10 @@
 							"_Name": "SubOperationsList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/WorkOrders/SubOperations/IsSubOperationLevelAssigmentType.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -202,22 +216,38 @@
 							"_Name": "OperationsList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/IsOperationLevelAssigmentType.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
 						{
-							"Title": "/SAPAssetManager/Rules/SideDrawer/SideDrawerWorkOrdersCount.js",
+							"Title": "/SmartInspections/Rules/2210/SI/OVPCardTitles/WorkOrdersCount.js",
 							"Image": "$(PLT,/SAPAssetManager/Images/orders.png,/SAPAssetManager/Images/orders.android.png)",
-							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js",
+							"OnPress": "/SmartInspections/Rules/2210/SI/OVPCardTitles/onPressWorkOrders.js",
 							"_Name": "WorkOrderList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMaintenanceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
+						},
+						{
+							"Title": "/SmartInspections/Rules/2210/SI/OVPCardTitles/InspectionsTitleCount.js",
+							"Image": "/SAPAssetManager/Images/stocksearch.android.light.png",
+							"OnPress": "/SmartInspections/Rules/2210/SI/OVPCardTitles/onPressInspections.js",
+							"_Name": "Inspections",
+							"ResetIfPressedWhenActive": true,
+							"Visible": true,
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -228,9 +258,10 @@
 							"_Name": "ServiceOrderList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableFieldServiceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -241,9 +272,10 @@
 							"_Name": "ExtensesList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/ServiceOrders/Expenses/ExpensesVisible.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -254,9 +286,10 @@
 							"_Name": "ServiceNotificationList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableFieldServiceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -267,9 +300,10 @@
 							"_Name": "NotificationList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMaintenanceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -280,9 +314,10 @@
 							"_Name": "EquipmentList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMultipleTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -293,9 +328,10 @@
 							"_Name": "FunctionalLocationList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMultipleTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -306,9 +342,10 @@
 							"_Name": "ReminderList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMultipleTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -319,9 +356,10 @@
 							"_Name": "TimeCaptureSection",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableMaintenanceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -332,9 +370,10 @@
 							"_Name": "TimeCaptureSectionFST",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnableFieldServiceTechnician.js",
+							"TextAlignment": "left",
 							"Styles": {
-								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
 								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
 							}
 						},
@@ -344,7 +383,9 @@
 							"OnPress": "/SAPAssetManager/Actions/WorkOrders/InspectionLot/InspectionLotListViewNav.action",
 							"_Name": "InspectionLotList",
 							"ResetIfPressedWhenActive": true,
-							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnabledChecklistSideMenu.js"
+							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnabledChecklistSideMenu.js",
+							"TextAlignment": "left",
+							"Styles": {}
 						},
 						{
 							"Title": "/SAPAssetManager/Rules/Forms/FSM/TotalFormInstancesCountSideBarCaption.js",
@@ -352,7 +393,9 @@
 							"OnPress": "/SAPAssetManager/Actions/Forms/FSM/FSMFormsInstancesListViewNav.action",
 							"_Name": "SmartFormInstanceList",
 							"ResetIfPressedWhenActive": true,
-							"Visible": "/SAPAssetManager/Rules/Forms/FSM/FSMSmartFormsFeatureIsEnabled.js"
+							"Visible": "/SAPAssetManager/Rules/Forms/FSM/FSMSmartFormsFeatureIsEnabled.js",
+							"TextAlignment": "left",
+							"Styles": {}
 						},
 						{
 							"Title": "$(L,crew)",
@@ -360,7 +403,9 @@
 							"OnPress": "/SAPAssetManager/Rules/Crew/CrewSummaryNavWrapper.js",
 							"_Name": "Crew",
 							"ResetIfPressedWhenActive": true,
-							"Visible": "/SAPAssetManager/Rules/ComponentsEnablement/IsCrewComponentEnabled.js"
+							"Visible": "/SAPAssetManager/Rules/ComponentsEnablement/IsCrewComponentEnabled.js",
+							"TextAlignment": "left",
+							"Styles": {}
 						}
 					],
 					"Visible": true,
@@ -419,8 +464,7 @@
 							"_Name": "Sync",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						},
 						{
 							"Title": "Blue Theme",
@@ -429,8 +473,7 @@
 							"_Name": "_BlueTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						},
 						{
 							"Title": "Red Theme",
@@ -439,8 +482,7 @@
 							"_Name": "_RedTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						},
 						{
 							"Title": "Green Theme",
@@ -449,8 +491,7 @@
 							"_Name": "_GreenTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						}
 					],
 					"Visible": true,
@@ -461,7 +502,7 @@
 			"_Type": "Control.Type.SideDrawer",
 			"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
 			"_Name": "SideDrawer0",
-			"DrawerButton": "$(PLT,/SAPAssetManager/Images/sidemenu.pdf,/SAPAssetManager/Images/sidemenu.android.png)",
+			"DrawerButton": "/SAPAssetManagerExt/Images/AG.png",
 			"AlwaysShowDrawerButton": false,
 			"ClearHistory": false,
 			"Styles": {

@@ -64,6 +64,15 @@
 	"ActionBar": {
 		"Items": [
 			{
+				"_Name": "ActionBarItem3",
+				"Caption": "Go to Home",
+				"Icon": "/SAPAssetManager/Images/overview.light.png",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SAPAssetManagerExt/Actions/2210/HomeNav.action"
+			},
+			{
 				"_Name": "Sync",
 				"Caption": "Sync",
 				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
