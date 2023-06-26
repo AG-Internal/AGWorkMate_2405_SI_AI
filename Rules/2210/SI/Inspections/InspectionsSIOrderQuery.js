@@ -30,7 +30,7 @@ export default function InspectionsSIOrderQuery(clientAPI) {
                     if (appClientData.triggeredFrom === "WORK_ORDERS") {
                         //fetching only the orders other than the SI Orders:    
                         sWoListODataQuery = "$filter=OrderId ne '{0}'";
-                    } else if(appClientData.triggeredFrom === "INSPECTIONS") {
+                    } else if (appClientData.triggeredFrom === "INSPECTIONS") {
                         //fetching only the SI Orders:    
                         sWoListODataQuery = "$filter=OrderId eq '{0}'";
                     }
@@ -43,7 +43,7 @@ export default function InspectionsSIOrderQuery(clientAPI) {
                         if (appClientData.triggeredFrom === "WORK_ORDERS") {
                             //fetching only the orders other than the SI Orders:    
                             sWoListODataQuery = "$filter=OrderId ne '{0}'";
-                        } else if(appClientData.triggeredFrom === "INSPECTIONS") {
+                        } else if (appClientData.triggeredFrom === "INSPECTIONS") {
                             //fetching only the SI Orders:    
                             sWoListODataQuery = "$filter=OrderId eq '{0}'";
                         }
@@ -57,7 +57,7 @@ export default function InspectionsSIOrderQuery(clientAPI) {
                         if (appClientData.triggeredFrom === "WORK_ORDERS") {
                             //fetching only the orders other than the SI Orders:    
                             sWoAdditionalOrd = " and OrderId ne '{0}'";
-                        } else if(appClientData.triggeredFrom === "INSPECTIONS") {
+                        } else if (appClientData.triggeredFrom === "INSPECTIONS") {
                             //fetching only the SI Orders:    
                             sWoAdditionalOrd = " or OrderId eq '{0}'";
                         }
@@ -68,14 +68,18 @@ export default function InspectionsSIOrderQuery(clientAPI) {
 
                 }
             });
-        } else { //When no SI WO present:            
-            sWoListODataQuery = "$filter=OrderId eq '1234564'";
+        } else { //When no SI WO present:     
+            if (appClientData.triggeredFrom === "WORK_ORDERS") {
+                sWoListODataQuery = "$filter=OrderId ne '1234564'";
+            } else if (appClientData.triggeredFrom === "INSPECTIONS") {
+                sWoListODataQuery = "$filter=OrderId eq '1234564'";
+            }
         }
 
         //Assigning to PageClient Data: Not required as of now
         //pageClientData.sWoListODataQuery = sWoListODataQuery;
         //pageClientData.aSiOrders = aSiOrders;
-        
+
         return sWoListODataQuery;
     });
 }
