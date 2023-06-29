@@ -4,6 +4,7 @@ Changes: EX Related Logic
 /*--------------------------------------------------------------------*
 * Change Tag    :  D062 - Catalog Profile for ADHOC
 *--------------------------------------------------------------------*/
+/**Change Tag : INC00073262-RT-PLANT - Use both MIC plant & MIC Number or MIC OBJKEY while filtering the MICs*/
 function ExecuteTechObjCreateEntity(pageProxy, binding) {
 	pageProxy.setActionBinding(binding);
 	//Must return the promised returned by executeAction to keep the chain alive.
@@ -104,7 +105,10 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 
 	return Promise.all([internalTechObjPromise, oEXGroupListPromise /*++SIV2203*/]).then(function (counts) {
 
-		var internalInspCharQuery = "$filter=MicPlant eq '" + maintenancePlant + "' and IsMic eq true";
+		//	var internalInspCharQuery = "$filter=MicPlant eq '" + maintenancePlant + "' and IsMic eq true";"-- for INC00073262-RT-PLANT
+		//B.O.A for INC00073262-RT-PLANT
+		var internalInspCharQuery = "$filter=(MicPlant eq '" + maintenancePlant + "' or MicPlant eq '" + planningPlant + "') and IsMic eq true";
+		//E.O.A for INC00073262-RT-PLANT
 		var internalInspCharPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'InternalCharacteristicDetailsSet', [],
 			internalInspCharQuery).then(
 				function (results) {
@@ -126,17 +130,22 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 
 		return Promise.all([internalInspCharPromise]).then(function (counts) {
 
-			var inspCharMastrQueryOptions = "$filter=Plant eq '" + maintenancePlant + "'";
+			//	var inspCharMastrQueryOptions = "$filter=Plant eq '" + maintenancePlant + "'";//-- for INC00073262-RT-PLANT
+			//B.O.A for INC00073262-RT-PLANT
+			var inspCharMastrQueryOptions = "$filter=Plant eq '" + maintenancePlant + "' or Plant eq '" + planningPlant + "'";
+			//E.O.A for INC00073262-RT-PLANT
 			var inspCharMasterPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'InspectionCharacteristicMasterSet', [],
 				inspCharMastrQueryOptions).then(
 					function (results) {
 						var micProposed = [];
 						var micTLOnly = [];
 						var micNumbersProposed = [];
+						var aMicObjectKeysProposed = [];//++ for INC00073262-RT-PLANT
 						var micNumbersTL = [];
 						if (results && results.length > 0) {
 							results.forEach(function (value) {
-								if (value.Plant === maintenancePlant && value.IsProposed === true) {
+								//if (value.Plant === maintenancePlant && value.IsProposed === true) { //-- for INC00073262-RT-PLANT
+								if ((value.Plant === maintenancePlant || value.Plant === planningPlant) && value.IsProposed === true) { // ++ for INC00073262-RT-PLANT
 									var index = pageClientData.ObjectKeys.indexOf(value.ObjectKey);
 									if (pageClientData.ObjectKeys.indexOf(value.ObjectKey) !== -1) {
 										if (pageClientData.CharacteristicValueTechObj.includes(pageClientData.InternalCharInspChar[index].CharacteristicValue)) {
@@ -145,6 +154,7 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 											value.AddInWoSnap = true;
 											micProposed.push(value);
 											micNumbersProposed.push(value.MicNumber);
+											aMicObjectKeysProposed.push(value.ObjectKey);//++ for INC00073262-RT-PLANT
 										}
 									}
 								}
@@ -153,7 +163,7 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 							results.forEach(function (value) {
 								if (value.InspectionLotNumber === inspectionLot && value.UnplannedChar === '' && value.NodeNumber === adHocNodeNumber) {
 									var index = micNumbersProposed.indexOf(value.MicNumber);
-
+									index = aMicObjectKeysProposed.indexOf(value.ObjectKey);//++ for INC00073262-RT-PLANT
 									if (micNumbersProposed.indexOf(value.MicNumber) !== -1) {
 										micProposed[index] = value;
 										micProposed[index].IsExisting = true;
@@ -206,10 +216,9 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 									for (var i = 0; i < pageClientData.MicUpdate.length; i++) {
 										if (pageClientData.MicUpdate[i].IsExisting === true) {
 											results.forEach(function (value) {
-												if (value.InspectionLotNumber === inspectionLot && value.MicNumber === pageClientData.MicUpdate[i].MicNumber &&
-													value
-														.Version ===
-													pageClientData.MicUpdate[i].Version) {
+												if (value.InspectionLotNumber === inspectionLot && value.MicNumber === pageClientData.MicUpdate[i].MicNumber 
+													&& value.MicPlant === pageClientData.MicUpdate[i].MicPlant //++ for INC00073262-RT-PLANT
+													&& value.Version === pageClientData.MicUpdate[i].Version ) {
 													pageClientData.MicUpdate[i].CharacteristicValue1 = value.CharacteristicValue1;
 													pageClientData.MicUpdate[i].CharacteristicValue1Desc = value.CharacteristicValue1Desc;
 													pageClientData.MicUpdate[i].CharacteristicValue2 = value.CharacteristicValue2;

@@ -6,6 +6,7 @@ New Rule
 4. Update Workorder Snapshot 
 **** Important Flags : AddInWoSnap , DeleteFromWoSnap , EXCallMode , IsExisting, IsUpdReq , IsAdhocAdded
  */
+/**Change Tag : INC00073262-RT-PLANT - Use both MIC plant & MIC Number or MIC OBJKEY while filtering the MICs*/
 function Wait() {
 	//Resolves after 1 s
 	return new Promise(r => setTimeout(r, 1));
@@ -168,6 +169,7 @@ export default function EXGroup_CreateInsp(clientAPI) {
 		//Prepare Logic
 		var aMicProposed = [];
 		var aMicNumbersProposed = [];
+		var aMicObjectKeysProposed = [];//++ for INC00073262-RT-PLANT
 		var aMicNumbersTL = [];
 		var aMicTLOnly = [];
 
@@ -184,6 +186,7 @@ export default function EXGroup_CreateInsp(clientAPI) {
 					//Push to arrays
 					aMicProposed.push(oMicLine);
 					aMicNumbersProposed.push(oMicLine.MicNumber);
+					aMicObjectKeysProposed.push(oMicLine.ObjectKey);//++ for INC00073262-RT-PLANT
 				}
 			}
 		}); // forEach 
@@ -198,6 +201,7 @@ export default function EXGroup_CreateInsp(clientAPI) {
 					//do the Logic - see if it is task list 
 					//	Check if the MIC in TL is already in Proposed List
 					var indexMicProposed = aMicNumbersProposed.indexOf(oMicLine.MicNumber);
+					indexMicProposed = aMicObjectKeysProposed.indexOf(oMicLine.ObjectKey);//++ for INC00073262-RT-PLANT
 					//Scenario - 1 - Proposed MIC is already in TL
 					if (indexMicProposed >= 0) {
 						//Use the Valuses from TL
