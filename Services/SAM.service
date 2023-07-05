@@ -1,5 +1,10 @@
 {
 	"DestinationName": "SAP_AGC_SI_OData",
-	"OfflineEnabled": true,
-	"SourceType": "Mobile"
+	"LanguageURLParam": "sap-language",
+	"Headers": {
+		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"
+	},
+	"OfflineEnabled": false,
+	"SourceType": "Mobile",
+	"RestService": true
 }
