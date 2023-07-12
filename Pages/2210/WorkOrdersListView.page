@@ -66,7 +66,7 @@
 			{
 				"_Name": "ActionBarItem3",
 				"Caption": "Go to Home",
-				"Icon": "/SAPAssetManager/Images/overview.light.png",
+				"Icon": "$(PLT,/SAPAssetManagerExt/Images/overview.dark.pdf,/SAPAssetManager/Images/overview.light.png)",
 				"Position": "Right",
 				"IsIconCircular": false,
 				"Visible": true,
@@ -76,7 +76,7 @@
 				"_Name": "Sync",
 				"Caption": "Sync",
 				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
-				"Position": "right",
+				"Position": "Right",
 				"IsIconCircular": false,
 				"IconText": "SyncIcon",
 				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
@@ -90,16 +90,17 @@
 				"IsIconCircular": false,
 				"Visible": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/IsWorkOrderAllowedToCreateUpdate.js",
 				"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
-			},
+			},			
 			{
-				"_Name": "ActionBarItem1",
-				"Caption": "",
-				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
-				"Position": "right",
-				"IsIconCircular": false,
-				"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWO.js",
-				"OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action"
-			},
+                "_Name": "ActionBarItem1",
+                "Caption": "",
+                "Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+                "Position": "right",
+                "IsIconCircular": false,
+                "Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWO.js",
+                "OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action"
+
+            },
 			{
 				"Text": "$(L,filter)",
 				"_Name": "ActionBarItem2",

@@ -2,7 +2,13 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
+import libCom from '../../../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
+
 export default function onPressWorkOrders(clientAPI) {
+    libCom.setStateVariable(clientAPI, 'WorkOrderListFilter', 'ALL_JOBS');
+    libCom.setStateVariable(clientAPI, 'WORKORDER_FILTER', '$filter=');
+    libCom.setStateVariable(clientAPI,'FromOperationsList', false);
+
     let pageProxy = clientAPI.getPageProxy();
     let appClientData = pageProxy.getAppClientData();
 

@@ -14,7 +14,6 @@
 					},
 					"_Type": "Section.Type.ObjectCardCollection",
 					"DataSubscriptions": [
-						"WorkOrderHeaderSet",
 						"/SAPAssetManager/Rules/Common/DataSubscriptions.js"
 					],
 					"_Name": "Cards",
@@ -288,7 +287,7 @@
 			{
 				"_Name": "Sync",
 				"Caption": "Sync",
-				"Icon": "$(PLT, /SAPAssetManager/Images/sync.dark.pdf, /SAPAssetManager/Images/sync.android.dark.png)",
+				"Icon": "$(PLT, /SAPAssetManagerExt/Images/sync.dark.pdf, /SAPAssetManager/Images/sync.android.dark.png)",
 				"Position": "right",
 				"IsIconCircular": false,
 				"IconText": "SyncIcon",
@@ -298,7 +297,7 @@
 			{
 				"_Name": "AutoSync",
 				"Caption": "AutoSync",
-				"Icon": "$(PLT, /SAPAssetManager/Images/auto-sync.dark.pdf, /SAPAssetManager/Images/auto-sync.android.dark.png)",
+				"Icon": "$(PLT, /SAPAssetManagerExt/Images/auto-sync.dark.pdf, /SAPAssetManager/Images/auto-sync.android.dark.png)",
 				"Position": "right",
 				"IsIconCircular": false,
 				"IconText": "SyncIcon",

@@ -12,4 +12,10 @@ export default function SIApplicationAfterStartUp(clientAPI) {
     let sTheme = clientAPI.getTheme();
     setTheme.setThemeByName(clientAPI, sTheme);
 
+    //Getting the OData Query for the STD Service:
+    let pageProxy = clientAPI.getPageProxy();
+    let appClientData = pageProxy.getAppClientData();
+
+    appClientData.sSIWoCardTitleIntialized = true;
+
 }

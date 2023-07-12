@@ -23,25 +23,29 @@
 						{
 							"_Name": "saveAllButton",
 							"Title": "Save ALL",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveAllValidations.js"
 						},
 						{
 							"_Name": "SaveSelButton",
 							"Title": "Save SELECTED",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveSelectedValidations.js"
 						},
 						{
@@ -51,13 +55,15 @@
 							],
 							"_Name": "CloseButton",
 							"Title": "CLOSE",
-							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseButtonEnable.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseOrder.js"
 						}
 					]
@@ -89,8 +95,6 @@
 						"Subhead": "{TechnicalObject}",
 						"Footnote": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PassFixFailCount.rule.js",
 						"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingCount.rule.js",
-						"DetailImage": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SelectionImage.js",
-						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
 						"Tags": [],
