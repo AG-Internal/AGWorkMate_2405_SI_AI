@@ -16,7 +16,7 @@ import prettyPrint from '../../../SAPAssetManager/Rules/Classification/Character
  * @param {*} isLAMQuery Has this been called from the LAM screen?
  * @returns 
  */
-export default function CharacteristicDisplayValue(context, withUOM=true, isLAMQuery=false) {
+export default function CharacteristicDisplayValue(context, withUOM = true, isLAMQuery = false) {
     var charValues = [];
     let property;
 
@@ -26,7 +26,8 @@ export default function CharacteristicDisplayValue(context, withUOM=true, isLAMQ
         property = context.binding.Characteristic.CharId;
     }
     if (parentEntityType(context) === 'Equipments') {
-        return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$filter=EquipId eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.EquipId + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,EquipId').then(function (results) {
+        //return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$filter=EquipId eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.EquipId + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,EquipId').then(function (results) {
+        return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$expand=Characteristic&$filter=EquipId eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.EquipId + '\' and CharId eq \'' + property + '\'&$orderby=CharId,EquipId,CharValDesc asc,CharValFrom asc').then(function (results) {
             for (var i = 0; i < results.length; i++) {
                 charValues.push(charValue(context, results.getItem(i), withUOM));
             }
@@ -36,7 +37,8 @@ export default function CharacteristicDisplayValue(context, withUOM=true, isLAMQ
             return charValues;
         });
     } else if (parentEntityType(context) === 'FunctionalLocations') {
-        return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$filter=FuncLocIdIntern eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.FuncLocIdIntern + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,FuncLocIdIntern').then(function (results) {
+        //return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$filter=FuncLocIdIntern eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.FuncLocIdIntern + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,FuncLocIdIntern').then(function (results) {
+        return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$expand=Characteristic&$filter=FuncLocIdIntern eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.FuncLocIdIntern + '\' and CharId eq \'' + property + '\'&$orderby=CharId,FuncLocIdIntern,CharValDesc asc,CharValFrom asc').then(function (results) {
             for (var i = 0; i < results.length; i++) {
                 charValues.push(charValue(context, results.getItem(i), withUOM));
             }
@@ -47,30 +49,29 @@ export default function CharacteristicDisplayValue(context, withUOM=true, isLAMQ
         });
     } else {
         if (context.evaluateTargetPathForAPI('#Page:-Previous').binding.EquipmentFlag === 'X') {
-            return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$filter=EquipId eq \'' + context.evaluateTargetPathForAPI(
-                '#Page:-Previous').binding.Equipment + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,EquipId').then(
-                    function (results) {
-                        for (var i = 0; i < results.length; i++) {
-                            charValues.push(charValue(context, results.getItem(i), withUOM));
-                        }
-                        return prettyPrint(charValues);
-                    }).catch((error) => {
-                        Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryClassifications.global').getValue(), error);
-                        return charValues;
-                    });
+            //return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$filter=EquipId eq \'' + context.evaluateTargetPathForAPI(
+            //    '#Page:-Previous').binding.Equipment + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,EquipId').then(
+            //        function (results) {
+            return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipClassCharValues', [], '$expand=Characteristic&$filter=EquipId eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.Equipment + '\' and CharId eq \'' + property + '\'&$orderby=CharId,EquipId,CharValDesc asc,CharValFrom asc').then(function (results) {
+                for (var i = 0; i < results.length; i++) {
+                    charValues.push(charValue(context, results.getItem(i), withUOM));
+                }
+                return prettyPrint(charValues);
+            }).catch((error) => {
+                Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryClassifications.global').getValue(), error);
+                return charValues;
+            });
         } else {
-            return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$filter=FuncLocIdIntern eq \'' +
-                context.evaluateTargetPathForAPI('#Page:-Previous').binding.FunctionalLocationInt + '\' and CharId eq \'' + context.binding.Characteristic
-                    .CharId +
-                '\'&$orderby=CharId,FuncLocIdIntern').then(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        charValues.push(charValue(context, results.getItem(i), withUOM));
-                    }
-                    return prettyPrint(charValues);
-                }).catch((error) => {
-                    Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryClassifications.global').getValue(), error);
-                    return charValues;
-                });
+            //return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$filter=FuncLocIdIntern eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.FunctionalLocationInt + '\' and CharId eq \'' + context.binding.Characteristic.CharId + '\'&$orderby=CharId,FuncLocIdIntern').then(function (results) {
+                return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyFuncLocClassCharValues', [], '$expand=Characteristic&$filter=FuncLocIdIntern eq \'' + context.evaluateTargetPathForAPI('#Page:-Previous').binding.FunctionalLocationInt + '\' and CharId eq \'' + property + '\'&$orderby=CharId,FuncLocIdIntern,CharValDesc asc,CharValFrom asc').then(function(results) {    
+                for (var i = 0; i < results.length; i++) {                    
+                    charValues.push(charValue(context, results.getItem(i), withUOM));
+                }
+                return prettyPrint(charValues);
+            }).catch((error) => {
+                Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryClassifications.global').getValue(), error);
+                return charValues;
+            });
         }
 
     }
