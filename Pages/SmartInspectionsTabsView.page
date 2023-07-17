@@ -85,24 +85,24 @@
 	"Caption": "Work Order - {{#Property:OrderId}}",
 	"OnLoaded": "/SmartInspections/Rules/SmartInspectionsTabsView_OnLoaded.js",
 	"ActionBar": {
-		"Items": [
+		"Items": [			
 			{
-				"Text": "Save ALL",
-				"_Name": "ActionBarItem0",
-				"Caption": "",
+				"_Name": "ActionBarItem3",
+				"Caption": "Go to Home",
+				"Icon": "$(PLT,/SAPAssetManagerExt/Images/overview.dark.pdf,/SAPAssetManager/Images/overview.light.png)",
 				"Position": "Right",
 				"IsIconCircular": false,
-				"Visible": false,
-				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveAllValidations.js"
+				"Visible": true,
+				"OnPress": "/SAPAssetManagerExt/Actions/2210/HomeNav.action"
 			},
 			{
-				"Text": "Save SELECTED",
-				"_Name": "ActionBarItem1",
-				"Caption": "",
+				"_Name": "Sync",
+				"Caption": "Sync",
+				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
 				"Position": "Right",
 				"IsIconCircular": false,
-				"Visible": false,
-				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SaveSelectedValidations.js"
+				"IconText": "SyncIcon",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
 			},
 			{
 				"Text": "",
@@ -113,15 +113,6 @@
 				"IsIconCircular": false,
 				"Visible": true,
 				"OnPress": "/SmartInspections/Actions/SmartInspectionsTabsView_MorePopover.action"
-			},
-			{
-				"Text": "CLOSE",
-				"_Name": "ActionBarItem3",
-				"Caption": "",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"Visible": false,
-				"OnPress": "/SmartInspections/Rules/TechnicalObjectPermSaveList_CloseOrder.js"
 			}
 		],
 		"_Name": "ActionBar1"

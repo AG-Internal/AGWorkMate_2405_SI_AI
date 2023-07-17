@@ -464,7 +464,12 @@
 							"_Name": "Sync",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left"
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
 						},
 						{
 							"Title": "Blue Theme",
@@ -473,7 +478,12 @@
 							"_Name": "_BlueTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left"
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
 						},
 						{
 							"Title": "Red Theme",
@@ -482,7 +492,12 @@
 							"_Name": "_RedTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left"
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
 						},
 						{
 							"Title": "Green Theme",
@@ -491,7 +506,26 @@
 							"_Name": "_GreenTheme",
 							"ResetIfPressedWhenActive": true,
 							"Visible": true,
-							"TextAlignment": "left"
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
+						},
+						{
+							"Title": "Beta Phase",
+							"Image": "$(PLT,/SAPAssetManager/Images/settings.png,/SAPAssetManager/Images/settings.android.png)",
+							"OnPress": " ",
+							"_Name": "_BetaPhase",
+							"ResetIfPressedWhenActive": true,
+							"Visible": true,
+							"TextAlignment": "left",
+							"Styles": {
+								"SectionItemActive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemInactive": "$(PLT,SectionItemActive,SideDrawerItemActive)",
+								"SectionItemOnPress": "$(PLT,SectionItemActive,SideDrawerItemActive)"
+							}
 						}
 					],
 					"Visible": true,

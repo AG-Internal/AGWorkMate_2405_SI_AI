@@ -1,4 +1,13 @@
 {
+	"ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/ClosePage.action"
+            }
+        ]
+    },
 	"Controls": [
 		{
 			"_Type": "Control.Type.SectionedTable",
