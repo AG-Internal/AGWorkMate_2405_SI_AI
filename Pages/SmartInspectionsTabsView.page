@@ -96,15 +96,6 @@
 				"OnPress": "/SAPAssetManagerExt/Actions/2210/HomeNav.action"
 			},
 			{
-				"_Name": "Sync",
-				"Caption": "Sync",
-				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"IconText": "SyncIcon",
-				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
-			},
-			{
 				"Text": "",
 				"_Name": "ActionBarItem2",
 				"Caption": "",
@@ -116,5 +107,26 @@
 			}
 		],
 		"_Name": "ActionBar1"
-	}
+	},
+     "ToolBar": {
+        "Controls": [
+            {
+                "_Name": "FlexibleSpaceLeftTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "SystemItem": "FlexibleSpace"
+            },
+            {
+                "_Name": "IssuePartTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "Enabled" : "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderEnableMobileStatus.js",
+                "Caption": "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderMobileStatusToolBarCaption.js",
+                "OnPress": "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderChangeStatusPopover.js"
+            },
+            {
+                "_Name": "FlexibleSpaceRightTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "SystemItem": "FlexibleSpace"
+            }
+        ]
+    }
 }
