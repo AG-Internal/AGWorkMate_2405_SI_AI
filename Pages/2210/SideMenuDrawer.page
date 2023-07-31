@@ -384,8 +384,7 @@
 							"_Name": "InspectionLotList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/SideDrawer/EnabledChecklistSideMenu.js",
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						},
 						{
 							"Title": "/SAPAssetManager/Rules/Forms/FSM/TotalFormInstancesCountSideBarCaption.js",
@@ -394,8 +393,7 @@
 							"_Name": "SmartFormInstanceList",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/Forms/FSM/FSMSmartFormsFeatureIsEnabled.js",
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						},
 						{
 							"Title": "$(L,crew)",
@@ -404,8 +402,7 @@
 							"_Name": "Crew",
 							"ResetIfPressedWhenActive": true,
 							"Visible": "/SAPAssetManager/Rules/ComponentsEnablement/IsCrewComponentEnabled.js",
-							"TextAlignment": "left",
-							"Styles": {}
+							"TextAlignment": "left"
 						}
 					],
 					"Visible": true,
@@ -536,7 +533,7 @@
 			"_Type": "Control.Type.SideDrawer",
 			"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
 			"_Name": "SideDrawer0",
-			"DrawerButton": "/SAPAssetManagerExt/Images/AG.png",
+			"DrawerButton": "/SAPAssetManagerExt/Images/Home_Logo.png",
 			"AlwaysShowDrawerButton": false,
 			"ClearHistory": false,
 			"Styles": {
