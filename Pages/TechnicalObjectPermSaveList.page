@@ -95,6 +95,8 @@
 						"Subhead": "{TechnicalObject}",
 						"Footnote": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PassFixFailCount.rule.js",
 						"SubstatusText": "/SmartInspections/Rules/TechnicalObjectDetailsListPage_PendingCount.rule.js",
+						"DetailImage": "/SmartInspections/Rules/TechnicalObjectPermSaveList_SelectionImage.js",
+						"DetailImageIsCircular": false,
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
 						"Tags": [],
