@@ -72,6 +72,33 @@ export default function DoMICUpdates(clientAPI, psCallFor, psReadLink) {
             ];
             bProceed = true;
             break;
+            
+        case "SCOPEBACK":
+
+            sAction = "/SmartInspections/Actions/InspCharDescopeTypeSave_UpdateEntity.action";
+            aValues = [
+                { key: "MicDescopeType", value: "" },
+                { key: "MicDescopeDesc", value: "" },
+                { key: "DescopedOn", value: isoDateTime },
+                { key: "DescopedTime", value: time[1] },
+                { key: "IsDescopeUpdated", value: true }
+
+            ];
+            bProceed = true;
+            break;
+        case "NOTE":
+
+            sAction = "/SmartInspections/Actions/NavToAddNote.action";
+            aValues = [];
+            bProceed = true;
+            break;
+
+        case "ATTACH":
+
+            sAction = "/SmartInspections/Actions/NavToAddAttachment.action";
+            aValues = [];
+            bProceed = true;
+            break;
         default:
             return true;
         // code block

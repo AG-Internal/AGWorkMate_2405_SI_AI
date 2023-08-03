@@ -44,6 +44,9 @@
 					},
 					"Buttons": [
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonDescope",
 							"Title": "Descope",
 							"Alignment": "Center",
@@ -52,12 +55,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonScopeBack",
 							"Title": "Bring Back To Scope",
 							"Alignment": "Center",
@@ -66,12 +69,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeClearButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonChangeInsp",
 							"Title": "Change Inspection Type",
 							"Alignment": "Center",
@@ -80,12 +83,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Rules/NavToInspectionTypeDetailsList.js"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonEXGroup",
 							"Title": "Change EX Group",
 							"Alignment": "Center",
@@ -94,12 +97,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/EXGroupButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Actions/NavToExGroupList.action"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonClassification",
 							"Title": "Classification",
 							"Alignment": "Right",
@@ -108,12 +111,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Rules/NavToClassifications.js"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonPassAll",
 							"Title": "Pass All",
 							"Alignment": "Center",
@@ -122,12 +125,12 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "SectionButton0",
 							"Title": "Clear All",
 							"Alignment": "Center",
@@ -136,9 +139,6 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/ClearAllButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/ClearAllButton_OnPress.js",
 								"UserInteraction": {
@@ -164,8 +164,10 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [],
-							"PerformFirstActionWithFullSwipe": true
+							"Items": "/SmartInspections/Rules/InspCharContextMenu/ContextMenuTable.js",
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": "/SmartInspections/Rules/InspCharContextMenu/LeadingItems.js",
+							"TrailingItems": "/SmartInspections/Rules/InspCharContextMenu/TrailingItems.js"
 						},
 						"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumber.js",
 						"PreserveIconStackSpacing": false,
