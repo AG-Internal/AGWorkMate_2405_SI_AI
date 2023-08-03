@@ -3,33 +3,21 @@
  * @param {IClientAPI} clientAPI
  */
 
-import NavToResultsRecordingPage  from '../NavToResultsRecordingPage.rule';
-
-function ExecuteMic03UpdateEntity(pageProxy, binding) {
-    pageProxy.setActionBinding(binding);
-    //Must return the promised returned by executeAction to keep the chain alive.
-    return pageProxy.executeAction('/SmartInspections/Actions/QualitativePFFPassAllSave_UpdateEntity.action');
-}
-
-function Wait() {
-    return new Promise(r => setTimeout(r, 1));
-    //return Promise.resolve();
-}
+import NavToResultsRecordingPage from '../NavToResultsRecordingPage.rule';
+import DoMICUpdates from './DoMICUpdates';
 
 export default function onSwipeRR_PASS(clientAPI) {
+    //get the binding
+    var binding = clientAPI.getPageProxy().getExecutedContextMenuItem().getBinding();
 
-    let pageProxy = clientAPI.getPageProxy();
-    var binding = clientAPI.binding;
-    var latestPromise = Promise.resolve();
+    //based on MIC Type
     if (binding.MicType === '03') {
 
-        binding.FixedValuesResult = 'PASS';
-        let bindingObject = binding;
-        latestPromise = latestPromise.then(() => {
-            return ExecuteMic03UpdateEntity(pageProxy, bindingObject);
-        }).then(Wait);
+        var sReadLink = binding['@odata.readLink'];
+        return DoMICUpdates(clientAPI, "PASS", sReadLink);
 
     } else {
+        //Open RR Page
         return NavToResultsRecordingPage(clientAPI);
     }
 
