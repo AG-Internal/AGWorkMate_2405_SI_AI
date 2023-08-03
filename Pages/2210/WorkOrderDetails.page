@@ -311,7 +311,7 @@
 						"Footnote": "Functional Location",
 						"DetailImage": "/SAPAssetManager/Images/functionallocations.android.dark.png",
 						"DetailImageIsCircular": false,
-						"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationDetailsNav.action",
+						"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationDetailsNav.js",
 						"OverflowButtons": [],
 						"PrimaryAction": {
 							"_Name": "See All",
@@ -613,7 +613,7 @@
 		],
 		"_Name": "ActionBar1"
 	},
-	 "ToolBar": {
+	"ToolBar": {
         "Controls": [
             {
                 "_Name": "FlexibleSpaceLeftTbI",
