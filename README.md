@@ -30,7 +30,9 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 12. T019  - 17-Mar-23 - RB - Hide Change Insp, Descope, Change EX when any MIC is descoped
 13. T024  - 23-Mar-23 - RB - Pass Count in Equipment View
 14. UAT019 - 29-Mar-23 - VN - Altering the Attachment Review Logic.
-15. INC00073262-RT-PLANT - 22-Jun-23 - RB - Consider MIC Plant in EX and ADHOC lofic while Filtering 
+15. INC00073262-RT-PLANT - 22-Jun-23 - RB - Consider MIC Plant in EX and ADHOC lofic while Filtering
+16. INC00074226-RT-ERROR - 13-Jul-23 - RB - Handle MIC TEMP SAVE error log to retain data in Tablet 
+17. CHG00074716-CR-BRQ002 - 22-Aug-23 - RB - Adhoc Technical Object Add Location and Plant Section
 
 ## Pages Change History
 ###### Page Name - [Change ID]
@@ -48,4 +50,11 @@ AssetManagerExt [AssetManagerExt](https://github.com/Jowat-SAM/SAM2110_Ext)
 12. AttachmentList_DownloadOrOpen [ UAT019 ]
 13. Attachment_SaveDownloaded [ UAT019 ]
 14. EXGroup_CreateInsp.js [ INC00073262-RT-PLANT ]
-15. AdHocAdTechObjAndInspChar_Create.js [ INC00073262-RT-PLANT ]
+15. AdHocAdTechObjAndInspChar_Create.js [ INC00073262-RT-PLANT , CHG00074716-CR-BRQ002 ]
+16. SmartInspectionsErrorArchive_Message.js [ INC00074226-RT-ERROR ]
+17. DownloadOfflineSAM.action [ INC00074226-RT-ERROR ]
+18. ODataUploadFailureMessage.action [ INC00074226-RT-ERROR ]
+19. SmartInspectionsErrorArchive.page [ INC00074226-RT-ERROR ]
+20. CheckForSyncErrorsAfterDownloadSuccess [ INC00074226-RT-ERROR ]
+21. AdHocTechnicalObjectListPage_Query.js [ CHG00074716-CR-BRQ002]
+22. TechnicalObject_CreateEntity_ErrorMessage.action [ CHG00074716-CR-BRQ002]

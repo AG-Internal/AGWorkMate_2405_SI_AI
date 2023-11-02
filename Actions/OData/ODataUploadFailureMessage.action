@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.BannerMessage",
+	"OnSuccess": "/SAPAssetManager/Rules/DigitalSignature/DigitalSignatureCommit.js",
+	"Message": "Smart Inspections upload failed. Errors accessible under profile menu.",
+	"Duration": 9999,
+	"Animated": true,
+	"ActionLabel": "View Details",
+	"OnActionLabelPress": "/SmartInspections/Actions/NavToSmartInspectionsErrorArchive.action",
+	"DismissBannerOnAction": true
+}

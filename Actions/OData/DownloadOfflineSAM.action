@@ -3,8 +3,8 @@
 	"ActionResult": {
 		"_Name": "result"
 	},
-	"OnFailure": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",
-	"OnSuccess": "/SmartInspections/Actions/SISyncSuccessMessage.action",
+	"OnFailure": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",	
+	"OnSuccess": "/SmartInspections/Rules/CheckForSyncErrorsAfterDownloadSuccess.js",
 	"Service": "/SmartInspections/Services/SAM.service",
 	"DefiningRequests": [
 		{

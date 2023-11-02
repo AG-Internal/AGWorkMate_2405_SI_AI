@@ -15,11 +15,13 @@ export default function SmartInspectionsErrorArchive_Message(context) {
 
 			if (!libVal.evalIsEmpty(data)) {
 				try {
-					let message = JSON.parse(data.getItem(0).Message);
+					//let message = JSON.parse(data.getItem(0).Message);// -- INC00074226-RT-ERROR
+					var message = JSON.parse(JSON.stringify(data.getItem(0).Message).replace(/\\/g,'').slice(1, -1));//++  INC00074226-RT-ERROR
 					return pageClientData.ItemCount + ". " + message.error.message.value;
 				} catch (e) {
 					if (!libVal.evalIsEmpty(data.getItem(0).Message)) {
-						return pageClientData.ItemCount + ". " + data.getItem(0).Message.error;
+						//return pageClientData.ItemCount + ". " + data.getItem(0).Message.error;// -- INC00074226-RT-ERROR
+						return pageClientData.ItemCount + ". " + data.getItem(0).Message;// ++ INC00074226-RT-ERROR
 					} else {
 						return '-';
 					}

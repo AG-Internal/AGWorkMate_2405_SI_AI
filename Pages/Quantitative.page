@@ -32,23 +32,6 @@
 				"SystemItem": "Add",
 				"Text": "",
 				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js"
-			},
-			{
-				"_Name": "ActionBarItem4",
-				"Caption": "",
-				"Icon": "sap-icon://notes",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"OnPress": "/SmartInspections/Actions/NavToAddNote.action"
-			},
-			{
-
-				"Caption": "",
-				"Icon": "sap-icon://add-photo",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"Visible": true,
-				"OnPress": "/SmartInspections/Actions/NavToAddAttachment.action"
 			}
 		]
 	},

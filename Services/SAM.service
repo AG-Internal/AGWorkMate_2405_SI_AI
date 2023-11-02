@@ -4,7 +4,7 @@
 	"Headers": {
 		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"
 	},
-	"OfflineEnabled": false,
+	"OfflineEnabled": true,
 	"SourceType": "Mobile",
 	"RestService": true
 }

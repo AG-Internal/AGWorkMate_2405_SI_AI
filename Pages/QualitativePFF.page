@@ -132,6 +132,7 @@
 						{
 							"_Name": "btnAttach",
 							"Title": "Contains Attachment(s)",
+							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Text",
 							"Semantic": "Tint",
@@ -143,6 +144,7 @@
 						{
 							"_Name": "btnNotes",
 							"Title": "Contains Notes",
+							"TextAlignment": "Center",
 							"Alignment": "Center",
 							"ButtonType": "Text",
 							"Semantic": "Tint",
@@ -196,23 +198,6 @@
 				"IsIconCircular": false,
 				"Visible": "/SmartInspections/Rules/ResultsRecordingMorePopover_SetVisible.js",
 				"OnPress": "/SmartInspections/Rules/QualitativePFFPage_SaveValidations.rule.js"
-			},
-			{
-				"_Name": "ActionBarItem4",
-				"Caption": "",
-				"Icon": "sap-icon://notes",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"OnPress": "/SmartInspections/Actions/NavToAddNote.action"
-			},
-			{
-				"_Name": "ActionBarItem3",
-				"Caption": "Item",
-				"Icon": "sap-icon://add-photo",
-				"Position": "Right",
-				"IsIconCircular": false,
-				"Visible": true,
-				"OnPress": "/SmartInspections/Actions/NavToAddAttachment.action"
 			}
 		],
 		"_Name": "ActionBar1"

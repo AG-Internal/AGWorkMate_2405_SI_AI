@@ -1,13 +1,4 @@
 {
-	"ActionBar": {
-        "Items": [
-            {
-                "Position": "left",
-                "SystemItem": "Cancel",
-                "OnPress": "/SAPAssetManager/Actions/Page/ClosePage.action"
-            }
-        ]
-    },
 	"Controls": [
 		{
 			"_Type": "Control.Type.SectionedTable",
@@ -30,13 +21,13 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": [
-							],
+							"Items": [],
 							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/SmartInspectionsErrorArchive_Message.js",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "disclosureIndicator",
+						"Tags": [],
 						"OnPress": "/SmartInspections/Rules/NavToSmartInspectionsErrorArchiveDetails.js"
 					},
 					"Search": {
@@ -51,5 +42,20 @@
 	],
 	"_Type": "Page",
 	"_Name": "SmartInspectionsErrorArchive",
-	"Caption": "Smart Inspections Error Archive"
+	"Caption": "Smart Inspections Error Archive",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Cancel",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SAPAssetManager/Actions/Page/ClosePage.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }

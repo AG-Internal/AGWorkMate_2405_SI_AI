@@ -44,9 +44,6 @@
 					},
 					"Buttons": [
 						{
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"_Name": "ButtonDescope",
 							"Title": "Descope",
 							"Alignment": "Center",
@@ -55,6 +52,9 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js"
 						},
 						{
@@ -164,10 +164,8 @@
 					},
 					"ObjectCell": {
 						"ContextMenu": {
-							"Items": "/SmartInspections/Rules/InspCharContextMenu/ContextMenuTable.js",
-							"PerformFirstActionWithFullSwipe": true,
-							"LeadingItems": "/SmartInspections/Rules/InspCharContextMenu/LeadingItems.js",
-							"TrailingItems": "/SmartInspections/Rules/InspCharContextMenu/TrailingItems.js"
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
 						},
 						"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumber.js",
 						"PreserveIconStackSpacing": false,

@@ -311,7 +311,7 @@
 						"Footnote": "Functional Location",
 						"DetailImage": "/SAPAssetManager/Images/functionallocations.android.dark.png",
 						"DetailImageIsCircular": false,
-						"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationDetailsNav.js",
+						"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationDetailsNav.action",
 						"OverflowButtons": [],
 						"PrimaryAction": {
 							"_Name": "See All",

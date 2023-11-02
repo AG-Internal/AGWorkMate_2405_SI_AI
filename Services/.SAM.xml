@@ -54,11 +54,13 @@
                 <Property Name="InspLotSystemStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Inspection Lot System Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="InspLotCreatedOn" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Inspection Lot Created On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="InspLotChangedOn" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Inspection Lot Changed On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalPending" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Pending" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalPass" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Pass" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalFix" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Fix" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalFail" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Fail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalPending" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Pending" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalPass" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Pass" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalFix" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Fix" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalFail" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Fail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="EXActive" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="EX Active" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PlantSection" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Plant Section" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <NavigationProperty Name="TechnicalObjectDetails" Relationship="AGCAPPS.SMTINS_AM_SRV.WorkOrderHeader_to_TechObjectDetails" FromRole="FromRole_WorkOrderHeader_to_TechObjectDetails" ToRole="ToRole_WorkOrderHeader_to_TechObjectDetails"/>
             </EntityType>
             <EntityType Name="TechnicalObjectDetails" sap:content-version="1">
@@ -110,10 +112,10 @@
                 <Property Name="SortNumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Sort Number" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
                 <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="TechnicalObject" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Technical Object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalFail" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Fail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalFix" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Fix" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalPass" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Pass" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="TotalPending" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Total Pending" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalFail" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Fail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalFix" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Fix" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalPass" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Pass" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalPending" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Total Pending" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="UsageDecisionCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Usage Decision Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ExGrp" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="EX Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ExGrpDesc" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="EX Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -136,6 +138,11 @@
                     <PropertyRef Name="TechnicalObject"/>
                 </Key>
                 <Property Name="AddInWoSnap" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Add In Work Order Snapshot" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescopedAtTo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Descoped at Technical Object Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderUpdatedVia" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Order Updated Via - Data From AGC Update table." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderUpdatedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order Changed By - AGC Update table." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderUpdatedAt" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Order Changed At - AGC Update table." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderUpdatedOn" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Order Updated On - AGC Update table." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsAdhocAdded" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Ad-Hoc Added" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescopeUpdated" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Descope Updated" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsExisting" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Existing" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -274,8 +281,8 @@
                     <PropertyRef Name="MicNumber"/>
                 </Key>
                 <Property Name="HasMsg" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Has Message" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="IsDescoped" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MicPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MIC Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsDescoped" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MessageType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescopedTo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Technical Object Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -354,6 +361,8 @@
                 <Property Name="MaintenancePlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Maintenance Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsProposed" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Proposed" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="CatalogProfile" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Catalog Profile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PlantSection" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Plant Section" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="AdHocOperationNumberDetails" sap:content-version="1">
                 <Key>
@@ -572,8 +581,8 @@
                     <End EntitySet="InspectionCharacteristicDetailsSet" Role="ToRole_TechObjectDetails_to_InspCharDetails"/>
                 </AssociationSet>
             </EntityContainer>
-            <atom:link rel="self" href="https://se-sam-dev-c1sng0vt-se-sam-dev-samsi.cfapps.eu20-001.hana.ondemand.com/SAP_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="https://se-sam-dev-c1sng0vt-se-sam-dev-samsi.cfapps.eu20-001.hana.ondemand.com/SAP_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

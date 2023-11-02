@@ -5,6 +5,7 @@ Changes: EX Related Logic
 * Change Tag    :  D062 - Catalog Profile for ADHOC
 *--------------------------------------------------------------------*/
 /**Change Tag : INC00073262-RT-PLANT - Use both MIC plant & MIC Number or MIC OBJKEY while filtering the MICs*/
+/**Change Tag : CHG00074716-CR-BRQ002 - add FLoc Internal value*/
 function ExecuteTechObjCreateEntity(pageProxy, binding) {
 	pageProxy.setActionBinding(binding);
 	//Must return the promised returned by executeAction to keep the chain alive.
@@ -297,6 +298,7 @@ export default function AdHocAdTechObjAndInspChar_Create(clientAPI) {
 								Equipment: equipment,
 								EquipmentDescription: equipmentDescription,
 								EquipmentFlag: equipmentFlag,
+								FunctionalLocationInt: adHocFunctionalLocation, //++CHG00074716-CR-BRQ002
 								FunctionalLocation: functionalLocation,
 								FunctionalLocationDesc: functionalLocationDesc,
 								InspectionLotNumber: inspectionLot,
