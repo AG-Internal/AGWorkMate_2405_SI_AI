@@ -3,7 +3,7 @@
 	"ActionResult": {
 		"_Name": "result"
 	},
-	"OnFailure": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",	
+	"OnFailure": "/SAPAssetManager/Rules/Sync/CheckForSyncErrorsAfterDownloadFailure.js",
 	"OnSuccess": "/SmartInspections/Rules/CheckForSyncErrorsAfterDownloadSuccess.js",
 	"Service": "/SmartInspections/Services/SAM.service",
 	"DefiningRequests": [
@@ -94,6 +94,16 @@
 		{
 			"Name": "CatalogProfileDetailsSet",
 			"Query": "CatalogProfileDetailsSet",
+			"AutomaticallyRetrievesStreams": false
+		},
+		{
+			"Name": "LTTemplateConfigSet",
+			"Query": "LTTemplateConfigSet",
+			"AutomaticallyRetrievesStreams": false
+		},
+		{
+			"Name": "LTTemplateTextSet",
+			"Query": "LTTemplateTextSet",
 			"AutomaticallyRetrievesStreams": false
 		}
 	]

@@ -97,6 +97,16 @@
 			"Name": "CatalogProfileDetailsSet",
 			"Query": "CatalogProfileDetailsSet",
 			"AutomaticallyRetrievesStreams": false
+		},
+		{
+			"Name": "LTTemplateConfigSet",
+			"Query": "LTTemplateConfigSet",
+			"AutomaticallyRetrievesStreams": false
+		},
+		{
+			"Name": "LTTemplateTextSet",
+			"Query": "LTTemplateTextSet",
+			"AutomaticallyRetrievesStreams": false
 		}
 	]
 }
