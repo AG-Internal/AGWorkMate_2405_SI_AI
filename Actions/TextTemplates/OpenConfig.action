@@ -1,0 +1,13 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "OpenConfig"
+	},
+	"PageToOpen": "/SmartInspections/Pages/TextTemplates/Config.page",
+	"BackStackVisible": true,
+	"ModalPageFullscreen": false,
+	"NavigationType": "Cross",
+	"Transition": {
+		"Curve": "Linear"
+	}
+}

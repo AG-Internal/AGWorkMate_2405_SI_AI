@@ -42,8 +42,18 @@
 					"EmptySection": {
 						"FooterVisible": false
 					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
 					"Buttons": [
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "ButtonDescope",
 							"Title": "Descope",
 							"Alignment": "Center",
@@ -52,9 +62,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeButton_SetEnabled.js",
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Rules/NavToDescopeTypeDetailsList.js"
 						},
 						{
@@ -69,6 +77,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/DescopeTypeClearButton_SetEnabled.js",
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Rules/DescopeTypeClearButton_OnPress.js"
 						},
 						{
@@ -83,6 +92,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/InspectionTypeButton_SetEnabled.js",
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Rules/NavToInspectionTypeDetailsList.js"
 						},
 						{
@@ -97,6 +107,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/EXGroupButton_SetEnabled.js",
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Actions/NavToExGroupList.action"
 						},
 						{
@@ -111,6 +122,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": true,
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Rules/NavToClassifications.js"
 						},
 						{
@@ -125,6 +137,7 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/PassAllButton_SetEnabled.js",
+							"Enabled": true,
 							"OnPress": "/SmartInspections/Rules/PassAllButton_OnPress.js"
 						},
 						{
@@ -139,11 +152,33 @@
 							"ImagePosition": "Leading",
 							"FullWidth": false,
 							"Visible": "/SmartInspections/Rules/ClearAllButton_SetEnabled.js",
+							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/ClearAllButton_OnPress.js",
 								"UserInteraction": {
 									"Enabled": true,
 									"Title": "Clear All"
+								}
+							}
+						},
+						{
+							"_Name": "SectionButton1",
+							"Title": "Notes",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressHeadNotesTO.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Button"
 								}
 							}
 						}
@@ -162,6 +197,13 @@
 						"Caption": "No Records",
 						"FooterVisible": false
 					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
 					"ObjectCell": {
 						"ContextMenu": {
 							"Items": [],
@@ -174,25 +216,34 @@
 						"Icons": "/SmartInspections/Rules/TechObjAndInspCharListPage_StatusIcon.js",
 						"Tags": [],
 						"AvatarStack": {
-							"Avatars": []
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
 						},
 						"AvatarGrid": {
-							"Avatars": []
+							"Avatars": [],
+							"ImageIsCircular": true
 						},
 						"OnPress": "/SmartInspections/Rules/NavToResultsRecordingPage.rule.js",
 						"OnAccessoryButtonPress": "/SmartInspections/Rules/InstructionsButton_OnPress.js",
 						"Styles": {
 							"Title": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicNumberColor.rule.js",
 							"BackgroundColor": "/SmartInspections/Rules/InspectionCharacteristicDetailsListPage_MicLineColor.js"
-						}
+						},
+						"Selected": false
 					},
 					"DataPaging": {
 						"ShowLoadingIndicator": true,
 						"LoadingIndicatorText": "Loading data...",
 						"PageSize": 70
-					}
+					},
+					"HighlightSelectedItem": false
 				}
-			]
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
 		}
 	],
 	"_Type": "Page",

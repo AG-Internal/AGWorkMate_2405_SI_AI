@@ -1,0 +1,18 @@
+{
+	"_Type": "Action.Type.PopoverMenu",
+	"ActionResult": {
+		"_Name": "config"
+	},
+	"Title": "Select Template",
+	"Message": "Select the Required Text Template",
+	"PopoverItems": [
+		{
+			"Title": "AAAAAAA",
+			"Icon": "",
+			"Style": "",
+			"OnPress": "A",
+			"Visible": true,
+			"Enabled": true
+		}
+	]
+}

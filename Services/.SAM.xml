@@ -256,13 +256,13 @@
                 <Key>
                     <PropertyRef Name="DocumentId"/>
                 </Key>
-                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="34" sap:unicode="false" sap:label="Document ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="NodeNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Node Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Deleted" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Deleted Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="257" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NodeNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Node Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentId" Type="Edm.String" Nullable="false" MaxLength="34" sap:unicode="false" sap:label="Document ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MicNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Mstr Insp. Cha." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="257" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MultipleSample" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Insp. Unit No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="MIME Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Object Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="FileSize" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Document size" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -284,8 +284,8 @@
                 <Property Name="MicPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MIC Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescoped" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MessageType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescopedTo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Technical Object Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MessageCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Message Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="IsDescopedMic" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is MIC Descoped" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MessageCodeText" Type="Edm.String" Nullable="false" MaxLength="132" sap:unicode="false" sap:label="Message Code Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
@@ -517,6 +517,31 @@
                 <Property Name="ActiveFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Active Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
+            <EntityType Name="LTTemplateText" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TemplateID"/>
+                    <PropertyRef Name="TempCounter"/>
+                </Key>
+                <Property Name="TemplateID" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Template Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempCounter" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Template Counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempRowType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempShortText" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempLongText" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Template Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Is Active" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="LTTemplateConfig" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Counter"/>
+                    <PropertyRef Name="TemplateArea"/>
+                </Key>
+                <Property Name="Counter" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Counter  - Serail No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TemplateArea" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Template Area" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TemplateID" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Template ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempRowType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Template Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempRowTypeText" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Template Type Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempShortText" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Template Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ConfigShortText" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Config Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
             <EntityType Name="CatalogProfileDetails" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="CatalogProfile"/>
@@ -571,6 +596,8 @@
                 <EntitySet Name="DescopeTypeDetailsSet" EntityType="AGCAPPS.SMTINS_AM_SRV.DescopeTypeDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
                 <EntitySet Name="InspectionCharacteristicMasterSet" EntityType="AGCAPPS.SMTINS_AM_SRV.InspectionCharacteristicMaster" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
                 <EntitySet Name="ParameterDetailsSet" EntityType="AGCAPPS.SMTINS_AM_SRV.ParameterDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="LTTemplateTextSet" EntityType="AGCAPPS.SMTINS_AM_SRV.LTTemplateText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="LTTemplateConfigSet" EntityType="AGCAPPS.SMTINS_AM_SRV.LTTemplateConfig" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="CatalogProfileDetailsSet" EntityType="AGCAPPS.SMTINS_AM_SRV.CatalogProfileDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <AssociationSet Name="WorkOrderHeader_to_TechObjectDetailsSet" Association="AGCAPPS.SMTINS_AM_SRV.WorkOrderHeader_to_TechObjectDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="WorkOrderHeaderSet" Role="FromRole_WorkOrderHeader_to_TechObjectDetails"/>
@@ -581,8 +608,8 @@
                     <End EntitySet="InspectionCharacteristicDetailsSet" Role="ToRole_TechObjectDetails_to_InspCharDetails"/>
                 </AssociationSet>
             </EntityContainer>
-            <atom:link rel="self" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm-ai.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://ag-sap-ssam-2210-s4q-2022-unr89afq-ssam-samsi-wm-ai.cfapps.eu10-004.hana.ondemand.com/SAP_AGC_SI_OData/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

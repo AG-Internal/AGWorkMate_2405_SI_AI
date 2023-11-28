@@ -1,0 +1,85 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"Target": {
+						"Service": "/SmartInspections/Services/SAM.service",
+						"EntitySet": "LTTemplateConfigSet",
+						"QueryOptions": "/SmartInspections/Rules/TextTemplates/QueryConfigSet.js"
+					},
+					"_Name": "SectionObjectCardCollection0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"Card": {
+						"Visible": true,
+						"Title": "{ConfigShortText}",
+						"Subhead": "{TempShortText}",
+						"Footnote": "{TemplateID}",
+						"DetailImageIsCircular": false,
+						"OnPress": "/SmartInspections/Rules/TextTemplates/OnPressTemplate.js",
+						"OverflowButtons": [],
+						"PrimaryAction": {
+							"Style": "",
+							"Title": "Primary",
+							"Visible": false
+						},
+						"SecondaryAction": {
+							"Style": "",
+							"Title": "Secondary",
+							"Visible": false
+						},
+						"Styles": {
+							"Footnote": "wdCardFootNote",
+							"Subhead": "wdSHText",
+							"Title": "wdCardTitle",
+							"BackgroundColor": "wdCardBG5"
+						},
+						"_Type": "Control.Type.ObjectCard"
+					},
+					"Layout": {
+						"LayoutType": "Vertical"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Config",
+	"Caption": "Select Template",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://close-command-field",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/TextTemplates/ClosePage.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ClosePage",
+	"ActionResult": {
+		"_Name": "ClosePage"
+	},
+	"DismissModal": "Action.Type.ClosePage.Completed",
+	"CancelPendingActions": true
+}
