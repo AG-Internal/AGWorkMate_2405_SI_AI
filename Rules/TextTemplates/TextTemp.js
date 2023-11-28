@@ -1,14 +1,100 @@
 import libVal from '../../../SAPAssetManager/Rules/Common/Library/ValidationLibrary';
 export class TextTemp {
 
-    /* Get and Set Template Area */
-    static setTemplateArea(psTemplateArea) {
-        this._sTemplateArea = psTemplateArea;
+    static init(pbDoReset/* Do Reset*/) {
+        if (!pbDoReset) {
+            if (this._isInit) {
+                return;//Return if already Intialized
+            }
+        }
+        this._isInit = true;
+        this._sTemplateArea = undefined; //Selected Template Area
+        this._obTemplateConfig = undefined;//Selected Template ID
+        this._oTemplateDetail = { Header: undefined, Items: [] };
     }
-
+    static reset() {
+        this.init(true);
+    }
+    /**********************************************************
+      * GETTER and SETTER Methods
+    **********************************************************/
     static getTemplateArea() {
         return this._sTemplateArea;
     }
+    static setTemplateArea(psTemplateArea) {
+        this.init();
+        this._sTemplateArea = psTemplateArea;
+    }
+    static getTemplateConfigBinding() {
+        return this._obTemplateConfig;
+    }
+    static setTemplateConfigBinding(poBinding) {
+        this._obTemplateConfig = poBinding;
+    }
+    static getTemplateDetail() {
+        return this._oTemplateDetail;
+    }
+    static setTemplateDetail(poHeader, paItems) {
+        this.init();
+        this._oTemplateDetail = { Header: poHeader, Items: paItems };
+    }
+
+    /**********************************************************
+    * Get TEMPLATE DETAIL
+    **********************************************************/
+
+    static getTemplateDetails(context) {
+        /* Get the Template Details & Set it to App Client Data */
+        var sTemplateID = this._obTemplateConfig.TemplateID;
+        var sTempTypeItem = context.getGlobalDefinition('/SmartInspections/Globals/TextTemplates/TYPE_ITEM.global').getValue();
+        var sQueryOptions = `$filter=TemplateID eq '${sTemplateID}'`;
+        //READ the entity
+        var oPromise = context.read('/SmartInspections/Services/SAM.service', 'LTTemplateTextSet', [], sQueryOptions).then(
+            function (results) {
+                //return the Results
+                var aItems = [];
+                //Prepare the Array
+                results.forEach(function (oValue) {
+                    aItems.push(oValue);
+                });
+                //Prepare for Client Data
+                let aTextItems = [];
+                let oTextHeader = undefined;
+                let oTextLine = {};
+                for (var i = 0; i < aItems.length; i++) {
+                    //From Entity
+                    oTextLine = {};
+                    oTextLine.TemplateID = aItems[i].TemplateID;
+                    oTextLine.TempCounter = aItems[i].TempCounter;
+                    oTextLine.TempRowType = aItems[i].TempRowType;
+                    oTextLine.TempShortText = aItems[i].TempShortText;
+                    oTextLine.TempLongText = aItems[i].TempLongText;
+                    oTextLine.IsActive = aItems[i].IsActive;
+                    //Other UI Needed Fields
+                    oTextLine.ResponseText = "";
+                    oTextLine.IsCompleted = false;
+
+                    if (oTextLine.TempRowType === sTempTypeItem) {
+                        //Pass the Rows to Item
+                        aTextItems.push(oTextLine);
+                    } else {
+                        //Pass the Row to Header
+                        oTextHeader = Object.assign({}, oTextLine);//Shallow Copy
+                    }
+                }//For
+                TextTemp.setTemplateDetail(oTextHeader, aTextItems);
+                // var sTempMsg = oTextHeader.TempCounter + "/" + oTextHeader.TempRowType + " - " + aTextItems.length;
+                // alert(sTempMsg);
+                return true;
+
+            }); //read
+
+        return oPromise;
+
+    }
+    /**********************************************************
+        * Others
+        **********************************************************/
 
     /* Check Connections */
     static hasConnection(context) {
@@ -70,8 +156,8 @@ export class TextTemp {
                 });
 
             }//For
-       
-          
+
+
             return true;
 
         });
