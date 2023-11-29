@@ -1,0 +1,214 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "{#Application/#ClientData/PageTextSeq/Item/TempShortText}",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle0",
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{#Application/#ClientData/PageTextSeq/Item/TempLongText}",
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "ShortText",
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"MaxNumberOfLines": 5,
+							"MinNumberOfLines": 3,
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "ResponseControl",
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "Please provide your response",
+							"MaxNumberOfLines": 7,
+							"MinNumberOfLines": 3,
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable1",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": false,
+						"Caption": "Quick Response"
+					},
+					"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton3",
+							"Title": "Yes",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"Image": "sap-icon://accept",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressYes.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Yes"
+								}
+							}
+						},
+						{
+							"_Name": "SectionButton4",
+							"Title": "No",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Negative",
+							"Image": "sap-icon://decline",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNo.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "No"
+								}
+							}
+						}
+					]
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Trailing"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton0",
+							"Title": "Cancel",
+							"Alignment": "Center",
+							"ButtonType": "Secondary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Cancel"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton1",
+							"Title": "Next",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqNextButtonEnabled.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNextTextSeq.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Next"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton2",
+							"Title": "Submit",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqSubmitButtonEnabled.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Submit"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TextSequence",
+	"Caption": "Text Sequence",
+	"PrefersLargeCaption": true
+}

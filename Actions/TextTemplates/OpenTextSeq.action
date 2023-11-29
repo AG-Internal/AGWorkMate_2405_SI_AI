@@ -1,0 +1,15 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "OpenTextSeq"
+	},
+	"PageToOpen": "/SmartInspections/Pages/TextTemplates/TextSequence.page",
+	"BackStackVisible": false,
+	"ModalPage": true,
+	"NavigationType": "Outer",
+	"Transition": {
+		"Curve": "Ease",
+		"Duration": 1,
+		"Name": "Fade"
+	}
+}

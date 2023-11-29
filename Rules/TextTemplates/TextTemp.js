@@ -10,7 +10,8 @@ export class TextTemp {
         this._isInit = true;
         this._sTemplateArea = undefined; //Selected Template Area
         this._obTemplateConfig = undefined;//Selected Template ID
-        this._oTemplateDetail = { Header: undefined, Items: [] };
+        this._oTemplateDetail = { Header: undefined, Items: [], ItemsCount: 0 };//Template Details
+        this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };
     }
     static reset() {
         this.init(true);
@@ -36,9 +37,49 @@ export class TextTemp {
     }
     static setTemplateDetail(poHeader, paItems) {
         this.init();
-        this._oTemplateDetail = { Header: poHeader, Items: paItems };
+        this._oTemplateDetail = { Header: poHeader, Items: paItems, ItemsCount: paItems.length };
+    }
+    /**********************************************************
+       * TEMPLATE SEQUENCE PROCESSING
+       **********************************************************/
+    static setAppClntDataTextSeq(clientAPI) {
+        this.prepareTextSeqCurrenRow();
+        let appClientData = clientAPI.getAppClientData();
+        appClientData.PageTextSeq = this.PageTextSeq;
     }
 
+    static prepareTextSeqCurrenRow() {
+        var iMaxIndex = this._oTemplateDetail.ItemsCount - 1;
+        if (this.PageTextSeq.CurrIndex === iMaxIndex)
+            return;
+
+        this.PageTextSeq.CurrIndex += 1;
+        this.PageTextSeq.IsLastItem = false;
+        this.PageTextSeq.Item = this._oTemplateDetail.Items[this.PageTextSeq.CurrIndex];
+
+        if (this.PageTextSeq.CurrIndex === iMaxIndex)
+            this.PageTextSeq.IsLastItem = true;
+
+    }
+
+    static updateTextSeqCurrenRow(psValue){
+        this.PageTextSeq.Item.ResponseText = psValue;
+        this.PageTextSeq.Item.IsCompleted = true;
+    }
+
+    static resetTextSeqCurrenRow(){
+        this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };
+    }
+
+    // static setCurrentFLocBinding(clientAPI, pBinding) {
+    //     let appClientData = clientAPI.getAppClientData();
+    //     appClientData.CurrentFLoc = pBinding;
+    // }
+
+    // static updateCurrentFLocBinding(clientAPI, sLongText) {
+    //     let appClientData = clientAPI.getAppClientData();
+    //     appClientData.CurrentFLoc.FLocLongText = sLongText;
+    // }
     /**********************************************************
     * Get TEMPLATE DETAIL
     **********************************************************/
@@ -47,7 +88,7 @@ export class TextTemp {
         /* Get the Template Details & Set it to App Client Data */
         var sTemplateID = this._obTemplateConfig.TemplateID;
         var sTempTypeItem = context.getGlobalDefinition('/SmartInspections/Globals/TextTemplates/TYPE_ITEM.global').getValue();
-        var sQueryOptions = `$filter=TemplateID eq '${sTemplateID}'`;
+        var sQueryOptions = `$filter=TemplateID eq '${sTemplateID}'&$orderby=TempCounter`;
         //READ the entity
         var oPromise = context.read('/SmartInspections/Services/SAM.service', 'LTTemplateTextSet', [], sQueryOptions).then(
             function (results) {
