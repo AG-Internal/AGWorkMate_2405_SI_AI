@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "OpenTextSeqSummary"
+	},
+	"PageToOpen": "/SmartInspections/Pages/TextTemplates/TextSequenceSummary.page",
+	"BackStackVisible": true,
+	"ModalPage": true,
+	"NavigationType": "Outer"
+}

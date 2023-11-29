@@ -186,7 +186,7 @@
 								"Button": "wdActionBtn"
 							},
 							"_Name": "SectionButton2",
-							"Title": "Submit",
+							"Title": "Show Summary",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
@@ -195,7 +195,7 @@
 							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqSubmitButtonEnabled.js",
 							"Enabled": true,
 							"OnPress": {
-								"Handler": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressSummaryTextSeq.js",
 								"UserInteraction": {
 									"Enabled": true,
 									"Title": "Submit"

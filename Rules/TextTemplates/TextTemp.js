@@ -1,6 +1,14 @@
 import libVal from '../../../SAPAssetManager/Rules/Common/Library/ValidationLibrary';
 export class TextTemp {
+    // static setCurrentFLocBinding(clientAPI, pBinding) {
+    //     let appClientData = clientAPI.getAppClientData();
+    //     appClientData.CurrentFLoc = pBinding;
+    // }
 
+    // static updateCurrentFLocBinding(clientAPI, sLongText) {
+    //     let appClientData = clientAPI.getAppClientData();
+    //     appClientData.CurrentFLoc.FLocLongText = sLongText;
+    // }
     static init(pbDoReset/* Do Reset*/) {
         if (!pbDoReset) {
             if (this._isInit) {
@@ -11,7 +19,8 @@ export class TextTemp {
         this._sTemplateArea = undefined; //Selected Template Area
         this._obTemplateConfig = undefined;//Selected Template ID
         this._oTemplateDetail = { Header: undefined, Items: [], ItemsCount: 0 };//Template Details
-        this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };
+        this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };//To SHow it in page
+        this._sSummarizedText = "";
     }
     static reset() {
         this.init(true);
@@ -39,9 +48,19 @@ export class TextTemp {
         this.init();
         this._oTemplateDetail = { Header: poHeader, Items: paItems, ItemsCount: paItems.length };
     }
+    static setSummarizedText(sValue, bAppend/* Append or Overwrite */) {
+        if (bAppend)
+            this._sSummarizedText = this._sSummarizedText + sValue;
+        else
+            this._sSummarizedText = sValue;
+
+    }
+    static getSummarizedText() {
+        return this._sSummarizedText;
+    }
     /**********************************************************
-       * TEMPLATE SEQUENCE PROCESSING
-       **********************************************************/
+    * TEMPLATE SEQUENCE PROCESSING
+    **********************************************************/
     static setAppClntDataTextSeq(clientAPI) {
         this.prepareTextSeqCurrenRow();
         let appClientData = clientAPI.getAppClientData();
@@ -62,24 +81,33 @@ export class TextTemp {
 
     }
 
-    static updateTextSeqCurrenRow(psValue){
+    static updateTextSeqCurrenRow(psValue) {
         this.PageTextSeq.Item.ResponseText = psValue;
         this.PageTextSeq.Item.IsCompleted = true;
     }
 
-    static resetTextSeqCurrenRow(){
+    static resetTextSeqCurrenRow() {
         this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };
     }
 
-    // static setCurrentFLocBinding(clientAPI, pBinding) {
-    //     let appClientData = clientAPI.getAppClientData();
-    //     appClientData.CurrentFLoc = pBinding;
-    // }
-
-    // static updateCurrentFLocBinding(clientAPI, sLongText) {
-    //     let appClientData = clientAPI.getAppClientData();
-    //     appClientData.CurrentFLoc.FLocLongText = sLongText;
-    // }
+    /**********************************************************
+   * TEMPLATE SEQUENCE SUMMARIZE
+   **********************************************************/
+    static summarizeTextSeq() {
+        var aItems = this._oTemplateDetail.Items;
+        var sSummarizedText = "";
+        var sCurrentLine = "";
+        var sNewLine = "\n";
+        for (var i = 0; i < aItems.length; i++) {
+            if (!aItems[i].IsCompleted)
+                continue;
+            sCurrentLine = "";
+            sCurrentLine = aItems[i].TempShortText + sNewLine + aItems[i].TempLongText + sNewLine + aItems[i].ResponseText + sNewLine;
+            //Append to long text
+            sSummarizedText = sSummarizedText + sCurrentLine;
+        }
+        this.setSummarizedText(sSummarizedText);
+    }
     /**********************************************************
     * Get TEMPLATE DETAIL
     **********************************************************/
