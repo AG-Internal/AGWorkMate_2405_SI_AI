@@ -1,0 +1,20 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "TechnicalObjectLTLongText_UpdateEntity"
+	},
+	"OnFailure": "/SmartInspections/Actions/AddNoteSave_FailureMessage.action",
+	"Target": {
+		"Service": "/SmartInspections/Services/SAM.service",
+		"EntitySet": "TechnicalObjectDetailsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"Status": "{Status}",
+		"LTTemplateID": "{LTTemplateID}",
+		"LTLongText": "{LTLongText}"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Replace"
+	}
+}

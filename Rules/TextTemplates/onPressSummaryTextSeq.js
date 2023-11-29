@@ -10,9 +10,7 @@ export default function onPressSummaryTextSeq(clientAPI) {
     TextTemp.updateTextSeqCurrenRow(sValue); //Update it in Global
 
     return clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ClosePage.action").then(function (param) {
-        alert("Before Summarize");
         TextTemp.summarizeTextSeq();
-        alert("After Summarize");
         clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/OpenTextSeqSummary.action");
     });
 
