@@ -3,7 +3,8 @@
 	"ActionResult": {
 		"_Name": "TechnicalObjectLTLongText_UpdateEntity"
 	},
-	"OnFailure": "/SmartInspections/Actions/AddNoteSave_FailureMessage.action",
+	"OnFailure": "/SmartInspections/Actions/TextTemplates/TechnicalObjectLTLongText_UE_Failure.action",
+	"OnSuccess": "/SmartInspections/Actions/TextTemplates/TechnicalObjectLTLongText_UE_Success.action",
 	"Target": {
 		"Service": "/SmartInspections/Services/SAM.service",
 		"EntitySet": "TechnicalObjectDetailsSet",
@@ -11,8 +12,12 @@
 	},
 	"Properties": {
 		"Status": "{Status}",
+		"IsLTUpdated": "{IsLTUpdated}",
 		"LTTemplateID": "{LTTemplateID}",
-		"LTLongText": "{LTLongText}"
+		"LTLongText": "{LTLongText}",
+		"LTChangedBy": "{LTChangedBy}",
+		"LTChangedOn": "{LTChangedOn}",
+		"LTChangeTime": "{LTChangeTime}"
 	},
 	"RequestOptions": {
 		"UpdateMode": "Replace"

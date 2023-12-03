@@ -1,0 +1,12 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "TechnicalObjectLTLongText_UE_Failure"
+	},
+	"OnSuccess": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+	"Message": "Failed to update Technical Object Header Notes",
+	"NumberOfLines": 2,
+	"Duration": 3,
+	"Icon": "sap-icon://error",
+	"Animated": true
+}

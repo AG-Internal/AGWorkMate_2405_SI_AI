@@ -9,6 +9,64 @@
 			"_Name": "SectionedTable0",
 			"Sections": [
 				{
+					"ObjectHeader": {
+						"DetailImageIsCircular": false,
+						"HeadlineText": "/SmartInspections/Rules/TextTemplates/ConfigPageObjHeadline.js",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading",
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton0",
+							"Title": "Header Notes",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://show-edit",
+							"ImagePosition": "Leading",
+							"FullWidth": true,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Actions/TextTemplates/OpenTechObjHeaderNotesPage.action",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Header Notes"
+								}
+							}
+						}
+					]
+				},
+				{
 					"Separators": {
 						"TopSectionSeparator": false,
 						"BottomSectionSeparator": true,
@@ -23,6 +81,12 @@
 						"QueryOptions": "/SmartInspections/Rules/TextTemplates/QueryConfigSet.js"
 					},
 					"_Name": "SectionObjectCardCollection0",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": false,
+						"Caption": "Select Template to add Header Notes"
+					},
 					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
@@ -66,7 +130,7 @@
 	],
 	"_Type": "Page",
 	"_Name": "Config",
-	"Caption": "Select Template",
+	"Caption": "/SmartInspections/Rules/TextTemplates/ConfigPageTitle.js",
 	"PrefersLargeCaption": true,
 	"ActionBar": {
 		"Items": [

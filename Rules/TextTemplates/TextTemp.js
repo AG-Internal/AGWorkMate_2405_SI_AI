@@ -21,6 +21,7 @@ export class TextTemp {
         this._oTemplateDetail = { Header: undefined, Items: [], ItemsCount: 0 };//Template Details
         this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };//To SHow it in page
         this._sSummarizedText = "";
+        this._saveCallFrom = "";
     }
     static reset() {
         this.init(true);
@@ -48,12 +49,13 @@ export class TextTemp {
         this.init();
         this._oTemplateDetail = { Header: poHeader, Items: paItems, ItemsCount: paItems.length };
     }
-    static setSummarizedText(sValue, bAppend/* Append or Overwrite */) {
+    static setSummarizedText(sValue, pSaveCallFrom, bAppend/* Append or Overwrite */) {
         if (bAppend)
             this._sSummarizedText = this._sSummarizedText + sValue;
         else
             this._sSummarizedText = sValue;
-
+        //Save Call from
+        this._saveCallFrom = pSaveCallFrom;
     }
     static getSummarizedText() {
         return this._sSummarizedText;

@@ -1,0 +1,60 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "/SmartInspections/Rules/TextTemplates/TechObjHeaderNotesValue.js",
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "HeaderNotes",
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "Technical Object Header Notes",
+							"MinNumberOfLines": 70,
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TechObjectHeaderNotes",
+	"Caption": "Header Notes",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/TextTemplates/onPressTOHeaderNotesConfirm.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

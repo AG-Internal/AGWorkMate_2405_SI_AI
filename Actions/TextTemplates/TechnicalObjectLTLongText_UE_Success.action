@@ -1,0 +1,12 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "TechnicalObjectLTLongText_UE_Success"
+	},
+	"OnSuccess": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+	"Message": "Technical Object Header Notes Updated",
+	"NumberOfLines": 2,
+	"Duration": 3,
+	"Icon": "sap-icon://message-success",
+	"Animated": true
+}

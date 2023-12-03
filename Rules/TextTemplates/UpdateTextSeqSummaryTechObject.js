@@ -22,15 +22,35 @@ export default function UpdateTextSeqSummaryTechObject(clientAPI) {
         binding = listPageClientData.NavigatedTechObject;
     } catch (err) { }
 
-    var sTemplateID = TextTemp._oTemplateDetail.Header.TemplateID;
+   // var sTemplateID = TextTemp._oTemplateDetail.Header.TemplateID;
     var sSummarizedText = TextTemp._sSummarizedText;
+    //Convert for Backend
+    sSummarizedText = sSummarizedText.split('\n').join('new_line'); // Converted text
 
+    //time stamps
+    var isoDateTime = new Date().toISOString();
+    var dateTime = isoDateTime.split(".");
+    var time = dateTime[0].split("T");
     //Prepare and call update
     oLatestPromise = oLatestPromise.then(() => {
-        binding.LTTemplateID = sTemplateID;
-        binding.LTLongText = sSummarizedText.split('\n').join('new_line');
+        //Template details
+        if (TextTemp._saveCallFrom === "HEADERNOTES") {
+            //From Header - just overwrite the Text
+            binding.LTLongText = sSummarizedText;
+        } else if (TextTemp._saveCallFrom === "TMPLSUMMARY") {
+            //From Summary Append the text
+            binding.LTTemplateID = TextTemp._oTemplateDetail.Header.TemplateID;;
+            binding.LTLongText = binding.LTLongText + sSummarizedText;
+        }
+        // binding.LTTemplateID = sTemplateID;
+        // binding.LTLongText = binding.LTLongText + sSummarizedText;
+        //Save Status
         binding.Status = 'T';
-        alert(binding.LTLongText);
+        //Update Params
+        binding.IsLTUpdated = true;
+        binding.LTChangedOn = new Date().toISOString();
+        binding.LTChangeTime = time[1];
+        //Call update Entity
         return ExecuteUpdateEntity(clientAPI, binding);
     }).then(Wait);
 
