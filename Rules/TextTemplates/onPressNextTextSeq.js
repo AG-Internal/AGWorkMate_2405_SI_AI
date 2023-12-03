@@ -11,24 +11,15 @@ export default function onPressNextTextSeq(clientAPI) {
     let sValue = simpleProp.getValue();
 
     if (!sValue) {
-        alert("Please provide Response");
-        return;
+        //Provide Response
+        clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ConfigProvideResponse.action");
+    } else {
+        TextTemp.updateTextSeqCurrenRow(sValue); //Update it in Global
+        //close the Modal and Open the Page Again
+        return clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ClosePage.action").then(function (param) {
+            OpenTextSeq(clientAPI);
+        });
+
     }
-
-    var sTempMsg = "Before - " + TextTemp.PageTextSeq.Item.ResponseText;
-
-    TextTemp.updateTextSeqCurrenRow(sValue); //Update it in Global
-    
-    sTempMsg = sTempMsg + "\n" + "After - " + TextTemp.PageTextSeq.Item.ResponseText;
-    sTempMsg = sTempMsg + "\n" + "In Array - " + TextTemp._oTemplateDetail.Items[TextTemp.PageTextSeq.CurrIndex].ResponseText;
-   
-   // alert(sTempMsg);
-
-    //close the Modal and Open the Page Again
-    return clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ClosePage.action").then(function (param) {
-        OpenTextSeq(clientAPI);
-    });
-
-
 
 }

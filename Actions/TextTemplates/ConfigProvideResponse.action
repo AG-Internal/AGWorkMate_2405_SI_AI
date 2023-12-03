@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "ConfigProvideResponse"
+	},
+	"Message": "Please provide response to continue...",
+	"NumberOfLines": 2,
+	"Duration": 3,
+	"Icon": "sap-icon://text",
+	"Animated": true
+}

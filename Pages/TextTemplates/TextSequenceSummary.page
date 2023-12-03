@@ -26,12 +26,22 @@
 	"_Type": "Page",
 	"_Name": "TextSequenceSummary",
 	"Caption": "Summary",
+	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/onPressTextSummaryActivityBack.js",
 	"ActionBar": {
 		"Items": [
 			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"Icon": "sap-icon://decline",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/TextTemplates/TextSeqCancelSummarySave.action"
+			},
+			{
 				"_Name": "ActionBarItem0",
 				"Caption": "Confirm",
-				"Icon": "sap-icon://accept",
+				"Icon": "sap-icon://save",
 				"Position": "Right",
 				"IsIconCircular": false,
 				"IconText": "Confirm",

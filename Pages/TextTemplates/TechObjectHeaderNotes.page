@@ -43,8 +43,18 @@
 	"_Name": "TechObjectHeaderNotes",
 	"Caption": "Header Notes",
 	"PrefersLargeCaption": true,
+	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/CancelActivityBack.js",
 	"ActionBar": {
 		"Items": [
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Close",
+				"Icon": "sap-icon://decline",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+			},
 			{
 				"_Name": "ActionBarItem0",
 				"Caption": "Item",

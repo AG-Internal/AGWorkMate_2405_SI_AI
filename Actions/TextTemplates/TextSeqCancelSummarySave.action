@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TextSeqCancelSummarySave"
+	},
+	"Message": "Are you sure to cancel the process without saving this summary?",
+	"Title": "Cancel Process",
+	"OKCaption": "Yes , Cancel",
+	"OnOK": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+	"CancelCaption": "No, Let Me Review"
+}

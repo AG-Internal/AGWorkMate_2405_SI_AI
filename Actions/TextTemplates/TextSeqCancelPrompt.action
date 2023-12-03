@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TextSeqCancelPrompt"
+	},
+	"Message": "Do you really want to cancel the process and show the summary until you responded? ",
+	"Title": "Cancel Process",
+	"OKCaption": "Yes, Show Summary",
+	"OnOK": "/SmartInspections/Rules/TextTemplates/onPressSummaryTextSeq.js",
+	"CancelCaption": "No, Continue to Respond"
+}

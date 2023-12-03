@@ -78,7 +78,7 @@
 						"UseTopPadding": false,
 						"Caption": "Quick Response"
 					},
-					"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
+					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
 					},
@@ -92,7 +92,7 @@
 							"Image": "sap-icon://accept",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
-							"Visible": true,
+							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
 							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/TextTemplates/onPressYes.js",
@@ -111,13 +111,32 @@
 							"Image": "sap-icon://decline",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
-							"Visible": true,
+							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
 							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNo.js",
 								"UserInteraction": {
 									"Enabled": true,
 									"Title": "No"
+								}
+							}
+						},
+						{
+							"_Name": "SectionButton5",
+							"Title": "Not Applicable",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Normal",
+							"Image": "sap-icon://strikethrough",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNA.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Not Applicable"
 								}
 							}
 						}
@@ -153,7 +172,7 @@
 							"Visible": true,
 							"Enabled": true,
 							"OnPress": {
-								"Handler": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+								"Handler": "/SmartInspections/Actions/TextTemplates/TextSeqCancelPrompt.action",
 								"UserInteraction": {
 									"Enabled": true,
 									"Title": "Cancel"
@@ -204,11 +223,27 @@
 						}
 					]
 				}
-			]
+			],
+			"OnRendered": "/SmartInspections/Rules/TextTemplates/onRenderedTextSeqPage.js"
 		}
 	],
 	"_Type": "Page",
 	"_Name": "TextSequence",
 	"Caption": "Text Sequence",
-	"PrefersLargeCaption": true
+	"PrefersLargeCaption": true,
+	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/onPressTextSeqActivityBack.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Close",
+				"Icon": "sap-icon://decline",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }
