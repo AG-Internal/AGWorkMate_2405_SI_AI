@@ -26,7 +26,7 @@
 							"PlaceHolder": "Technical Object Header Notes",
 							"MinNumberOfLines": 70,
 							"Enabled": true,
-							"IsEditable": true
+							"IsEditable": "/SmartInspections/Rules/TextTemplates/IsTechObjectTempSaved.js"
 						}
 					],
 					"Visible": true,
@@ -61,7 +61,7 @@
 				"Icon": "sap-icon://save",
 				"Position": "Right",
 				"IsIconCircular": false,
-				"Visible": true,
+				"Visible": "/SmartInspections/Rules/TextTemplates/IsTechObjectTempSaved.js",
 				"OnPress": "/SmartInspections/Rules/TextTemplates/onPressTOHeaderNotesConfirm.js"
 			}
 		],
