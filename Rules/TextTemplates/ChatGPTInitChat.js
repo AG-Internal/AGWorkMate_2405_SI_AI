@@ -4,7 +4,6 @@
  */
 import { GetDataUtil } from "../SIData/GetDataUtil";
 import { TextTemp } from "./TextTemp";
-import ChatGPTTextAPICall from "./ChatGPTTextAPICall";
 export default function ChatGPTInitChat(clientAPI, pbIsInitalCall) {
     var sIdActInd = clientAPI.showActivityIndicator("AI gears are turning...");
     /* Initial call - read Techobject Data and Call ChatGPT */
@@ -22,18 +21,20 @@ export default function ChatGPTInitChat(clientAPI, pbIsInitalCall) {
         TechnicalObject: binding.TechnicalObject
     };
 
+    //Get the Failed MICs
     return GetDataUtil.getTechObjFailedInspForAI(clientAPI, oDetails).then(function (result) {
- 
+
         //Close the Indicator
         clientAPI.dismissActivityIndicator(sIdActInd);
         if (result.bHasFails) {
             //Set Data
             TextTemp.aiPrepareInitialChatData(oDetails.TechnicalObject, result.sFaultText);
             TextTemp.aiPrepareFirstPrompt();
-            //Call Post
+            //Call API Post
             clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ChatGPTInit.action");
         } else {
-            alert("ChatGPTInitChat-GetDataUtil-No Fails")
+            //No Failures
+            clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ChatGPT_InitNeedFailedMic.action");
         }
     });
 

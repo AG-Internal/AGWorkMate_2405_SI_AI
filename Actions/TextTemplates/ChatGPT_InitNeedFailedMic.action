@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "ChatGPT_InitNeedFailedMic"
+	},
+	"Message": "Looks like you haven't recorded any failures in your inspection list yet! To activate the AI assistant, please add at least one failure so it can analyze the situation and offer valuable insights.",
+	"Title": "Get AI insights",
+	"OKCaption": "OK"
+}

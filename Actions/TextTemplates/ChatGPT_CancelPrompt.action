@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "ChatGPT_CancelPrompt"
+	},
+	"Message": "Do you really want to cancel the AI Assistance and show the summary until you responded? ",
+	"Title": "Cancel Assistance",
+	"OKCaption": "Yes, Show Summary",
+	"OnOK": "/SmartInspections/Rules/TextTemplates/ChatGPT_CancelAndShowSummary.js",
+	"CancelCaption": "No, Continue to Respond"
+}

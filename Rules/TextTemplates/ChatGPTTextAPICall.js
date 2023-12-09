@@ -14,13 +14,13 @@ export default function ChatGPTTextAPICall(clientAPI) {
         method: "POST",
         body: oBody
     }).then(function (response) {
-        alert(response.statusCode);
+        // alert(response.statusCode);
         let data = JSON.parse(response.content.getData());
         //on Success
         if (response.statusCode === 200) {
             var oMessage = data.choices[0].message;
             TextTemp.aiAppendChatData(oMessage);
-            alert(oMessage.content);
+            //alert(oMessage.content);
         }
         //Close the Indicator
         clientAPI.dismissActivityIndicator(sIdActInd);
@@ -30,7 +30,7 @@ export default function ChatGPTTextAPICall(clientAPI) {
     }).catch(function (error) {
         var eMessage = error.message;
         // Handle errors that occur during the request
-        alert('Request Error: ' + eMessage  );
+        alert('Request Error: ' + eMessage);
         clientAPI.dismissActivityIndicator(sIdActInd);
     });
 }

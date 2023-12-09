@@ -18,7 +18,7 @@
 					},
 					"Controls": [
 						{
-							"Value": "/SmartInspections/Rules/TextTemplates/ChatGPTInputPage_Content.js",
+							"Value": "AI Assistant",
 							"_Type": "Control.Type.FormCell.Title",
 							"_Name": "FormCellTitle0",
 							"IsVisible": true,
@@ -26,6 +26,18 @@
 							"PlaceHolder": "PlaceHolder",
 							"Enabled": true,
 							"IsEditable": false
+						},
+						{
+							"Value": "/SmartInspections/Rules/TextTemplates/ChatGPTInputPage_Content.js",
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"MaxNumberOfLines": 7,
+							"MinNumberOfLines": 4,
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
 							"_Type": "Control.Type.FormCell.Note",
@@ -80,7 +92,7 @@
 							"Image": "sap-icon://accept",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
-							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
+							"Visible": true,
 							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/TextTemplates/onPressYes.js",
@@ -99,7 +111,7 @@
 							"Image": "sap-icon://decline",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
-							"Visible": "/SmartInspections/Rules/TextTemplates/TextSeqQuickResponseVisible.js",
+							"Visible": true,
 							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNo.js",
@@ -111,7 +123,7 @@
 						},
 						{
 							"_Name": "SectionButton5",
-							"Title": "Not Applicable",
+							"Title": "Not Sure",
 							"Alignment": "Center",
 							"ButtonType": "Text",
 							"Semantic": "Normal",
@@ -121,10 +133,10 @@
 							"Visible": true,
 							"Enabled": true,
 							"OnPress": {
-								"Handler": "/SmartInspections/Rules/TextTemplates/onPressNA.js",
+								"Handler": "/SmartInspections/Rules/TextTemplates/OnPressNotSure.js",
 								"UserInteraction": {
 									"Enabled": true,
-									"Title": "Not Applicable"
+									"Title": "Not Sure"
 								}
 							}
 						}
@@ -160,7 +172,7 @@
 							"Visible": true,
 							"Enabled": true,
 							"OnPress": {
-								"Handler": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+								"Handler": "/SmartInspections/Actions/TextTemplates/ChatGPT_CancelPrompt.action",
 								"UserInteraction": {
 									"Enabled": true,
 									"Title": "Cancel"
@@ -198,7 +210,7 @@
 	"_Name": "AIAssistance",
 	"Caption": "AI Assistance",
 	"PrefersLargeCaption": true,
-	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/onPressTextSeqActivityBack.js",
+	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/ChatGPTInputPage_OnActivityBack.js",
 	"ActionBar": {
 		"Items": [
 			{

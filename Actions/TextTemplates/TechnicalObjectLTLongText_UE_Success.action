@@ -4,6 +4,7 @@
 		"_Name": "TechnicalObjectLTLongText_UE_Success"
 	},
 	"OnSuccess": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+	"ShowActivityIndicator": true,
 	"Message": "Technical Object Header Notes Updated",
 	"NumberOfLines": 2,
 	"Duration": 3,

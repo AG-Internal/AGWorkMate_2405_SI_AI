@@ -4,8 +4,9 @@
  */
 import { TextTemp } from "./TextTemp";
 export default function ChatGPTOpenInputPage(clientAPI) {
-    alert("Inside Open");
+
     /* open Input Page for ChatGPT */
+    //Update Current Row
     TextTemp.aiPrepareCurrentRow();
 
     if (TextTemp._aiPageData.isSummary) {

@@ -211,7 +211,7 @@ export class TextTemp {
         };
         this._aiChatData.model = this._aiPromptData.GPTModel;
         this.aiAppendChatData(oMessage);
-        alert("FirstPrompt" + this._aiPromptData.FirstPrompt);
+        //alert("FirstPrompt" + this._aiPromptData.FirstPrompt);
     }
 
     static aiAppendUserRespToChatData(psMessage) {
@@ -237,8 +237,11 @@ export class TextTemp {
 
         this._aiPageData.Item.Content = sContent;
         //Check if has Summary chat
-        if (this._aiPageData.Item.Content.search("<END OF SUMMARY>") >= 0)
-            this._aiPageData.isSummary = true;
+        if (this._aiPageData.Item.Content.search("<END OF SUMMARY>") >= 0) {
+            this._aiPageData.isSummary = true;//Set Flag
+            //Replace the String in chat
+            this._aiChatData.messages[iSelIndex].content = this._aiChatData.messages[iSelIndex].content.replace("<END OF SUMMARY>", "\n");
+        }
 
     }
 
@@ -246,12 +249,19 @@ export class TextTemp {
         var aItems = this._aiChatData.messages;
         var sSummarizedText = "";
         var sCurrentLine = "";
+        var sRole = "";
         var sNewLine = "\n";
         for (var i = 0; i < aItems.length; i++) {
             if (i === 0)
                 continue //Skip First Chat
             sCurrentLine = "";
-            sCurrentLine = aItems[i].role + sNewLine + aItems[i].content + sNewLine;
+            sRole = aItems[i].role;
+            if (aItems[i].role === "assistant") {
+                sRole = "AI Assistant: "
+            } else if (aItems[i].role === "user") {
+                sRole = "Technician Response: "
+            }
+            sCurrentLine = sRole + sNewLine + aItems[i].content + sNewLine;
             //Append to long text
             sSummarizedText = sSummarizedText + sCurrentLine;
         }
