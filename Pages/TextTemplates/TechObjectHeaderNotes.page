@@ -24,6 +24,7 @@
 							"IsVisible": true,
 							"Separator": true,
 							"PlaceHolder": "Technical Object Header Notes",
+							"OnValueChange": "/SmartInspections/Rules/TextTemplates/TechObjHeaderNotes_OnValueChange.js",
 							"MinNumberOfLines": 70,
 							"Enabled": true,
 							"IsEditable": "/SmartInspections/Rules/TextTemplates/IsTechObjectTempSaved.js"
@@ -53,7 +54,7 @@
 				"Position": "Left",
 				"IsIconCircular": false,
 				"Visible": true,
-				"OnPress": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+				"OnPress": "/SmartInspections/Rules/TextTemplates/onPressTOHeaderNotesCancel.js"
 			},
 			{
 				"_Name": "ActionBarItem0",

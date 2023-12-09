@@ -1,10 +1,10 @@
 {
 	"_Type": "Action.Type.Message",
 	"ActionResult": {
-		"_Name": "TextSeqCancelSummarySave"
+		"_Name": "TechObjecHeaderNote_CancelPrompt"
 	},
-	"Message": "Are you sure to cancel the process without saving this summary?",
-	"Title": "Cancel Process",
+	"Message": "Are you sure want to cancel without saving the changes?",
+	"Title": "Cancel Changes",
 	"OKCaption": "Yes, Cancel",
 	"OnOK": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
 	"CancelCaption": "No, Let Me Review"

@@ -166,8 +166,8 @@ export class TextTemp {
     }
 
     /**********************************************************
-  * CHATGPT - Texts
-  **********************************************************/
+      * CHATGPT - CHAT Processing
+      **********************************************************/
     static aiResetChatData() {
         /** Reset the ChatData */
         this._aiChatData = { "model": undefined, "messages": [] };
@@ -244,7 +244,9 @@ export class TextTemp {
         }
 
     }
-
+    /**********************************************************
+     * CHATGPT - SUMMARIZE Chats
+     **********************************************************/
     static aiSummarizeChatGPT() {
         var aItems = this._aiChatData.messages;
         var sSummarizedText = "";
@@ -269,8 +271,22 @@ export class TextTemp {
     }
 
     /**********************************************************
+    * LONG TEXT - Processing & Summarizing
+    **********************************************************/
+    static LTResetLongTextData() {
+        /* reset the Summarized Text */
+        this._sSummarizedText = "";
+    }
+
+    static LTSummarizeLongText() {
+        /**get the Long Text From template & Set it in Global */
+        var sLongText = this._oTemplateDetail.Header.TempLongText;//Long Text
+        this.setSummarizedText(sLongText);
+
+    }
+    /**********************************************************
         * Others
-        **********************************************************/
+    **********************************************************/
 
     /* Check Connections */
     static hasConnection(context) {
