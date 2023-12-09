@@ -1,0 +1,6 @@
+{
+	"DestinationName": "openai",
+	"OfflineEnabled": false,
+	"SourceType": "Mobile",
+	"RestService": true
+}

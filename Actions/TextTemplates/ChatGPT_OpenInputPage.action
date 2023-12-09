@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "ChatGPT_OpenInputPage"
+	},
+	"PageToOpen": "/SmartInspections/Pages/TextTemplates/ChatGPTInput.page",
+	"BackStackVisible": false,
+	"ModalPage": true,
+	"NavigationType": "Outer"
+}

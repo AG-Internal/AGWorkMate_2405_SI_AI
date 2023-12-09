@@ -1,14 +1,61 @@
 import libVal from '../../../SAPAssetManager/Rules/Common/Library/ValidationLibrary';
 export class TextTemp {
-    // static setCurrentFLocBinding(clientAPI, pBinding) {
-    //     let appClientData = clientAPI.getAppClientData();
-    //     appClientData.CurrentFLoc = pBinding;
-    // }
 
-    // static updateCurrentFLocBinding(clientAPI, sLongText) {
-    //     let appClientData = clientAPI.getAppClientData();
-    //     appClientData.CurrentFLoc.FLocLongText = sLongText;
-    // }
+    /**********************************************************
+    * Get TEMPLATE DETAIL
+    **********************************************************/
+    static getTemplateDetails(context) {
+        /* Get the Template Details & Set it to App Client Data */
+        var sTemplateID = this._obTemplateConfig.TemplateID;
+        var sTempTypeItem = context.getGlobalDefinition('/SmartInspections/Globals/TextTemplates/TYPE_ITEM.global').getValue();
+        var sQueryOptions = `$filter=TemplateID eq '${sTemplateID}'&$orderby=TempCounter`;
+        //READ the entity
+        var oPromise = context.read('/SmartInspections/Services/SAM.service', 'LTTemplateTextSet', [], sQueryOptions).then(
+            function (results) {
+                //return the Results
+                var aItems = [];
+                //Prepare the Array
+                results.forEach(function (oValue) {
+                    aItems.push(oValue);
+                });
+                //Prepare for Client Data
+                let aTextItems = [];
+                let oTextHeader = undefined;
+                let oTextLine = {};
+                for (var i = 0; i < aItems.length; i++) {
+                    //From Entity
+                    oTextLine = {};
+                    oTextLine.TemplateID = aItems[i].TemplateID;
+                    oTextLine.TempCounter = aItems[i].TempCounter;
+                    oTextLine.TempRowType = aItems[i].TempRowType;
+                    oTextLine.TempShortText = aItems[i].TempShortText;
+                    oTextLine.TempLongText = aItems[i].TempLongText;
+                    oTextLine.IsActive = aItems[i].IsActive;
+                    //Other UI Needed Fields
+                    oTextLine.ResponseText = "";
+                    oTextLine.IsCompleted = false;
+
+                    if (oTextLine.TempRowType === sTempTypeItem) {
+                        //Pass the Rows to Item
+                        aTextItems.push(oTextLine);
+                    } else {
+                        //Pass the Row to Header
+                        oTextHeader = Object.assign({}, oTextLine);//Shallow Copy
+                    }
+                }//For
+                TextTemp.setTemplateDetail(oTextHeader, aTextItems);
+                // var sTempMsg = oTextHeader.TempCounter + "/" + oTextHeader.TempRowType + " - " + aTextItems.length;
+                // alert(sTempMsg);
+                return true;
+
+            }); //read
+
+        return oPromise;
+
+    }
+    /**********************************************************
+       *  Class Vars
+       **********************************************************/
     static init(pbDoReset/* Do Reset*/) {
         if (!pbDoReset) {
             if (this._isInit) {
@@ -22,6 +69,13 @@ export class TextTemp {
         this.PageTextSeq = { Item: undefined, CurrIndex: -1, IsLastItem: false };//To SHow it in page
         this._sSummarizedText = "";
         this._saveCallFrom = "";
+        //CHATGPT
+        this._aiChatData = { "model": undefined, "messages": [] };//To Hold Data
+        this._aiPageData = { Item: { Content: undefined }, isSummary: false };//To show it in Page
+        this._aiPromptData = {
+            "GPTModel": "gpt-3.5-turbo", "FirstPrompt": undefined,
+            "TechObject": undefined, "FaultText": undefined
+        };//Initial Prompt
     }
     static reset() {
         this.init(true);
@@ -110,59 +164,100 @@ export class TextTemp {
         }
         this.setSummarizedText(sSummarizedText);
     }
+
     /**********************************************************
-    * Get TEMPLATE DETAIL
-    **********************************************************/
+  * CHATGPT - Texts
+  **********************************************************/
+    static aiResetChatData() {
+        /** Reset the ChatData */
+        this._aiChatData = { "model": undefined, "messages": [] };
+        this._aiPageData = { Item: { Content: undefined }, isSummary: false };
+        this._aiPromptData = {
+            "GPTModel": "gpt-3.5-turbo", "FirstPrompt": undefined,
+            "TechObject": undefined, "FaultText": undefined
+        };
+    }
 
-    static getTemplateDetails(context) {
-        /* Get the Template Details & Set it to App Client Data */
-        var sTemplateID = this._obTemplateConfig.TemplateID;
-        var sTempTypeItem = context.getGlobalDefinition('/SmartInspections/Globals/TextTemplates/TYPE_ITEM.global').getValue();
-        var sQueryOptions = `$filter=TemplateID eq '${sTemplateID}'&$orderby=TempCounter`;
-        //READ the entity
-        var oPromise = context.read('/SmartInspections/Services/SAM.service', 'LTTemplateTextSet', [], sQueryOptions).then(
-            function (results) {
-                //return the Results
-                var aItems = [];
-                //Prepare the Array
-                results.forEach(function (oValue) {
-                    aItems.push(oValue);
-                });
-                //Prepare for Client Data
-                let aTextItems = [];
-                let oTextHeader = undefined;
-                let oTextLine = {};
-                for (var i = 0; i < aItems.length; i++) {
-                    //From Entity
-                    oTextLine = {};
-                    oTextLine.TemplateID = aItems[i].TemplateID;
-                    oTextLine.TempCounter = aItems[i].TempCounter;
-                    oTextLine.TempRowType = aItems[i].TempRowType;
-                    oTextLine.TempShortText = aItems[i].TempShortText;
-                    oTextLine.TempLongText = aItems[i].TempLongText;
-                    oTextLine.IsActive = aItems[i].IsActive;
-                    //Other UI Needed Fields
-                    oTextLine.ResponseText = "";
-                    oTextLine.IsCompleted = false;
+    static aiPrepareInitialChatData(psTechObject, psFaultText) {
+        /** Prepare Initial Data and Data from template */
+        this._aiPromptData.GPTModel = "gpt-3.5-turbo";//Model
+        this._aiPromptData.FirstPrompt = this._oTemplateDetail.Header.TempLongText;//First Prompt
+        this._aiPromptData.TechObject = psTechObject;//Technical Object
+        this._aiPromptData.FaultText = psFaultText;//Fault Text
 
-                    if (oTextLine.TempRowType === sTempTypeItem) {
-                        //Pass the Rows to Item
-                        aTextItems.push(oTextLine);
-                    } else {
-                        //Pass the Row to Header
-                        oTextHeader = Object.assign({}, oTextLine);//Shallow Copy
-                    }
-                }//For
-                TextTemp.setTemplateDetail(oTextHeader, aTextItems);
-                // var sTempMsg = oTextHeader.TempCounter + "/" + oTextHeader.TempRowType + " - " + aTextItems.length;
-                // alert(sTempMsg);
-                return true;
+        /** Replace & Update the First Prompt  */
+        var sFirstPrompt = this._aiPromptData.FirstPrompt;
+        sFirstPrompt = sFirstPrompt.replace("_FAULTTEXT_", this._aiPromptData.FaultText);
+        sFirstPrompt = sFirstPrompt.replace("_TECHOBJ_", this._aiPromptData.TechObject);
 
-            }); //read
+        this._aiPromptData.FirstPrompt = sFirstPrompt;
+        //Message Format
+        var oMessage =
+        {
+            "role": "user",
+            "content": sFirstPrompt
+        };
+        //Update Model Data
+        // this._aiChatData.model = "gpt-3.5-turbo";
+        //this._aiChatData.messages.push(oMessage);
+    }
 
-        return oPromise;
+    static aiPrepareFirstPrompt() {
+        //Message Format
+        var oMessage =
+        {
+            "role": "user",
+            "content": this._aiPromptData.FirstPrompt
+        };
+        this._aiChatData.model = this._aiPromptData.GPTModel;
+        this.aiAppendChatData(oMessage);
+        alert("FirstPrompt" + this._aiPromptData.FirstPrompt);
+    }
+
+    static aiAppendUserRespToChatData(psMessage) {
+        var oMessage =
+        {
+            "role": "user",
+            "content": psMessage
+        };
+        this.aiAppendChatData(oMessage);
+    }
+
+    static aiAppendChatData(poMessage) {
+        /* Append to Chat Data */
+        if (poMessage)
+            this._aiChatData.messages.push(poMessage);
+    }
+    static aiPrepareCurrentRow() {
+        /* Prepare Current row needs to be shown in Page */
+        var iMsglen = this._aiChatData.messages.length;
+        var iSelIndex = iMsglen - 1;
+        //Read the Last Row and show it
+        var sContent = this._aiChatData.messages[iSelIndex].content;
+
+        this._aiPageData.Item.Content = sContent;
+        //Check if has Summary chat
+        if (this._aiPageData.Item.Content.search("<END OF SUMMARY>") >= 0)
+            this._aiPageData.isSummary = true;
 
     }
+
+    static aiSummarizeChatGPT() {
+        var aItems = this._aiChatData.messages;
+        var sSummarizedText = "";
+        var sCurrentLine = "";
+        var sNewLine = "\n";
+        for (var i = 0; i < aItems.length; i++) {
+            if (i === 0)
+                continue //Skip First Chat
+            sCurrentLine = "";
+            sCurrentLine = aItems[i].role + sNewLine + aItems[i].content + sNewLine;
+            //Append to long text
+            sSummarizedText = sSummarizedText + sCurrentLine;
+        }
+        this.setSummarizedText(sSummarizedText);
+    }
+
     /**********************************************************
         * Others
         **********************************************************/

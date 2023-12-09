@@ -1,0 +1,14 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "ChatGPTInit"
+	},
+	"OnSuccess": "/SmartInspections/Rules/TextTemplates/ChatGPTTextAPICall.js",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Your AI companion is loading...",
+	"Message": "Tuning in to your equipment's needs...",
+	"NumberOfLines": 2,
+	"Duration": 2,
+	"IsIconHidden": true,
+	"Animated": true
+}
