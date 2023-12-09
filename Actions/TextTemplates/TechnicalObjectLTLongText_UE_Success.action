@@ -5,9 +5,9 @@
 	},
 	"OnSuccess": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
 	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Redirecting to Equipment View...",
 	"Message": "Technical Object Header Notes Updated",
 	"NumberOfLines": 2,
-	"Duration": 3,
 	"Icon": "sap-icon://message-success",
 	"Animated": true
 }

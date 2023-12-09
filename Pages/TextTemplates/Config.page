@@ -98,8 +98,8 @@
 					"Card": {
 						"Visible": true,
 						"Title": "{ConfigShortText}",
-						"Subhead": "{TempShortText}",
-						"Footnote": "{TemplateID}",
+						"Subhead": "{TempShortText} ({TempRowTypeText})",
+						"DetailImage": "/SmartInspections/Rules/TextTemplates/ConfigPage_RowIcon.js",
 						"DetailImageIsCircular": false,
 						"OnPress": "/SmartInspections/Rules/TextTemplates/OnPressTemplate.js",
 						"OverflowButtons": [],

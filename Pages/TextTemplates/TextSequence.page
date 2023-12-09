@@ -229,7 +229,7 @@
 	],
 	"_Type": "Page",
 	"_Name": "TextSequence",
-	"Caption": "Text Sequence",
+	"Caption": "Sequential questions",
 	"PrefersLargeCaption": true,
 	"OnActivityBackPressed": "/SmartInspections/Rules/TextTemplates/onPressTextSeqActivityBack.js",
 	"ActionBar": {

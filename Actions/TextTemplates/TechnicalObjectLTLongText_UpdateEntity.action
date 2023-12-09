@@ -5,6 +5,8 @@
 	},
 	"OnFailure": "/SmartInspections/Actions/TextTemplates/TechnicalObjectLTLongText_UE_Failure.action",
 	"OnSuccess": "/SmartInspections/Actions/TextTemplates/TechnicalObjectLTLongText_UE_Success.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Updating Header Notes",
 	"Target": {
 		"Service": "/SmartInspections/Services/SAM.service",
 		"EntitySet": "TechnicalObjectDetailsSet",
