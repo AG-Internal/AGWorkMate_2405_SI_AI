@@ -2,6 +2,7 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
+import libVal from '../Common/ValidationLibrary';
 import { GetDataUtil } from "../SIData/GetDataUtil";
 import { TextTemp } from "./TextTemp";
 export default function ChatGPTInitChat(clientAPI, pbIsInitalCall) {
@@ -16,9 +17,24 @@ export default function ChatGPTInitChat(clientAPI, pbIsInitalCall) {
         binding = listPageClientData.NavigatedTechObject;
     } catch (err) { }
 
+    //Get TechObject Description
+    var TechnicalObjectDesc = binding.TechnicalObject;
+    if (libVal.evalIsEmpty(binding.FunctionalLocation)) {
+        //Equipment (if Floc is initial)
+        TechnicalObjectDesc = binding.EquipmentDescription;
+    } else {
+        //Floc Desc
+        TechnicalObjectDesc = binding.FunctionalLocationDesc;
+    }
+    if (!TechnicalObjectDesc) {
+        //If Text is empty pass the Technical Object Itself
+        TechnicalObjectDesc = binding.TechnicalObject;
+    }
+    //Prepare Details
     var oDetails = {
         OrderNumber: binding.OrderNumber,
-        TechnicalObject: binding.TechnicalObject
+        TechnicalObject: binding.TechnicalObject,//ID
+        TechnicalObjectDesc:TechnicalObjectDesc //Description
     };
 
     //Get the Failed MICs
@@ -28,7 +44,7 @@ export default function ChatGPTInitChat(clientAPI, pbIsInitalCall) {
         clientAPI.dismissActivityIndicator(sIdActInd);
         if (result.bHasFails) {
             //Set Data
-            TextTemp.aiPrepareInitialChatData(oDetails.TechnicalObject, result.sFaultText);
+            TextTemp.aiPrepareInitialChatData(oDetails.TechnicalObjectDesc, result.sFaultText);
             TextTemp.aiPrepareFirstPrompt();
             //Call API Post
             clientAPI.executeAction("/SmartInspections/Actions/TextTemplates/ChatGPTInit.action");
