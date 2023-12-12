@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "TechObj_NavToImageInspection"
+	},
+	"PageToOpen": "/SmartInspections/Pages/ImageAnal/TechObject_ImageInspection.page",
+	"BackStackVisible": true,
+	"NavigationType": "Outer"
+}

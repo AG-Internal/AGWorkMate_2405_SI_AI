@@ -1,6 +1,10 @@
 {
 	"Controls": [
 		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
 			"_Type": "Control.Type.SectionedTable",
 			"_Name": "SectionedTable0",
 			"Sections": [
@@ -36,12 +40,6 @@
 						"LayoutType": "Horizontal",
 						"HorizontalAlignment": "Trailing"
 					},
-					"_Type": "Section.Type.ButtonTable",
-					"_Name": "SectionButtonTable0",
-					"Visible": true,
-					"EmptySection": {
-						"FooterVisible": false
-					},
 					"Separators": {
 						"TopSectionSeparator": false,
 						"BottomSectionSeparator": true,
@@ -49,7 +47,34 @@
 						"FooterSeparator": true,
 						"ControlSeparator": true
 					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
 					"Buttons": [
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton2",
+							"Title": "Vision",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/ImageAnal/TechObj_OnPressVision.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Vision"
+								}
+							}
+						},
 						{
 							"Styles": {
 								"Button": "wdActionBtn"
@@ -162,6 +187,9 @@
 							}
 						},
 						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "SectionButton1",
 							"Title": "Notes",
 							"Alignment": "Center",
@@ -171,9 +199,6 @@
 							"FullWidth": false,
 							"Visible": true,
 							"Enabled": true,
-							"Styles": {
-								"Button": "wdActionBtn"
-							},
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/TextTemplates/onPressHeadNotesTO.js",
 								"UserInteraction": {
@@ -185,6 +210,13 @@
 					]
 				},
 				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
 					"_Type": "Section.Type.ObjectTable",
 					"Target": {
 						"EntitySet": "InspectionCharacteristicDetailsSet",
@@ -196,13 +228,6 @@
 					"EmptySection": {
 						"Caption": "No Records",
 						"FooterVisible": false
-					},
-					"Separators": {
-						"TopSectionSeparator": false,
-						"BottomSectionSeparator": true,
-						"HeaderSeparator": true,
-						"FooterSeparator": true,
-						"ControlSeparator": true
 					},
 					"ObjectCell": {
 						"ContextMenu": {
@@ -239,11 +264,7 @@
 					},
 					"HighlightSelectedItem": false
 				}
-			],
-			"FilterFeedbackBar": {
-				"ShowAllFilters": false,
-				"_Type": "Control.Type.FilterFeedbackBar"
-			}
+			]
 		}
 	],
 	"_Type": "Page",

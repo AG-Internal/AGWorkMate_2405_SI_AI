@@ -1,0 +1,93 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Footnote": "/SmartInspections/Rules/ImageAnal/TechObj_InspCounts.js",
+						"DetailImageIsCircular": false,
+						"BodyText": "/SmartInspections/Rules/ImageAnal/TechObj_TotalCounts.js",
+						"HeadlineText": "/SmartInspections/Rules/TextTemplates/ConfigPageObjHeadline.js",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading",
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "FormCellButton0",
+							"IsVisible": true,
+							"Separator": true,
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"Title": "Start Smart Vision Analysis",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "/SmartInspections/Images/chatgpt.dark.png",
+							"ImagePosition": "Leading",
+							"Enabled": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.Attachment",
+							"_Name": "FormCellAttachment0",
+							"IsVisible": true,
+							"Separator": true,
+							"AttachmentActionType": [
+								"AddPhoto",
+								"TakePhoto"
+							],
+							"AttachmentTitle": "Add Equipment Images for AI Smart Vision Inspection"
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TechObject_ImageInspection",
+	"Caption": "/SmartInspections/Rules/TextTemplates/ConfigPageTitle.js",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Close",
+				"Icon": "sap-icon://close-command-field",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/TextTemplates/ClosePage.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}
