@@ -48,11 +48,12 @@
 							"Semantic": "Tint",
 							"Image": "/SmartInspections/Images/chatgpt.dark.png",
 							"ImagePosition": "Leading",
-							"Enabled": true
+							"Enabled": true,
+							"OnPress": "/SmartInspections/Rules/ImageAnal/TOIP_OnPressStartAnalysis.js"
 						},
 						{
 							"_Type": "Control.Type.FormCell.Attachment",
-							"_Name": "FormCellAttachment0",
+							"_Name": "AttachmentControl",
 							"IsVisible": true,
 							"Separator": true,
 							"AttachmentActionType": [
@@ -69,7 +70,8 @@
 					"_Type": "Section.Type.FormCell",
 					"_Name": "SectionFormCell0"
 				}
-			]
+			],
+			"OnRendered": "/SmartInspections/Rules/ImageAnal/TOIP_OnRendered.js"
 		}
 	],
 	"_Type": "Page",

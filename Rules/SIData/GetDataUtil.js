@@ -204,4 +204,57 @@ export class GetDataUtil {
         return oResultDataPromise;
     }//getResultDataSetOnQuery
 
+    /**********************************************************
+       * Get Template Details based on Template Area
+      **********************************************************/
+    static getTemplateDetailForArea(clientAPI, psTemplateArea) {
+        /* get Template Config and then get the Area */
+
+        //Config Query
+       
+        var sTemplateConfigQuery = `$filter=TemplateArea eq '${psTemplateArea}'`;
+        //Read Parameters
+        var oPromise = clientAPI.read('/SmartInspections/Services/SAM.service', 'LTTemplateConfigSet', [], sTemplateConfigQuery).then(
+            function (results) {
+                /* Variables*/
+                var aConfigs = [];
+                var aTemplateTexts = [];
+                /*get the Template ID */
+                var sTemplateID = "";
+                if (results && results.length > 0) {
+                    results.forEach(function (value) {
+                        aConfigs.push(value);
+                    })//ForEach
+                }//Results
+                if (aConfigs.length > 0) {
+                    //Read the First Template & continue to proceed
+                    sTemplateID = aConfigs[0].TemplateID;
+                } else {
+                    //no Template ID found then return empty array
+                
+                    return aTemplateTexts;
+                }
+             
+                /**Call Next Promise to get Template Details */
+                var sTemplateTextQuery = `$filter=TemplateID eq '${sTemplateID}'&$orderby=TempCounter`;
+                //Read
+                return clientAPI.read('/SmartInspections/Services/SAM.service', 'LTTemplateTextSet', [], sTemplateTextQuery).then(
+                    function (ttresults) {
+                   
+                        if (ttresults && ttresults.length > 0) {
+                            ttresults.forEach(function (value) {
+                                aTemplateTexts.push(value);
+                            })//ForEach
+                        }
+                        return aTemplateTexts;
+                    });//LTTemplateTextSet
+
+            });//LTTemplateConfigSet
+
+        return oPromise
+
+    }//getTemplateDetailForArea
+
+
+
 }//CLASS-GetDataUtil
