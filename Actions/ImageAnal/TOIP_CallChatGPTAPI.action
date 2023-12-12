@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "TOIP_CallChatGPTAPI"
+	},
+	"OnSuccess": "/SmartInspections/Rules/ImageAnal/TOIP_CallChatGPTAPI.js",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Your AI technician is on the case...",
+	"Message": "AI Eyes on the Prize: Analyzing Images for Insights"
+}

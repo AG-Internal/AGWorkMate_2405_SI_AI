@@ -9,6 +9,10 @@ export class ImageAnal {
         this._oTechObjectInsp = undefined;//Techncal Object Details
         this._oResultData = undefined; //Results Data
         this._sPromptSystem = "";//Prompt for System role
+        //Chat Data
+        this._aAttachData = [];// attachment Data
+        this._sInspCriteria = "";//Inspection Criteria concatenated
+        this._oAIChatData = {};
 
     }
     /**********************************************************
@@ -25,6 +29,15 @@ export class ImageAnal {
     }
     static setPromptSystem(sValue) {
         this._sPromptSystem = sValue;
+    }
+    static setAttachData(aArray) {
+        this._aAttachData = aArray;
+    }
+    static setInspCriteria(sValue) {
+        this._sInspCriteria = sValue;
+    }
+    static setAIChatData(oValue) {
+        this._oAIChatData = oValue;
     }
     /**********************************************************
     *Get Inspection Data
@@ -70,6 +83,63 @@ export class ImageAnal {
             }
             return bHasData;
         });
+    }
+
+    /**********************************************************
+   *For API call
+   **********************************************************/
+    static prepareInspCriterias() {
+        //get MICs From Global
+        var aItems = this._oTechObjectInsp.aAllMics;
+        //concat all the Mics in to a String
+        var sInspections = "Inspection Criteria: \n";
+        for (var i = 0; i < aItems.length; i++) {
+            sInspections = sInspections + `${aItems[i].MicShortText} \n`;
+        }
+        //Set it in Global
+        ImageAnal.setInspCriteria(sInspections);
+    }//prepareInspCriterias
+
+    static prepareChatData() {
+        /* Prepare ChatData */
+        var aMessages = [
+            //System Prompt
+            {
+                "role": "system",
+                "content": ImageAnal._sPromptSystem
+            },
+            //Inspections
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": ImageAnal._sInspCriteria
+                    }
+                ]
+            }
+        ];
+        //Append ChatData to Messages
+        for (var i = 0; i < ImageAnal._aAttachData.length; i++) {
+            aMessages[1].content.push({
+                "type": "image_url",
+                "image_url": {
+                    "url": ImageAnal._aAttachData[i].image_url
+                }
+            });
+        }//for-ImageAnal._aAttachData
+
+        //Final ChatData
+        var oChatData = {
+            "model": "gpt-4-vision-preview",
+            "messages": aMessages,
+            "max_tokens": 1000,
+            "temperature": 1,
+            "top_p": 1,
+            "n": 1
+        };
+        //Set it to global
+        ImageAnal.setAIChatData(oChatData);
     }
 
 } //ImageAnal
