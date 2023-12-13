@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "TOIP_NavToVisionSummary"
+	},
+	"PageToOpen": "/SmartInspections/Pages/ImageAnal/TOIPS_VisionSummary.page",
+	"BackStackVisible": false,
+	"ModalPage": true,
+	"NavigationType": "Outer"
+}

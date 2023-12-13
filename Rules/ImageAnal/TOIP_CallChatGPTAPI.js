@@ -12,23 +12,32 @@ export default function TOIP_CallChatGPTAPI(clientAPI) {
         method: "POST",
         body: oBody
     }).then(function (response) {
-        alert(response.statusCode);
+
+        //Parse the Data set it in Global
         let data = JSON.parse(response.content.getData());
         //on Success
         if (response.statusCode === 200) {
             var oMessage = data.choices[0].message;
-            alert(oMessage.content);
+            //Set Response to Image Anal
+            ImageAnal.setAIResponseMessage(oMessage.content);
+            //alert(oMessage.content);
+        } else {
+            alert(response.statusCode);
         }
 
-        var sMessage = oMessage.content;
-        sMessage = sMessage.replace("```json", "");
-        sMessage = sMessage.replace("```", "");
+        //process the response
+        ImageAnal.ProcessAIResponseToArray();
+        // var sMessage = oMessage.content;
+        // sMessage = sMessage.replace("```json", "");
+        // sMessage = sMessage.replace("```", "");
 
-        var aInsp = JSON.parse(sMessage);
-        var sTempMsg = aInsp.length + "";
-        alert(sTempMsg + aInsp[0].Result);
+        // var aInsp = JSON.parse(sMessage);
+        // var sTempMsg = aInsp.length + "";
+        // alert(sTempMsg + aInsp[0].Result);
         //Close the Indicator
         clientAPI.dismissActivityIndicator(sIdActInd);
+
+        clientAPI.executeAction("/SmartInspections/Actions/ImageAnal/TOIP_NavToVisionSummary.action");
 
     }).catch(function (error) {
         var eMessage = error.message;

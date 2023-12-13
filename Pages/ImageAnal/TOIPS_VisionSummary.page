@@ -1,0 +1,84 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "/SmartInspections/Rules/ImageAnal/TOIPS_SummaryCount.js",
+						"DetailImageIsCircular": false,
+						"HeadlineText": "/SmartInspections/Rules/TextTemplates/ConfigPageTitle.js",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading"
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": "/SmartInspections/Rules/ImageAnal/TOIPS_TableData.js",
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{MicShortText}",
+						"Footnote": "{LongText}",
+						"DisplayDescriptionInMobile": true,
+						"StatusText": "{DisplayResult}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"Icons": "/SmartInspections/Rules/ImageAnal/TOIPS_LineStatusIcon.js",
+						"Tags": [],
+						"AvatarStack": {
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [],
+							"ImageIsCircular": false
+						},
+						"Styles": {
+							"BackgroundColor": "/SmartInspections/Rules/ImageAnal/TOIPS_LineBGColor.js"
+						},
+						"Selected": "{Selected}"
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"Mode": "None",
+						"LongPressToEnable": "Multiple",
+						"ExitOnLastDeselect": true
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TOIP_VisionSummary",
+	"Caption": "Vision Summary",
+	"PrefersLargeCaption": true
+}

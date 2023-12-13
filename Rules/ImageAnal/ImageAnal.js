@@ -12,7 +12,17 @@ export class ImageAnal {
         //Chat Data
         this._aAttachData = [];// attachment Data
         this._sInspCriteria = "";//Inspection Criteria concatenated
-        this._oAIChatData = {};
+        this._oAIChatData = {}; //Input Chat Body
+        this._sAIResponseMessage = ""; // AI Response
+        //Processed Response
+        this._oProcessedResp = {
+            aResponse: [],
+            totalCount: 0,
+            passCount: 0,
+            failCount: 0,
+            descopeCount: 0,
+            notVerCount: 0
+        };
 
     }
     /**********************************************************
@@ -38,6 +48,9 @@ export class ImageAnal {
     }
     static setAIChatData(oValue) {
         this._oAIChatData = oValue;
+    }
+    static setAIResponseMessage(sValue) {
+        this._sAIResponseMessage = sValue;
     }
     /**********************************************************
     *Get Inspection Data
@@ -140,7 +153,107 @@ export class ImageAnal {
         };
         //Set it to global
         ImageAnal.setAIChatData(oChatData);
-    }
+    }//prepareChatData
+    /**********************************************************
+    *Process Response
+    **********************************************************/
+
+    static ProcessAIResponseToArray() {
+        /*Process the AI response in to required format */
+        var aResponse = [];
+        var aRespFinal = [];
+        //get the message from Class
+        var sMessage = this._sAIResponseMessage;
+        //Replace the Characters
+        sMessage = sMessage.replace("```json", "");//Begin
+        sMessage = sMessage.replace("```", "");//End
+
+        //Convert to array
+        aResponse = JSON.parse(sMessage);
+
+        if (aResponse.length <= 0) {
+            alert("Error in Response");
+        }
+        //Prepare Final Array with all Required Fields
+        var sFixedValuesResult = "";
+        var sAIResultUC = "";
+        var sDisplayResult = "";
+        var sMicDescopeType = "";
+        var sDefectCodeGroup = "";
+        var sDefectCode = "";
+        var bFitForUpdate = true;
+        var bSelected = false;
+        var totalCount = 0, passCount = 0, failCount = 0, descopeCount = 0, notVerCount = 0;
+        for (var i = 0; i < aResponse.length; i++) {
+            //Upper case
+            sAIResultUC = aResponse[i].Result.toUpperCase();
+            //Clear vars
+            bFitForUpdate = false;   bSelected = false;
+            sMicDescopeType = ""; sFixedValuesResult = ""; sDefectCodeGroup = ""; sDefectCode = "";
+            //Check the result
+            totalCount += 1;
+            if (sAIResultUC === "PASS") {
+                sDisplayResult = "Pass";
+                sFixedValuesResult = "PASS";// Set it as Pass
+                bFitForUpdate = true;
+                bSelected = true;
+                passCount += 1;
+            } else if (sAIResultUC === "FAIL") {
+                sDisplayResult = "Fail";
+                sFixedValuesResult = "FAIL";// Set it as Fail
+                sDefectCodeGroup = "CIVIL";
+                sDefectCode = "BLK";
+                bFitForUpdate = true;
+                bSelected = true;
+                failCount += 1;
+            } else if (sAIResultUC === "CANNOT BE VERIFIED") {
+                sDisplayResult = "No Result";
+                sFixedValuesResult = "";//No result
+                bFitForUpdate = false;
+                bSelected = false;
+                notVerCount += 1;
+            } else if (sAIResultUC === "NOT APPLICABLE") {
+                sDisplayResult = "Descope";
+                sFixedValuesResult = "";
+                sMicDescopeType = "01";
+                bFitForUpdate = true;
+                bSelected = true;
+                descopeCount += 1;
+            }
+            //Push it to Array
+
+            aRespFinal.push({
+                Index: i, //Index
+                Selected: bSelected, //Selected
+                IsFitForUpdate: bFitForUpdate,
+                //Mic Text
+                MicShortText: aResponse[i].InspectionCriteria,
+                //Result
+                AIResult: aResponse[i].Result,
+                DisplayResult: sDisplayResult,
+                //LongText
+                LongText: aResponse[i].Reason,
+                //Results
+                FixedValuesResult: sFixedValuesResult,
+                MicDescopeType: sMicDescopeType,
+                //Defect codes
+                DefectCodeGroup: sDefectCodeGroup,
+                DefectCode: sDefectCode
+            });
+        }//FOR-aResponse
+
+        //Set it Global
+        this._oProcessedResp = {
+            aResponse: aRespFinal,
+            totalCount: totalCount,
+            passCount: passCount,
+            failCount: failCount,
+            descopeCount: descopeCount,
+            notVerCount: notVerCount
+        };
+
+
+    }//ProcessAIResponseToArray
 
 } //ImageAnal
 
