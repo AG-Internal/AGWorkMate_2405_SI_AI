@@ -15,7 +15,10 @@
 						"HeadlineText": "/SmartInspections/Rules/TextTemplates/ConfigPageTitle.js",
 						"StatusPosition": "Stacked",
 						"StatusImagePosition": "Leading",
-						"SubstatusImagePosition": "Leading"
+						"SubstatusImagePosition": "Leading",
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
+						}
 					},
 					"_Type": "Section.Type.ObjectHeader",
 					"_Name": "SectionObjectHeader0",
@@ -83,8 +86,18 @@
 	"_Name": "TOIP_VisionSummary",
 	"Caption": "Vision Summary",
 	"PrefersLargeCaption": true,
+	"OnActivityBackPressed": "/SmartInspections/Rules/ImageAnal/TOIPS_OnActivityBack.js",
 	"ActionBar": {
 		"Items": [
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Close",
+				"Icon": "sap-icon://decline",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/ImageAnal/TOIPS_CancelPrompt.action"
+			},
 			{
 				"_Name": "ActionBarItem0",
 				"Caption": "Item",

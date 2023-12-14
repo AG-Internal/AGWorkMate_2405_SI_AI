@@ -19,7 +19,8 @@ export default function TOIP_OnPressStartAnalysis(clientAPI) {
     //Check attachments is added or not
     var iAttLength = oAttachmentControl.length;
     if (iAttLength <= 0) {
-        alert("Please Add images");
+        //alert("Please Add images");
+        return clientAPI.executeAction("/SmartInspections/Actions/ImageAnal/TOIPS_AddImageToProceed.action");
         return;
     }
     var sIdActInd = clientAPI.showActivityIndicator("Fueling the AI Engine, Data Preparation in Progress..");
@@ -47,7 +48,7 @@ export default function TOIP_OnPressStartAnalysis(clientAPI) {
     ImageAnal.prepareInspCriterias();
     //Prepare the Chat Data
     ImageAnal.prepareChatData();
-    
+
     clientAPI.dismissActivityIndicator(sIdActInd);
 
     //Call  the Chatgpt

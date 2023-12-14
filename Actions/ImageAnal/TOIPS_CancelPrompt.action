@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TOIPS_CancelPrompt"
+	},
+	"Message": "Do you really want to cancel saving the AI Insights?  or Long press on the Inspection item in the list, then pick your favorites to save!",
+	"Title": "Cancel AI Vision Summary",
+	"OKCaption": "Yes, Cancel",
+	"OnOK": "/SmartInspections/Actions/TextTemplates/ClosePage.action",
+	"CancelCaption": "No, Let me Review"
+}

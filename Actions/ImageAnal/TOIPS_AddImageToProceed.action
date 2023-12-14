@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TOIPS_AddImageToProceed"
+	},
+	"Message": "Unlock AI insights! Please Add Equipment images to get started....",
+	"Title": "Upload Images",
+	"OKCaption": "OK"
+}
