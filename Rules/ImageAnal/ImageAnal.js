@@ -23,6 +23,7 @@ export class ImageAnal {
             descopeCount: 0,
             notVerCount: 0
         };
+        this._aSummarySelectedIndices = [];
 
     }
     /**********************************************************
@@ -51,6 +52,9 @@ export class ImageAnal {
     }
     static setAIResponseMessage(sValue) {
         this._sAIResponseMessage = sValue;
+    }
+    static setSummarySelectedIndices(aArray) {
+        this._aSummarySelectedIndices = aArray;
     }
     /**********************************************************
     *Get Inspection Data
@@ -175,10 +179,13 @@ export class ImageAnal {
             alert("Error in Response");
         }
         //Prepare Final Array with all Required Fields
+        var aSummarySelectedIndices = [];
         var sFixedValuesResult = "";
         var sAIResultUC = "";
+        var sResult = "";
         var sDisplayResult = "";
         var sMicDescopeType = "";
+        var sMicDescopeDesc = "";
         var sDefectCodeGroup = "";
         var sDefectCode = "";
         var bFitForUpdate = true;
@@ -188,8 +195,10 @@ export class ImageAnal {
             //Upper case
             sAIResultUC = aResponse[i].Result.toUpperCase();
             //Clear vars
-            bFitForUpdate = false;   bSelected = false;
-            sMicDescopeType = ""; sFixedValuesResult = ""; sDefectCodeGroup = ""; sDefectCode = "";
+            bFitForUpdate = false; bSelected = false;
+            sMicDescopeType = ""; sMicDescopeDesc = "";
+            sDefectCodeGroup = ""; sDefectCode = "";
+            sFixedValuesResult = ""; sResult = "";
             //Check the result
             totalCount += 1;
             if (sAIResultUC === "PASS") {
@@ -216,10 +225,13 @@ export class ImageAnal {
                 sDisplayResult = "Descope";
                 sFixedValuesResult = "";
                 sMicDescopeType = "01";
+                sMicDescopeDesc = "Inspection Tool Failure"
                 bFitForUpdate = true;
                 bSelected = true;
                 descopeCount += 1;
             }
+            /* Result if Mic Type 2 - we need to update the result */
+            /*** Logic to be added**/
             //Push it to Array
 
             aRespFinal.push({
@@ -231,15 +243,21 @@ export class ImageAnal {
                 //Result
                 AIResult: aResponse[i].Result,
                 DisplayResult: sDisplayResult,
+                Result: sResult,//Mic Result
                 //LongText
                 LongText: aResponse[i].Reason,
                 //Results
                 FixedValuesResult: sFixedValuesResult,
                 MicDescopeType: sMicDescopeType,
+                MicDescopeDesc: sMicDescopeDesc,
                 //Defect codes
                 DefectCodeGroup: sDefectCodeGroup,
                 DefectCode: sDefectCode
             });
+
+            if (bSelected) {
+                aSummarySelectedIndices.push(i);
+            }
         }//FOR-aResponse
 
         //Set it Global
@@ -251,6 +269,7 @@ export class ImageAnal {
             descopeCount: descopeCount,
             notVerCount: notVerCount
         };
+        this._aSummarySelectedIndices = aSummarySelectedIndices;
 
 
     }//ProcessAIResponseToArray

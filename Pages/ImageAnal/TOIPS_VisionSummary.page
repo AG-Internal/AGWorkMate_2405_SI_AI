@@ -45,6 +45,7 @@
 						"Footnote": "{LongText}",
 						"DisplayDescriptionInMobile": true,
 						"StatusText": "{DisplayResult}",
+						"SubstatusImage": "/SmartInspections/Rules/ImageAnal/TOIPS_LineSubStatusImage.js",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "none",
 						"Icons": "/SmartInspections/Rules/ImageAnal/TOIPS_LineStatusIcon.js",
@@ -72,7 +73,8 @@
 						"Mode": "None",
 						"LongPressToEnable": "Multiple",
 						"ExitOnLastDeselect": true
-					}
+					},
+					"OnSelectionChanged": "/SmartInspections/Rules/ImageAnal/TOIPS_OnSelectionChange.js"
 				}
 			]
 		}
@@ -80,5 +82,20 @@
 	"_Type": "Page",
 	"_Name": "TOIP_VisionSummary",
 	"Caption": "Vision Summary",
-	"PrefersLargeCaption": true
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"IconText": "Save",
+				"Visible": true,
+				"OnPress": "/SmartInspections/Rules/ImageAnal/TOIPS_OnSaveSummary.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }

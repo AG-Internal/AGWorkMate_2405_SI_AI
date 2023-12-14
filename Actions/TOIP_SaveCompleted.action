@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TOIP_SaveCompleted"
+	},
+	"Message": "AI Cracks the Case! Inspections Updated with Flying Colors",
+	"Title": "Update Successfull",
+	"OKCaption": "OK",
+	"OnOK": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+}

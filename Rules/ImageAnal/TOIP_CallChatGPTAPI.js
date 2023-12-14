@@ -4,7 +4,7 @@
  */
 import { ImageAnal } from "./ImageAnal";
 export default function TOIP_CallChatGPTAPI(clientAPI) {
-    var sIdActInd = clientAPI.showActivityIndicator("AI Eyes on the Prize: Analyzing Images for Insights ,Results Soon...");
+    var sIdActInd = clientAPI.showActivityIndicator("AI Eyes on the Prize: Analyzing Images for Insights, Results Soon...");
     var oBody = ImageAnal._oAIChatData;
 
 

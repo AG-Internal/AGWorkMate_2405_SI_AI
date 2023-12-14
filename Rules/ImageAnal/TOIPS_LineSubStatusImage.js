@@ -2,22 +2,19 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
-export default function TOIPS_LineStatusIcon(clientAPI) {
+export default function TOIPS_LineSubStatusImage(clientAPI) {
 
     var binding = clientAPI.binding;
     var sAIResultUC = binding.AIResult.toUpperCase();
     var sIcon = "";
-
-    return sIcon;
-
     if (sAIResultUC == 'PASS') {
-        sIcon = '/SmartInspections/Images/pass.png';
+        sIcon = '/SmartInspections/Images/PassGreen.png';
     } else if (sAIResultUC == 'FAIL') {
-        sIcon = '/SmartInspections/Images/fail.png';
+        sIcon = '/SmartInspections/Images/FailRed.png';
     } else if (sAIResultUC == 'CANNOT BE VERIFIED') {
-        sIcon = '/SmartInspections/Images/notfound.png';
+        sIcon = '/SmartInspections/Images/NotFoundAmber.png';
     } else if (sAIResultUC == 'NOT APPLICABLE') {
-        sIcon = '/SmartInspections/Images/descope.png';
+        sIcon = '/SmartInspections/Images/DescopeGrey.png';
     }
 
     return sIcon;
