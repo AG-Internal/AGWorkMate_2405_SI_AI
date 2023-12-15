@@ -58,6 +58,27 @@
 							"Styles": {
 								"Button": "wdActionBtn"
 							},
+							"_Name": "SectionButton3",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://attachment",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SmartInspections/Rules/ImageAnal/TechObj_OnPressAttach.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": ""
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
 							"_Name": "SectionButton2",
 							"Title": "Vision",
 							"Alignment": "Center",
@@ -65,7 +86,7 @@
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
 							"FullWidth": false,
-							"Visible": true,
+							"Visible": "/SmartInspections/Rules/ImageAnal/TechObj_VisionButtonEnabled.js",
 							"Enabled": true,
 							"OnPress": {
 								"Handler": "/SmartInspections/Rules/ImageAnal/TechObj_OnPressVision.js",

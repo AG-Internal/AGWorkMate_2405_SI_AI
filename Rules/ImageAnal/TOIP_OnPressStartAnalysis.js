@@ -24,6 +24,10 @@ export default function TOIP_OnPressStartAnalysis(clientAPI) {
         return;
     }
     var sIdActInd = clientAPI.showActivityIndicator("Fueling the AI Engine, Data Preparation in Progress..");
+
+    //Set attach control value to Global for ProcessingLater
+    ImageAnal.setAttachControlValue(oAttachmentControl);
+
     /* Prepare Image Prompt */
     var aAttachArray = [];
     var base64String = "";

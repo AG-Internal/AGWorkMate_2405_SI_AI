@@ -9,6 +9,8 @@ export class ImageAnal {
         this._oTechObjectInsp = undefined;//Techncal Object Details
         this._oResultData = undefined; //Results Data
         this._sPromptSystem = "";//Prompt for System role
+        //Attachment Control
+        this._oAttachControlValue = undefined; //Attachment Control Data
         //Chat Data
         this._aAttachData = [];// attachment Data
         this._sInspCriteria = "";//Inspection Criteria concatenated
@@ -40,6 +42,9 @@ export class ImageAnal {
     }
     static setPromptSystem(sValue) {
         this._sPromptSystem = sValue;
+    }
+    static setAttachControlValue(oValue){
+        this._oAttachControlValue = oValue;
     }
     static setAttachData(aArray) {
         this._aAttachData = aArray;

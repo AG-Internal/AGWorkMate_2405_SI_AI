@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ClosePage",
+	"ActionResult": {
+		"_Name": "TechObj_Close_AttachSaveSuccess"
+	},
+	"OnSuccess": "/SmartInspections/Actions/SIAttachments/TechObj_Msg_AttachSaveSuccess.action",
+	"CancelPendingActions": false
+}

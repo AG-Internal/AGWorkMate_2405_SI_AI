@@ -6,5 +6,5 @@
 	"Message": "AI Cracks the Case! Inspections Updated with Flying Colors",
 	"Title": "Update Successfull",
 	"OKCaption": "OK",
-	"OnOK": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+	"OnOK": "/SmartInspections/Rules/ImageAnal/TOIP_SaveAttachments.js"
 }

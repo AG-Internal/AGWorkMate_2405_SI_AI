@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "TechObj_OpenAttachmentList"
+	},
+	"PageToOpen": "/SmartInspections/Pages/SIAttachments/AttachmentList.page",
+	"BackStackVisible": true,
+	"OuterNavigation": true,
+	"ModalPage": true,
+	"NavigationType": "Outer"
+}

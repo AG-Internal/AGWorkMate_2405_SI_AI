@@ -1,0 +1,86 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/SmartInspections/Services/SAM.service",
+						"EntitySet": "InspectionCharacteristicAttachmentSet",
+						"QueryOptions": "/SmartInspections/Rules/SIAttachments/GetAttachmentListQuery.js",
+						"ReadLink": "{@odata.readLink}"
+					},
+					"_Name": "AttachmentList",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No Attachments Found",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{FileName}",
+						"Subhead": "{Description}",
+						"Footnote": "/SmartInspections/Rules/AttachmentList_FileSizeWrapper.js",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "none",
+						"ProgressIndicator": "/SmartInspections/Rules/AttachmentList_SetIndicatorState.js",
+						"Icons": "/SmartInspections/Rules/AttachmentList_Icon.js",
+						"Tags": [],
+						"AvatarStack": {
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"ImageIsCircular": true
+						},
+						"OnPress": "/SmartInspections/Rules/AttachmentList_DownloadOrOpen.js",
+						"OnAccessoryButtonPress": "/SmartInspections/Rules/AttachmentList_DownloadOrOpen.js",
+						"Selected": false
+					},
+					"DataPaging": {
+						"PageSize": 50,
+						"ShowLoadingIndicator": false
+					},
+					"HighlightSelectedItem": false
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"InspectionCharacteristicAttachmentSet"
+	],
+	"_Name": "AttachmentList",
+	"Caption": "Attachment List",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://decline",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SmartInspections/Actions/TextTemplates/ClosePage.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "TechObj_Msg_AttachSaveSuccess"
+	},
+	"Message": "Attachment(s) successfully saved to Equipment..",
+	"NumberOfLines": 2,
+	"Duration": 3,
+	"Animated": true
+}
