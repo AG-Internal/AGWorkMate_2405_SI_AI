@@ -6,9 +6,13 @@
 import { ImageAnal } from "./ImageAnal";
 import Base64Library from "../../../SAPAssetManager/Rules/Common/Library/Base64Library.js";
 import IsAndroid from '../../../SAPAssetManager/Rules/Common/IsAndroid.js';
+import CheckForConnectivity from '../../../SAPAssetManager/Rules/Common/CheckForConnectivity';
 
 export default function TOIP_OnPressStartAnalysis(clientAPI) {
-
+    if (!CheckForConnectivity(clientAPI)) {
+        //If No Connectivity - DOnt proceed
+        return clientAPI.executeAction("/SmartInspections/Actions/ImageAnal/TOIP_NoNetwork.action");
+    }
     /* 1. Check if it has the Attachements,
        2. get the Prompt 
        3. Prepare the Inspection Criteria 

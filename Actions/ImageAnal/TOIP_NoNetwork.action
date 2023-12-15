@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TOIP_NoNetwork"
+	},
+	"Message": "AI's brain needs its internet feed! Connect to an network and unlock the vision magic..",
+	"Title": "No Network",
+	"OKCaption": "OK"
+}
