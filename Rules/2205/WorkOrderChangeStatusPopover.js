@@ -9,7 +9,7 @@ import libWOMobile from '../../../SAPAssetManager/Rules/WorkOrders/MobileStatus/
 import isAssignEnableWorkOrder from '../../../SAPAssetManager/Rules/WorkOrders/MobileStatus/IsAssignEnableWorkOrder';
 import isUnAssignOrReAssignEnableWorkOrder from '../../../SAPAssetManager/Rules/WorkOrders/MobileStatus/IsUnAssignOrReAssignEnableWorkOrder';
 import personaLib from '../../../SAPAssetManager/Rules/Persona/PersonaLibrary';
-import DisconnectAllowComplete from '../../../SAPAssetManager/Rules/Meter/DisconnectAllowComplete';
+// import DisconnectAllowComplete from '../../../SAPAssetManager/Rules/Meter/DisconnectAllowComplete';
 import IsPhaseModelEnabled from '../../../SAPAssetManager/Rules/Common/IsPhaseModelEnabled';
 
 /**
@@ -85,7 +85,7 @@ export default function WorkOrderChangeStatusPopover(context) {
 
     };
     //E.O.A for D070
-    return Promise.all([libWOMobile.isAnyWorkOrderStarted(context), roleCheck(), DisconnectAllowComplete(context), /*D070*/siCloseCheck()]).then(checks => {
+    return Promise.all([libWOMobile.isAnyWorkOrderStarted(context), roleCheck(), /*DisconnectAllowComplete(context)*/, /*D070*/siCloseCheck()]).then(checks => {
         const anythingStarted = checks[0];
         const supervisorRole = checks[1];
         const isClockedIn = libClock.isBusinessObjectClockedIn(context);

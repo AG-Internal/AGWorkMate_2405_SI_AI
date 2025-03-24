@@ -1,0 +1,35 @@
+{
+    "Caption": "/SmartInspections/Rules/ClassificationListView_Caption.js",
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Header": {
+                        "UseTopPadding": false
+                   },
+                    "ObjectCell": {
+                        "Title": "/SAPAssetManager/Rules/Classification/ClassDescription.js",
+                        "Subhead": "/SAPAssetManager/Rules/Classification/ClassId.js",
+                        "AccessoryType": "disclosureIndicator",
+                        "SubstatusText": "/SAPAssetManager/Rules/Classification/ClassTypeDescription.js",
+                        "OnPress": "/SAPAssetManager/Actions/Classification/ClassificationDetailsNav.action",
+                        "PreserveIconStackSpacing":false
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_classification_available)"
+                    },
+                    "Target": {
+                        "EntitySet": "/SmartInspections/Rules/ClassificationListView_EntitySet.js",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SmartInspections/Rules/ClassificationListView_Query.js"
+                    },    
+                    "_Name": "Classification",
+                    "_Type": "Section.Type.ObjectTable"
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "ClassificationPage"
+}

@@ -1,5 +1,5 @@
 {
-	"DestinationName": "SAP_AGC_SI_OData",
+	"DestinationName": "SAP_SI_OData",
 	"LanguageURLParam": "sap-language",
 	"Headers": {
 		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"

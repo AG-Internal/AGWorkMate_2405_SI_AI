@@ -1,0 +1,411 @@
+{
+    "Caption": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsCaption.js",
+    "PrefersLargeCaption": true,
+    "OnLoaded": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsOnPageLoad.js",
+    "OnReturning": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsOnPageReturn.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "Right",
+                "_Name": "Edit",
+                "SystemItem": "Edit",
+                "Caption": "",
+                "IsIconCircular": false,
+                "OnPress": "/SAPAssetManager/Rules/Equipment/CreateUpdate/EquipmentOpenEditPage.js",
+                "Visible": "/SAPAssetManager/Rules/Equipment/CreateUpdate/EquipmentEditButtonVisible.js"
+            },
+            {
+                "_Name": "EquipmentOverflow",
+                "Position": "Right",
+                "IsIconCircular": false,
+                "Icon":"$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png, '', /SAPAssetManager/Images/menuicon.png)",
+                "Caption": "",
+                "OnPress": "/SAPAssetManager/Actions/Equipment/EquipmentPopover.action",
+                "Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js"
+            }
+        ]
+    },
+    "Controls": [
+        {   "_Type": "Control.Type.SectionedTable",
+            "_Name": "SectionedTable",
+            "Sections": [
+                {
+					"ObjectHeader": {
+						"Footnote": "/SAPAssetManager/Rules/Equipment/EquipmentTechnicalObjectId.js",
+						"SubstatusText": "/SAPAssetManager/Rules/Equipment/EquipmentDetailViewFormat.js",
+						"Tags": [
+							"{EquipType}",
+							"{EquipCategory}"
+						],
+						"BodyText": "/SAPAssetManager/Rules/Equipment/EquipmentDetailViewFormat.js",
+						"HeadlineText": "/SAPAssetManager/Rules/Equipment/EquipmentDetailViewFormat.js",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading",
+						"Styles": {
+							"ObjectHeader": "wdObjHeader"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "EquipmentObjectHeaderSection"
+				},
+
+                {
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton0",
+							"Title": "Ord",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/FunctionalLocation/WorkOrderIsSamePlanningPlant.js",
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressWorkOrderAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Ord"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton1",
+							"Title": "Notf",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/FunctionalLocation/NotificationIsSamePlanningPlant.js",
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressNotifAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Notf"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton2",
+							"Title": "Read",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/Equipment/EquipmentTakeReadingIsVisible.js",
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressReadAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Read"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton3",
+							"Title": "Inst",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/Equipments/EnableEquipmentEdit.js",
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressInstAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Inst"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Name": "SectionButton4",
+							"Title": "Dismantle",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://decline",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/Equipment/Uninstall/UninstallVisible.js",
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressDismantle.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Dismantle"
+								}
+							}
+						}
+					]
+				},
+
+                {
+                    "_Type": "Fragment",
+                    "Fragment": "/SAPAssetManager/Pages/Fragments/Details/StatusesGridTable.fragment",
+                    "Properties": {
+                        "Header": {
+                            "Caption": "$(L,statuses)",
+                            "UseTopPadding": "/SAPAssetManager/Rules/EPD/IsEPDVisualizationAvailable.js"
+                        },
+                        "Target": "/SAPAssetManager/Rules/Common/DetailsPage/EquipFLocDetailsPageStatusesTable.js"
+                    }
+                },
+
+                {
+					"KeyAndValues": [
+						{
+							"LinkColor": "/SAPAssetManagerExt/Rules/Themes/keyValueLinkColor.js",
+							"Value": "/SAPAssetManager/Rules/Equipment/EquipmentSuperiorEquipment.js",
+							"_Name": "KeyValue3",
+							"KeyName": "$(L,superior_equipment)",
+							"OnPress": "dummy"
+						},
+						{
+							"LinkColor": "/SAPAssetManagerExt/Rules/Themes/keyValueLinkColor.js",
+							"Value": "/SAPAssetManager/Rules/Equipment/EquipmentManufacturer.js",
+							"_Name": "KeyValue4",
+							"KeyName": "$(L,manufacturer)",
+							"OnPress": "dummy"
+						},
+						{
+							"LinkColor": "/SAPAssetManagerExt/Rules/Themes/keyValueLinkColor.js",
+							"Value": "/SAPAssetManager/Rules/Equipment/EquipmentModelNumber.js",
+							"_Name": "KeyValue5",
+							"KeyName": "$(L,model_number)",
+							"OnPress": "dummy"
+						},
+						{
+							"LinkColor": "/SAPAssetManagerExt/Rules/Themes/keyValueLinkColor.js",
+							"Value": "/SAPAssetManager/Rules/Equipment/EquipmentSerialNumber.js",
+							"_Name": "KeyValue7",
+							"KeyName": "$(L,serial_number)",
+							"OnPress": "dummy"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "KeyValueTable",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "$(L,equipment_details)"
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+                {
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"_Name": "SectionObjectCardCollection0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Cards": [
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard1",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Equipment/ClassificationsCount.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/classification.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressClassificationCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG1"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard2",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/2210/Equipment/RelatedWOCount.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/relatedWorkOrder.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressRelatedWOCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG2"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard3",
+							"Visible": "/SAPAssetManager/Rules/Documents/DocumentsIsVisible.js",
+							"Title": "/SAPAssetManagerExt/Rules/2210/Equipment/DocumentsCount.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/documents.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressDocumentsCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG3"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard4",
+							"Title": "/SAPAssetManagerExt/Rules/2210/Equipment/NotesCount.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/notes.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressNotesCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG4"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard5",
+							"Title": "/SAPAssetManagerExt/Rules/2210/Equipment/MeasuringPointsCount.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/measuringPoint.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressMeasuringPointsCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG5"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard6",
+							"Visible": true,
+							"Title": "Full Details",
+							"DetailImage": "/SAPAssetManagerExt/Images/moredetails.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/2210/Equipment/onPressMoreDetailsCard.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG6"
+							}
+						}
+					],
+					"Layout": {
+						"LayoutType": "Vertical"
+					}
+				}
+            ]
+            
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "EquipmentDetailsPage",
+    "DataSubscriptions": [
+        "MeasuringPoints",
+        "MyEquipDocuments"
+    ]
+}

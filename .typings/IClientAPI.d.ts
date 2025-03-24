@@ -1,4 +1,4 @@
-/// version: MDK SDK 23.8
+/// version: MDK SDK 6.3
 
 /**
  * A designer-facing interface that provides access to a context.
@@ -49,7 +49,6 @@
    * you must return the Promise returned by this method as the result of the rule.
    * Not doing this may cause the action binding and pressed item to be reset before the action completes.
    * @param actionPath the action path
-   * @returns a promise as the result of the rule
    */
   executeAction(actionPath: string): Promise<IActionResult>;
   /**

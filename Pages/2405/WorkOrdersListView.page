@@ -1,0 +1,113 @@
+{	
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
+	"Caption": "/SmartInspections/Rules/2405/WOListView/SIWorkOrderListViewCaption.js",
+	"ActionBar":
+	{	"_Name": "ActionBar1",
+		"Items":
+		[
+			{
+				"_Name": "ActionBarItem3",
+				"Caption": "Go to Home",
+				"Icon": "$(PLT,/SAPAssetManagerExt/Images/overview.dark.pdf,/SAPAssetManager/Images/overview.light.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/SAPAssetManagerExt/Actions/2210/HomeNav.action"
+			},
+			{
+				"_Name": "Sync",
+				"Caption": "Sync",
+				"Icon": "/SAPAssetManager/Rules/Sync/SyncIcon.js",
+				"Position": "right",
+				"IsIconCircular": false,
+				"IconText": "SyncIcon",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+			},
+		{
+			"Position": "Right",
+			"Caption": "",
+			"SystemItem": "Add",
+			"Text": "$(L,add)",
+			"_Name": "ActionBarItem0",
+			"IsIconCircular": false,
+			"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderCreate.js",
+			"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+		},
+		{	"_Name": "ActionBarItem1",
+			"Caption": "",
+			"Position": "Right",
+			"IsIconCircular": false,
+			"Text": "Menu",
+			"Icon":"$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+			"OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action",
+			"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListPopoverVisible.js"
+		},
+		{	
+			"_Name": "ActionBarItem2",
+			"Text": "$(L,filter)",
+			"Position": "Right",
+			"IsIconCircular": false,
+			"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png,'',/SAPAssetManager/Images/filter.android.png)",
+			"Caption": "",
+			"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewFilterVisible.js",
+            "OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action"
+		}]
+	},
+	"Controls":
+	[{
+		"Sections":
+		[{
+			"Search":
+			{
+				"Enabled" : "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+				"Delay": 500,
+				"MinimumCharacterThreshold": 3,
+				"Placeholder": "$(L,search)",
+				"BarcodeScanner": true
+			},
+			"Header": {
+				"_Name": "SectionHeader0",
+				"AccessoryType": "none",
+				"UseTopPadding": false
+			},
+			"EmptySection": {
+				"Caption": "/SAPAssetManager/Rules/WorkOrders/NoWorkOrdersCaption.js",
+				"FooterVisible": false
+			},
+			"ObjectCell": {
+				"_Type": "Fragment",
+				"Fragment": "/SAPAssetManagerExt/Pages/2405/Fragments/WorkOrderObjectCell.fragment",
+				"Properties":{
+					"Description": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewDescription.js",
+					"ContextMenu": {
+						"PerformFirstActionWithFullSwipe": true,
+						"Items":"/SAPAssetManager/Rules/WorkOrders/WorkOrderObjectCellContextMenuItems.js",
+						"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+						"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+					}
+				}
+			},
+			"Target": {
+				"EntitySet" : "MyWorkOrderHeaders",
+				"Service" : "/SAPAssetManager/Services/AssetManager.service",
+                "QueryOptions": "/SmartInspections/Rules/2405/WOListView/InspectionsSIOrderQuery.js"
+			},
+			"_Type" : "Section.Type.ObjectTable",
+			"_Name" : "WorkOrdersListSection"
+		}],	
+		"FilterFeedbackBar": {
+			"_Type": "Control.Type.FilterFeedbackBar",
+			"_Name": "FilterFeedback",
+			"ShowAllFilters": true,
+			"FastFilters": "/SAPAssetManager/Rules/WorkOrders/ListView/FastFilters/WorkOrderFastFiltersItems.js"
+		},
+		"Filters": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewDefaultFilters.js",
+		"_Type" : "Control.Type.SectionedTable",
+		"_Name" : "SectionedTable"
+	}],
+	"_Type": "Page",
+	"_Name": "WorkOrdersListViewPage",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js"
+}
