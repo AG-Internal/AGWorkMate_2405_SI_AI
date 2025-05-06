@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.OfflineOData.Upload",
+	"ActionResult": {
+		"_Name": "result"
+	},
+	"OnFailure": "/SAPAssetManager/Rules/Sync/OnUploadFailure.js",
+	"OnSuccess": "/SmartInspections/Actions/OData/UploadOfflineSAM.action",
+	"Service": "/SAPAssetManager/Services/AssetManager.service"
+}

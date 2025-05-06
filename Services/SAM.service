@@ -6,5 +6,5 @@
 	},
 	"OfflineEnabled": true,
 	"SourceType": "Mobile",
-	"RestService": true
+	"RestService": false
 }
