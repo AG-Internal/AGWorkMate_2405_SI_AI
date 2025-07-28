@@ -3,6 +3,7 @@
  * @param {IClientAPI} clientAPI
  */
 import WOCountQuery from "../SI/Inspections/WOCountQuery";
+import WorkOrdersCount from "../../../../SAPAssetManager/Rules/WorkOrders/WorkOrdersCount";
 export default function CardTitles(clientAPI, psCallFrom) {
     var sTitle = "";
 
@@ -12,7 +13,8 @@ export default function CardTitles(clientAPI, psCallFrom) {
 
             let SIOrdCount = clientAPI.count('/SmartInspections/Services/SAM.service', 'WorkOrderHeaderSet');
             return SIOrdCount.then(function (count) {
-                sTitle = sTitle.replace("{0}", count);
+                // sTitle = sTitle.replace("{0}", count);
+                sTitle = `${count}`
                 return sTitle;
             });
 
@@ -21,18 +23,22 @@ export default function CardTitles(clientAPI, psCallFrom) {
             let pageProxy = clientAPI.getPageProxy();
             let appClientData = pageProxy.getAppClientData();
 
-            if (!appClientData.sSIWoCardTitleIntialized) {                              //New Logic for OVP Testing                
-                sTitle = "Work Orders (0)";                                            //New Logic for OVP Testing
-                return sTitle;                                                         //New Logic for OVP Testing
-            } else {                                                                   //New Logic for OVP Testing
+            if (!appClientData.sSIWoCardTitleIntialized) {
+                sTitle = "Work Orders (0)";
+                sTitle = "0";
+                return sTitle;
+            } else {                                                                  //New Logic for OVP Testing
                 sTitle = "Work Orders ({0})";
-
+                sTitle = "0";
                 //Calling the Std Service to get the count:                
-                return WOCountQuery(clientAPI).then(function (stdODataQuery) {                    
-                    let stdOrdCount = clientAPI.count('/SAPAssetManager/Services/AssetManager.service', 'MyWorkOrderHeaders', stdODataQuery);
-                    
-                    return stdOrdCount.then(function (count) {                        
-                        sTitle = sTitle.replace("{0}", count);                        
+                return WOCountQuery(clientAPI).then(function (stdODataQuery) {
+                    //  let stdOrdCount = clientAPI.count('/SAPAssetManager/Services/AssetManager.service', 'MyWorkOrderHeaders', stdODataQuery);
+                    let OVPContextAPI = clientAPI.evaluateTargetPathForAPI('#Page:OverviewPageNew');
+                    let stdOrdCount = WorkOrdersCount(OVPContextAPI, stdODataQuery);
+
+                    return stdOrdCount.then(function (count) {
+                        // sTitle = sTitle.replace("{0}", count);
+                        sTitle = `${count}`
                         return sTitle;
                     });
                 });

@@ -2,6 +2,7 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
+
 export default function WOCountQuery(clientAPI) {
     return clientAPI.read('/SmartInspections/Services/SAM.service', 'WorkOrderHeaderSet', []).then(function (results) {
 
@@ -27,38 +28,37 @@ export default function WOCountQuery(clientAPI) {
                 if (aSiOrders.length === 1) { //For only one SI Order:
 
                     //Building the Query Based on the Triggering Point:
-                        sWoListODataQuery = "$filter=OrderId ne '{0}'";
-                        
+                    sWoListODataQuery = "$filter=OrderId ne '{0}'";
+
                     sWoListODataQuery = sWoListODataQuery.replace("{0}", value);
 
                 } else { //For multiple SI Orders:
                     if (arrayIndex === 0) {
 
                         //Building the Query Based on the Triggering Point:
-                            sWoListODataQuery = "$filter=OrderId ne '{0}'";
-                           
+                        sWoListODataQuery = "$filter=OrderId ne '{0}'";
+
                         sWoListODataQuery = sWoListODataQuery.replace("{0}", value);
 
                     }
 
                     if (arrayIndex > 0) {
                         //Preparing the Additional Order numbers in the same Query as above:
-                            //fetching only the orders other than the SI Orders:    
-                            sWoAdditionalOrd = " and OrderId ne '{0}'";
-                        
+                        //fetching only the orders other than the SI Orders:    
+                        sWoAdditionalOrd = " and OrderId ne '{0}'";
+
 
                         sWoAdditionalOrd = sWoAdditionalOrd.replace("{0}", value);
                         sWoListODataQuery = sWoListODataQuery.concat(sWoAdditionalOrd);
-                        
+
                     }
 
                 }
             });
         } else { //When no SI WO present:     
-                sWoListODataQuery = "$filter=OrderId ne '1234564'";
-            
-        }
+            sWoListODataQuery = "$filter=OrderId ne '1234564'";
 
+        }
         return sWoListODataQuery;
 
     });

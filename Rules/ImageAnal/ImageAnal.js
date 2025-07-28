@@ -153,7 +153,7 @@ export class ImageAnal {
 
         //Final ChatData
         var oChatData = {
-            "model": "gpt-4-vision-preview",
+            "model": "gpt-4o", //"gpt-4-vision-preview",
             "messages": aMessages,
             "max_tokens": 1000,
             "temperature": 1,

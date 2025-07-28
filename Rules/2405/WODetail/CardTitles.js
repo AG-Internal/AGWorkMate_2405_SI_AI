@@ -7,7 +7,8 @@ import InspHistCount from '../../../../SmartInspections/Rules/SmartInspection_Te
 
 export default function CardTitles(clientAPI, psCallFrom) {
     //get Workorder page Context
-    let workOrderContextAPI = clientAPI.evaluateTargetPathForAPI('#Page:WorkOrderDetailsPage');
+  //  let workOrderContextAPI = clientAPI.evaluateTargetPathForAPI('#Page:WorkOrderDetailsPage');
+    let workOrderContextAPI = clientAPI.evaluateTargetPathForAPI('#Page:WorkOrderDetailsWithObjectCardsPage');
     var sTitle = "";
 
     switch (psCallFrom) {

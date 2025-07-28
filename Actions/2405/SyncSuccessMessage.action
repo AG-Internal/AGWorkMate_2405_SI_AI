@@ -1,10 +1,10 @@
 {
-    "_Type": "Action.Type.ToastMessage",
-    "Icon": "",
-    "Message" : "$(L,sync_success)",
-    "IsIconHidden": false,
-    "MaxNumberOfLines": 2,
-    "Duration": 3,
-    "Animated": true,
-    "OnSuccess": "/SmartInspections/Actions/OData/UploadOfflineSAM.action"
+	"_Type": "Action.Type.ToastMessage",
+	"OnSuccess": "/SmartInspections/Actions/OData/UploadOfflineSAM.action",
+	"ShowActivityIndicator": true,
+	"Message": "$(L,sync_success)",
+	"Duration": 3,
+	"IsIconHidden": false,
+	"Animated": true,
+	"MaxNumberOfLines": 2
 }

@@ -1,0 +1,566 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManagerExt/Pages/Fragments/WorkOrder/WorkOrderDetails/ObjectHeader.fragment",
+					"Properties": {
+						"ObjectHeader": {
+							"DetailImage": "$(PLT, /SAPAssetManager/Images/DetailImages/WO.png, /SAPAssetManager/Images/DetailImages/WO.android.png)"
+						}
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrderDetailsPopoverIsVisible.js",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton0",
+							"Title": "Ord",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderCreateFromWorkOrder.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/onPressOrderAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Ord"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton1",
+							"Title": "Opr",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableOperationCreate.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressOperAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Opr"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton2",
+							"Title": "Part",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressPartAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Part"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton3",
+							"Title": "Note",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressNoteAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Note"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton4",
+							"Title": "Notif",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/Notifications/EnableNotificationCreateFromWorkOrder.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressNotifAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Notf"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton5",
+							"Title": "Rem",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://add",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressRemAdd.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Rem"
+								}
+							}
+						},
+						{
+							"Styles": {
+								"Button": "wdActionBtn"
+							},
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton6",
+							"Title": "Down",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://download",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": "/SAPAssetManagerExt/Rules/WorkOrder/DownloadEnabled.js",
+							"Enabled": true,
+							"OnPress": {
+								"Handler": "/SAPAssetManagerExt/Rules/WorkOrder/onPressActDownload.js",
+								"UserInteraction": {
+									"Enabled": true,
+									"Title": "Down"
+								}
+							}
+						}
+					]
+				},
+				"/SAPAssetManagerExt/Pages/Fragments/WorkOrder/WorkOrderDetails/WorkOrderDetails.fragment",
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManagerExt/Pages/Fragments/WorkOrder/Assets.fragment",
+					"Properties": {
+						"Target": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderAssets.js",
+						"MaxItemCount": 2
+					}
+				},
+				{
+					"Separators": {
+						"ControlSeparator": false
+					},
+					"DataSubscriptions": [
+						"PMMobileStatuses",
+						"Confirmations"
+					],
+					"_Type": "Section.Type.ObjectCardCollection",
+					"Target": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/OperationsObjectCardCollectionTarget.js",
+					"_Name": "OperationsObjectCardCollection",
+					"EmptySection": {
+						"Caption": "$(L,no_operations_available)",
+						"FooterVisible": false
+					},
+					"Card": {
+						"Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
+						"Subhead": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewFormat.js",
+						"Footnote": "{OrderId}",
+						"DetailImage": "$(PLT, /SAPAssetManager/Images/DetailImages/Operation.png, /SAPAssetManager/Images/DetailImages/Operation.android.png)",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/WorkOrderOperationDetailsNav.js",
+						"OverflowButtons": [
+							{
+								"_Name": "TertiaryButton",
+								"Title": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardTertiaryActionTitle.js",
+								"Visible": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardTertiaryActionVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardTertiaryActionOnPress.js"
+							},
+							{
+								"_Name": "TakeReadings",
+								"Title": "$(L,take_readings)",
+								"Visible": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardTakeReadingsVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointsDataEntryNavWrapper.js"
+							},
+							{
+								"_Name": "AddOrder",
+								"Title": "$(L,add_order)",
+								"Visible": "/SAPAssetManager/Rules/OverviewPage/MyWorkSection/ObjectCardOrderButtonVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+							},
+							{
+								"_Name": "AddNotification",
+								"Title": "$(L,add_notification)",
+								"Visible": "/SAPAssetManager/Rules/UserAuthorizations/Notifications/EnableNotificationCreateFromWorkOrderOperation.js",
+								"OnPress": "/SAPAssetManager/Rules/Operations/WorkOrderOperationNotificationCreateNav.js"
+							},
+							{
+								"_Name": "Parts",
+								"Title": "$(L,parts)",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Actions/Parts/PartsListViewNav.action"
+							},
+							{
+								"_Name": "AddTime",
+								"Title": "$(L,record_time)",
+								"Visible": "/SAPAssetManager/Rules/OverviewPage/MyWorkSection/ObjectCardTimeVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/OverviewPage/MyWorkSection/ObjectCardTimeCreate.js"
+							}
+						],
+						"PrimaryAction": {
+							"_Name": "PrimaryButton",
+							"Title": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardPrimaryActionTitle.js",
+							"Visible": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardPrimaryActionVisible.js",
+							"OnPress": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardPrimaryActionOnPress.js",
+							"Style": "WdObjectCardPrimaryAction"
+						},
+						"SecondaryAction": {
+							"_Name": "SecondaryButton",
+							"Title": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardSecondaryActionTitle.js",
+							"Visible": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardSecondaryActionVisible.js",
+							"OnPress": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ObjectCardSecondaryActionOnPress.js"
+						},
+						"Styles": {
+							"Description": "wdCardTitle",
+							"Footnote": "wdCardFootNote",
+							"StatusText": "wdCardStatusText",
+							"Subhead": "wdCardTitle",
+							"Title": "wdCardTitle",
+							"BackgroundColor": "wdCardBG2"
+						},
+						"_Type": "Control.Type.ObjectCard"
+					},
+					"Layout": {
+						"LayoutType": "HorizontalScroll"
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"_Name": "SectionObjectCardCollection1",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Cards": [
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard8",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountOperations.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/operation.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressOperView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG1"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard9",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountParts.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/parts.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressPartView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG2"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard4",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountDocuments.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/documents.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressDocView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG3"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard7",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountForms.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/List.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressForms.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG4"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard6",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountNotes.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/notes.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressNoteView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG5"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard1",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountObjectList.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/hier.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/onPressObjectList.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG6"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard3",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountRelNotif.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/notification.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/onPressRelNotif.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG7"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCardSI",
+							"Visible": "/SmartInspections/Rules/WOexistInSI_Open.js",
+							"Title": "/SmartInspections/Rules/2405/WODetail/SICount.js",
+							"DetailImage": "/SAPAssetManager/Images/stocksearch.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SmartInspections/Rules/2405/WODetail/onPressSI.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdCardTextColor6",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG6"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCardSIHist",
+							"Visible": "/SmartInspections/Rules/WOexistInSI_Closed.js",
+							"Title": "/SmartInspections/Rules/2405/WODetail/InspHistCount.js",
+							"DetailImage": "/SmartInspections/Images/InspHistory-removebg-preview.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SmartInspections/Rules/2405/WODetail/onPressSI.js",
+							"OverflowButtons": [],
+							"PrimaryAction": {
+								"Style": "",
+								"Title": "Primary",
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Style": "",
+								"Title": "Secondary",
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdCardTextColor7",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG7"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard2",
+							"Visible": true,
+							"Title": "Full Details",
+							"DetailImage": "/SAPAssetManagerExt/Images/moredetails.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/onPressMoreDetails.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG1"
+							}
+						}
+					],
+					"Layout": {
+						"LayoutType": "Vertical"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"MyWorkOrderOperations",
+		"MyWorkOrderDocuments",
+		"EAMChecklistLinks",
+		"InspectionLots",
+		"InspectionCharacteristics"
+	],
+	"_Name": "WorkOrderDetailsWithObjectCardsPage",
+	"Caption": "/SAPAssetManager/Rules/WorkOrders/Header/WorkOrderHeader.js",
+	"PrefersLargeCaption": false,
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsOnPageLoad.js",
+	"OnUnloaded": "/SAPAssetManager/Rules/Common/DetailsPageToolbar/ToolbarClassResetOnPageUnloaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsOnPageReturning.js",
+	"ActionBar": {
+		"Items": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderDetails/ActionBarItems.fragment",
+		"_Name": "ActionBar1"
+	},
+	  "ToolBar": {
+        "Visible": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsToolbarVisibility.js",
+        "Controls": {
+            "_Type": "Fragment",
+            "Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderDetails/ToolBarControls.fragment",
+            "Properties": {
+                "#Name:WorkOrderDetailsPageTbI0": {
+                    "_Name": "WorkOrderDetailsWithObjectCardsPageTbI0"
+                },
+                "#Name:WorkOrderDetailsPageTbI1": {
+                    "_Name": "WorkOrderDetailsWithObjectCardsPageTbI1"
+                },
+                "#Name:WorkOrderDetailsPageTbI2": {
+                    "_Name": "WorkOrderDetailsWithObjectCardsPageTbI2"
+                }
+            }
+        }
+    }
+}
