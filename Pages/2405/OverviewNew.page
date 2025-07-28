@@ -163,7 +163,7 @@
 							"Subhead": "/SmartInspections/Rules/2405/SI/WorkOrdersCount.js",
 							"DetailImage": "/SAPAssetManager/Images/orders.android.dark.png",
 							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManagerExt/Rules/2405/Overview/OnPressWorkOrderAll.js",
+							"OnPress": "/SmartInspections/Rules/2405/SI/onPressWorkOrders.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -184,7 +184,7 @@
 							"Subhead": "/SmartInspections/Rules/2405/SI/InspectionsTitleCount.js",
 							"DetailImage": "/SAPAssetManager/Images/stocksearch.dark.png",
 							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js",
+							"OnPress": "/SmartInspections/Rules/2405/SI/onPressInspections.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -646,6 +646,6 @@
 				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
 			}
 		],
-		"_Name": "ActionBar0"
+		"_Name": "ActionBar1"
 	}
 }

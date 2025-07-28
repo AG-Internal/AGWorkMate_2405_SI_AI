@@ -3,5 +3,5 @@
 	"ActionResult": {
 		"_Name": "SIInspectionToWOList"
 	},
-	"PageToOpen": "/SmartInspections/Pages/2210/WorkOrdersListView.page"
+	"PageToOpen": "/SmartInspections/Pages/2405/WorkOrdersListView.page"
 }

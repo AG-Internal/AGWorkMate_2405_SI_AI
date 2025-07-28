@@ -1,0 +1,131 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"FastFilters": "/SAPAssetManager/Rules/WorkOrders/ListView/FastFilters/WorkOrderFastFiltersItems.js",
+				"_Name": "FilterFeedback",
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Type": "SectionCommon.Type.Header",
+						"_Name": "SectionCommonTypeHeader0",
+						"AccessoryType": "None",
+						"UseTopPadding": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"EntitySet": "MyWorkOrderHeaders",
+						"QueryOptions": "/SmartInspections/Rules/2405/WOListView/WorkOrdersListViewQueryOptionWrapper.js"
+					},
+					"_Name": "WorkOrdersListSection",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "/SAPAssetManager/Rules/WorkOrders/NoWorkOrdersCaption.js",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"_Type": "Fragment",
+						"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderObjectCell.fragment",
+						"Properties": {
+							"Description": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewDescription.js",
+							"ContextMenu": {
+								"PerformFirstActionWithFullSwipe": true,
+								"Items": "/SAPAssetManager/Rules/WorkOrders/WorkOrderObjectCellContextMenuItems.js",
+								"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+								"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+							}
+						}
+					},
+					"Search": {
+						"Enabled": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"HighlightSelectedItem": false
+				}
+			],
+			"Filters": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewDefaultFilters.js"
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+	"_Name": "WorkOrdersListViewPage",
+	"Caption": "/SmartInspections/Rules/2405/WOListView/SIWorkOrderListViewCaption.js",
+	"PrefersLargeCaption": false,
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			{
+				"Text": "$(L,add)",
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderCreate.js",
+				"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+			},
+			{
+				"Text": "Menu",
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListPopoverVisible.js",
+				"OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action"
+			},
+			{
+				"Text": "$(L,workorders_assign)",
+				"_Name": "ActionBarItem2",
+				"Caption": "",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWOAndroid.js",
+				"OnPress": "/SAPAssetManager/Actions/Supervisor/Assign/WorkOrderAssignNav.action"
+			},
+			{
+				"_Name": "ActionBarItem3",
+				"Caption": "/SAPAssetManager/Rules/Filter/FilterButtonCaption.js",
+				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png,'',/SAPAssetManager/Images/filter.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewFilterVisible.js",
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action"
+			},
+			{
+				"Text": "$(L, online_search)",
+				"_Name": "ActionBarItem4",
+				"Caption": "",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": false,
+				"OnPress": "/SAPAssetManager/Rules/OnlineSearch/WorkOrders/OnlineSearchFromWorkOrdersNav.js"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

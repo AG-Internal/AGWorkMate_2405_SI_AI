@@ -13,7 +13,7 @@ export default function onPressWorkOrders(clientAPI) {
     let appClientData = pageProxy.getAppClientData();
 
     //Setting Flag to be used in WO List View Query:
-    appClientData.triggeredFrom = "WORK_ORDERS";
+    appClientData.triggeredFrom = "WORK_ORDERS_OVP_TITLE";
 
     //Calling the WO List View Action:
     clientAPI.executeAction('/SmartInspections/Actions/WorkMate/SIInspectionToWOList.action');

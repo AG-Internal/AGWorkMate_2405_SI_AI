@@ -39,6 +39,7 @@ export default function CardTitles(clientAPI, psCallFrom) {
                     return stdOrdCount.then(function (count) {
                         // sTitle = sTitle.replace("{0}", count);
                         sTitle = `${count}`
+                        appClientData._countWorkOrder = count; 
                         return sTitle;
                     });
                 });
