@@ -180,74 +180,11 @@
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCard7",
 							"Visible": true,
-							"Title": "Inspections",
+							"Title": "Inspections / Checklist",
 							"Subhead": "/SmartInspections/Rules/2405/SI/InspectionsTitleCount.js",
 							"DetailImage": "/SAPAssetManager/Images/stocksearch.dark.png",
 							"DetailImageIsCircular": true,
 							"OnPress": "/SmartInspections/Rules/2405/SI/onPressInspections.js",
-							"PrimaryAction": {
-								"Visible": false
-							},
-							"SecondaryAction": {
-								"Visible": false
-							},
-							"Styles": {
-								"Subhead": "ovpCardTitle",
-								"Title": "ovpCardTitle",
-								"BackgroundColor": "ovpCardBG1"
-							}
-						}
-					],
-					"Layout": {
-						"LayoutType": "HorizontalScroll"
-					}
-				},
-				{
-					"Separators": {
-						"TopSectionSeparator": false,
-						"BottomSectionSeparator": false,
-						"HeaderSeparator": false,
-						"FooterSeparator": false,
-						"ControlSeparator": true
-					},
-					"_Type": "Section.Type.ObjectCardCollection",
-					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
-					"_Name": "SectionObjectCardCollection2",
-					"Visible": true,
-					"EmptySection": {
-						"FooterVisible": false
-					},
-					"Cards": [
-						{
-							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard11",
-							"Visible": true,
-							"Title": "$(L,'operations')",
-							"Subhead": "/SAPAssetManager/Rules/Operations/OperationCount.js",
-							"DetailImage": "/SAPAssetManager/Images/operations.android.dark.png",
-							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewNav.js",
-							"PrimaryAction": {
-								"Visible": false
-							},
-							"SecondaryAction": {
-								"Visible": false
-							},
-							"Styles": {
-								"Subhead": "ovpCardTitle",
-								"Title": "ovpCardTitle",
-								"BackgroundColor": "ovpCardBG1"
-							}
-						},
-						{
-							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard12",
-							"Visible": true,
-							"Title": "$(L,notifications)",
-							"Subhead": "/SAPAssetManager/Rules/Notifications/NotificationsTotalCount.js",
-							"DetailImage": "/SAPAssetManager/Images/notifications.android.dark.png",
-							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Rules/Notifications/NotificationsListViewNav.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -346,13 +283,13 @@
 					"Cards": [
 						{
 							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard23",
+							"_Name": "ObjectCard12",
 							"Visible": true,
-							"Title": "$(L,checklists)",
-							"Subhead": "/SAPAssetManager/Rules/WorkOrders/InspectionLot/InspectionLotCount.js",
-							"DetailImage": "/SAPAssetManager/Images/checklists.android.dark.png",
+							"Title": "$(L,notifications)",
+							"Subhead": "/SAPAssetManager/Rules/Notifications/NotificationsTotalCount.js",
+							"DetailImage": "/SAPAssetManager/Images/notifications.android.dark.png",
 							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Actions/WorkOrders/InspectionLot/InspectionLotListViewNav.action",
+							"OnPress": "/SAPAssetManager/Rules/Notifications/NotificationsListViewNav.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -628,7 +565,7 @@
 	],
 	"_Type": "Page",
 	"_Name": "OverviewPageNew",
-	"Caption": "AG EAM Skins",
+	"Caption": "AG's EAM Skins",
 	"PrefersLargeCaption": false,
 	"OnLoaded": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageLoad.js",
 	"OnReturning": "/SAPAssetManager/Rules/OverviewPage/OverviewMTNewOnPageReturning.js",
@@ -646,6 +583,6 @@
 				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
 			}
 		],
-		"_Name": "ActionBar1"
+		"_Name": "ActionBar0"
 	}
 }
