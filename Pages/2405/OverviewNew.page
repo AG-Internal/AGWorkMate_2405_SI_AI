@@ -501,15 +501,12 @@
 					"AnalyticCards": [
 						{
 							"DataSeries": {
-								"Data": [
-									[
-										"/SAPAssetManager/Rules/Operations/OperationCount.js",
-										"/SAPAssetManager/Rules/SubOperations/SubOperationCount.js"
-									]
-								],
+								"Data": "/SAPAssetManagerExt/Rules/2405/Overview/GetChartPriorityData.js",
 								"CategoryTitles": [
-									"Operations",
-									"Sub Operations"
+									"Very High",
+									"High",
+									"Medium",
+									"Low"
 								],
 								"CategoryLabelVisible": true,
 								"NumericLabelVisible": true
@@ -517,40 +514,37 @@
 							"_Type": "Card.Type.Chart",
 							"_Name": "CardTypeChart0",
 							"ChartType": "Column",
-							"Title": "Operations",
+							"Title": "Orders by Priority",
 							"IsTrendUpward": true,
 							"SeriesTitle": [
 								"Count"
 							],
 							"SeriesColor": [
-								"#2ca1cc"
+								"#eaa510"
 							]
 						},
 						{
 							"DataSeries": {
-								"Data": [
-									[
-										"/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationCount.js",
-										"/SAPAssetManager/Rules/Equipment/EquipmentCount.js"
-									]
-								],
+								"Data": "/SAPAssetManagerExt/Rules/2405/Overview/GetChartOrderData.js",
 								"CategoryTitles": [
-									"Func.Loc",
-									"Equipments"
+									"Preventive",
+									"Corrective"
 								],
 								"CategoryLabelVisible": true,
-								"NumericLabelVisible": true
+								"NumericLabelVisible": false
 							},
 							"_Type": "Card.Type.Chart",
-							"_Name": "CardTypeChart2",
-							"ChartType": "Column",
-							"Title": "Technical Objects",
+							"_Name": "CardTypeChart1",
+							"ChartType": "Donut",
+							"Title": "Orders by Type",
 							"IsTrendUpward": true,
 							"SeriesTitle": [
-								"Count"
+								"Preventive",
+								"Corrective"
 							],
 							"SeriesColor": [
-								"#2aed51"
+								"#c356d8",
+								"#340de0"
 							]
 						}
 					],
