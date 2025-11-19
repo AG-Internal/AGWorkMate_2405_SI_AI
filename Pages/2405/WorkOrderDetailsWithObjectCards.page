@@ -208,6 +208,23 @@
 						"MaxItemCount": 2
 					}
 				},
+
+				{
+                    "_Type": "Fragment",
+                    "Fragment": "/SAPAssetManager/Pages/Fragments/Notification/NotificationSection.fragment",
+                    "Properties": {
+                        "Target": {
+                            "EntitySet" : "{{#Property:@odata.readLink}}/Notification",
+                            "Service" : "/SAPAssetManager/Services/AssetManager.service",
+                            "QueryOptions" : "/SAPAssetManager/Rules/Notifications/NotificationsListViewQueryOption.js"
+                        },
+                        "ObjectCell": {
+                            "DetailImage": "$(PLT, /SAPAssetManager/Images/DetailImages/Notification.png, /SAPAssetManager/Images/DetailImages/Notification.android.png)",
+                            "PreserveIconStackSpacing": false
+                        }
+                    }
+                },
+
 				{
 					"Separators": {
 						"ControlSeparator": false
@@ -311,12 +328,12 @@
 					"Cards": [
 						{
 							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard8",
+							"_Name": "ObjectCard6",
 							"Visible": true,
-							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountOperations.js",
-							"DetailImage": "/SAPAssetManagerExt/Images/operation.png",
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountNotes.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/notes.png",
 							"DetailImageIsCircular": false,
-							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressOperView.js",
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressNoteView.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -326,27 +343,7 @@
 							"Styles": {
 								"Subhead": "wdSHText",
 								"Title": "wdCardTitle",
-								"BackgroundColor": "wdCardBG1"
-							}
-						},
-						{
-							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard9",
-							"Visible": true,
-							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountParts.js",
-							"DetailImage": "/SAPAssetManagerExt/Images/parts.png",
-							"DetailImageIsCircular": false,
-							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressPartView.js",
-							"PrimaryAction": {
-								"Visible": false
-							},
-							"SecondaryAction": {
-								"Visible": false
-							},
-							"Styles": {
-								"Subhead": "wdSHText",
-								"Title": "wdCardTitle",
-								"BackgroundColor": "wdCardBG2"
+								"BackgroundColor": "wdCardBG5"
 							}
 						},
 						{
@@ -391,12 +388,12 @@
 						},
 						{
 							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard6",
+							"_Name": "ObjectCard9",
 							"Visible": true,
-							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountNotes.js",
-							"DetailImage": "/SAPAssetManagerExt/Images/notes.png",
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountParts.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/parts.png",
 							"DetailImageIsCircular": false,
-							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressNoteView.js",
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressPartView.js",
 							"PrimaryAction": {
 								"Visible": false
 							},
@@ -406,13 +403,33 @@
 							"Styles": {
 								"Subhead": "wdSHText",
 								"Title": "wdCardTitle",
-								"BackgroundColor": "wdCardBG5"
+								"BackgroundColor": "wdCardBG2"
+							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard8",
+							"Visible": true,
+							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountOperations.js",
+							"DetailImage": "/SAPAssetManagerExt/Images/operation.png",
+							"DetailImageIsCircular": false,
+							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/OnPressOperView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "wdSHText",
+								"Title": "wdCardTitle",
+								"BackgroundColor": "wdCardBG1"
 							}
 						},
 						{
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCard1",
-							"Visible": true,
+							"Visible": false,
 							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountObjectList.js",
 							"DetailImage": "/SAPAssetManagerExt/Images/hier.png",
 							"DetailImageIsCircular": false,
@@ -429,26 +446,7 @@
 								"BackgroundColor": "wdCardBG6"
 							}
 						},
-						{
-							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard3",
-							"Visible": true,
-							"Title": "/SAPAssetManagerExt/Rules/WorkOrder/CountRelNotif.js",
-							"DetailImage": "/SAPAssetManagerExt/Images/notification.png",
-							"DetailImageIsCircular": false,
-							"OnPress": "/SAPAssetManagerExt/Rules/WorkOrder/onPressRelNotif.js",
-							"PrimaryAction": {
-								"Visible": false
-							},
-							"SecondaryAction": {
-								"Visible": false
-							},
-							"Styles": {
-								"Subhead": "wdSHText",
-								"Title": "wdCardTitle",
-								"BackgroundColor": "wdCardBG7"
-							}
-						},
+						
 						{
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCardSI",

@@ -176,6 +176,71 @@
 								"BackgroundColor": "ovpCardBG1"
 							}
 						},
+
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard12",
+							"Visible": true,
+							"Title": "$(L,notifications)",
+							"Subhead": "/SAPAssetManager/Rules/Notifications/NotificationsTotalCount.js",
+							"DetailImage": "/SAPAssetManager/Images/notifications.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/Notifications/NotificationsListViewNav.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTitle",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG1"
+							}
+						}
+					],
+					"Layout": {
+						"LayoutType": "HorizontalScroll"
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": false,
+						"HeaderSeparator": false,
+						"FooterSeparator": false,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ObjectCardCollection",
+					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+					"_Name": "SectionObjectCardCollection2",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Cards": [
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard11",
+							"Visible": true,
+							"Title": "$(L,'operations')",
+							"Subhead": "/SAPAssetManager/Rules/Operations/OperationCount.js",
+							"DetailImage": "/SAPAssetManager/Images/operations.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewNav.js", 
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTitle",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG1"
+							}
+						},
+
 						{
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCard7",
@@ -197,6 +262,7 @@
 								"BackgroundColor": "ovpCardBG1"
 							}
 						}
+
 					],
 					"Layout": {
 						"LayoutType": "HorizontalScroll"
@@ -280,28 +346,7 @@
 					"EmptySection": {
 						"FooterVisible": false
 					},
-					"Cards": [
-						{
-							"_Type": "Control.Type.ObjectCard",
-							"_Name": "ObjectCard12",
-							"Visible": true,
-							"Title": "$(L,notifications)",
-							"Subhead": "/SAPAssetManager/Rules/Notifications/NotificationsTotalCount.js",
-							"DetailImage": "/SAPAssetManager/Images/notifications.android.dark.png",
-							"DetailImageIsCircular": true,
-							"OnPress": "/SAPAssetManager/Rules/Notifications/NotificationsListViewNav.js",
-							"PrimaryAction": {
-								"Visible": false
-							},
-							"SecondaryAction": {
-								"Visible": false
-							},
-							"Styles": {
-								"Subhead": "ovpCardTitle",
-								"Title": "ovpCardTitle",
-								"BackgroundColor": "ovpCardBG1"
-							}
-						},
+					"Cards": [						
 						{
 							"_Type": "Control.Type.ObjectCard",
 							"_Name": "ObjectCard24",
@@ -322,7 +367,52 @@
 								"Title": "ovpCardTitle",
 								"BackgroundColor": "ovpCardBG1"
 							}
+						},
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard13",
+							"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWO.js",
+							"Title": "$(L,pending_review)",
+							"Subhead": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/SupervisorSectionCountForWO.js",
+							"DetailImage": "/SAPAssetManager/Images/orders.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/SupervisorWorkOrdersListView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTitle",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG1"
+							}
+						},
+
+						{
+							"_Type": "Control.Type.ObjectCard",
+							"_Name": "ObjectCard14",
+							"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForOperations.js",
+							"Title": "$(L,pending_review)",
+							"Subhead": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/SupervisorSectionCountForOperations.js",
+							"DetailImage": "/SAPAssetManager/Images/operations.android.dark.png",
+							"DetailImageIsCircular": true,
+							"OnPress": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/SupervisorOperationsListView.js",
+							"PrimaryAction": {
+								"Visible": false
+							},
+							"SecondaryAction": {
+								"Visible": false
+							},
+							"Styles": {
+								"Subhead": "ovpCardTitle",
+								"Title": "ovpCardTitle",
+								"BackgroundColor": "ovpCardBG1"
+							}
 						}
+
+
 					],
 					"Layout": {
 						"LayoutType": "HorizontalScroll"
